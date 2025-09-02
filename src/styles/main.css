@@ -126,14 +126,13 @@
 
   .card {
     @apply rounded-2xl shadow-lg;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .card:hover {
     @apply shadow-2xl;
-    transform: translateY(-8px) rotateX(-2deg);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
   }
 
   /* Scroll animations with Safari optimization */

@@ -7,9 +7,10 @@
           :src="paccLogo" 
           alt="PACC" 
           class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-500 delay-75 group-hover:scale-105"
-          :style="!isScrolled ? 
+          :style="logoLoaded && !isScrolled ? 
             'filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 75px rgba(255, 255, 255, 0.4)); opacity: 1' : 
             'filter: none; opacity: 1'"
+          @load="logoLoaded = true"
         />
       </a>
       
@@ -64,6 +65,7 @@ import paccLogo from '@/assets/images/logo_full.png'
 
 const isMobileMenuOpen = ref(false)
 const isScrolled = ref(false)
+const logoLoaded = ref(false)
 
 let scrollTimeout: number | null = null
 
