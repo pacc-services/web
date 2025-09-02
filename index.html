@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PACC – Clean Molecules Market‑Maker</title>
+  <meta name="description" content="PACC is the trusted bridge between producers and customers of the energy transition—de‑risking supply, aggregating demand, and creating structured pathways for clean molecules." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand: #0ea5e9; --brand-dark:#0284c7; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol'; }
+    .glass { background: rgba(255,255,255,0.75); backdrop-filter: blur(10px); }
+    .brand-gradient { background: linear-gradient(135deg, var(--brand), #22c55e); }
+    .prose h3 { margin-top: 1.25rem; font-weight: 700; }
+    .card { border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.07); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg brand-gradient flex items-center justify-center text-white font-black">P</div>
+        <span class="font-extrabold tracking-tight text-slate-900">PACC</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="#mission" class="hover:text-sky-700">Mission</a>
+        <a href="#approach" class="hover:text-sky-700">Approach</a>
+        <a href="#problem" class="hover:text-sky-700">Market</a>
+        <a href="#solution" class="hover:text-sky-700">Solution</a>
+        <a href="#revenue" class="hover:text-sky-700">Revenue</a>
+        <a href="#timeline" class="hover:text-sky-700">Timeline</a>
+        <a href="#leadership" class="hover:text-sky-700">Team</a>
+        <a href="#contact" class="hover:text-sky-700">Contact</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 hover:bg-slate-100" aria-label="Open Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5h14a1 1 0 110 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2z" clip-rule="evenodd"/></svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm font-semibold">
+        <a href="#mission" class="py-2">Mission</a>
+        <a href="#approach" class="py-2">Approach</a>
+        <a href="#problem" class="py-2">Market</a>
+        <a href="#solution" class="py-2">Solution</a>
+        <a href="#revenue" class="py-2">Revenue</a>
+        <a href="#timeline" class="py-2">Timeline</a>
+        <a href="#leadership" class="py-2">Team</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 brand-gradient opacity-10"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 lg:pt-24 lg:pb-16">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-slate-900">
+            The bridge between clean molecule producers and customers
+          </h1>
+          <p id="mission" class="mt-5 text-lg leading-7 text-slate-700">
+            Our mission is to become the trusted bridge between producers and customers of the energy transition—delivering scale, certainty, and value across dislocated markets.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-sky-600 text-white font-semibold shadow hover:bg-sky-700">Talk to Us</a>
+            <a href="#approach" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-300 font-semibold hover:bg-white">How We Work</a>
+          </div>
+          <div class="mt-6 text-xs text-slate-500">Hydrogen & specialty gases • Logistics • Market‑making</div>
+        </div>
+        <div class="lg:pl-8">
+          <div class="card glass p-6 md:p-8">
+            <h2 class="text-xl font-bold">Our Impact</h2>
+            <p class="mt-3 text-slate-700">PACC accelerates the commercialization of clean molecules by unlocking new markets, reducing risks to producers, and delivering a reliable supply to customers.</p>
+            <ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+              <li>Producer‑first mindset and aligned incentives</li>
+              <li>Structured offtake, credit support, and logistics optimization</li>
+              <li>Trust and reliability through disciplined, scalable execution</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section id="approach" class="py-16 border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="md:col-span-1">
+          <h2 class="text-2xl font-extrabold">Our Approach</h2>
+          <p class="mt-2 text-slate-600">We de‑risk production, aggregate demand, and create structured pathways for clean molecules.</p>
+        </div>
+        <div class="md:col-span-2 grid sm:grid-cols-2 gap-6">
+          <div class="card p-6">
+            <h3 class="font-bold text-slate-900">De‑risk Production</h3>
+            <p class="mt-2 text-slate-700">Commercial certainty via structured offtake, credit support, and long‑term agreements.</p>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-bold text-slate-900">Aggregate Demand</h3>
+            <p class="mt-2 text-slate-700">Create liquidity and price transparency; build scalable customer funnels.</p>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-bold text-slate-900">Optimize Logistics</h3>
+            <p class="mt-2 text-slate-700">Trailers, storage, pipelines—optimize midstream to lower delivered costs and improve reliability.</p>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-bold text-slate-900">Market‑Maker</h3>
+            <p class="mt-2 text-slate-700">Act as trusted intermediary to take market risk so producers can focus on operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Problem -->
+  <section id="problem" class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-2xl font-extrabold">Market Problem</h2>
+          <ul class="mt-4 space-y-3 text-slate-700 list-disc list-inside">
+            <li><span class="font-semibold">Stranded Molecules:</span> Producers lack offtake certainty—limiting investment and scale.</li>
+            <li><span class="font-semibold">Commercial Barriers:</span> Credit requirements, risk exposure, and illiquidity stall deals.</li>
+            <li><span class="font-semibold">High Delivered Costs:</span> Fragmented supply, complex logistics, unreliable delivery.</li>
+            <li><span class="font-semibold">No Market‑Maker:</span> Emerging markets lack a trusted intermediary to connect supply and demand.</li>
+          </ul>
+        </div>
+        <div id="solution" class="card p-6">
+          <h3 class="text-xl font-bold">PACC Solution</h3>
+          <p class="mt-2 text-slate-700">PACC connects producers and customers, turning stranded molecules into scalable markets.</p>
+          <ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+            <li>Unlock value for producers through commercial certainty</li>
+            <li>De‑risk transactions as a trusted intermediary</li>
+            <li>Lower delivered costs by aggregating volumes and optimizing logistics</li>
+            <li>Create liquidity and price transparency in emerging molecules</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revenue Streams -->
+  <section id="revenue" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between flex-wrap gap-4">
+        <h2 class="text-2xl font-extrabold">Revenue Streams</h2>
+        <span class="text-sm px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">CAGR 27%</span>
+      </div>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card p-6">
+          <h3 class="font-bold">Physical Trading & Market‑Making</h3>
+          <p class="mt-2 text-slate-700">Act as principal or agent, monetize arbitrage, and create liquidity in illiquid markets.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="font-bold">Logistics & Supply Chain</h3>
+          <p class="mt-2 text-slate-700">Coordinate transportation, storage, and delivery to ensure molecules flow reliably.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="font-bold">Origination & Marketing</h3>
+          <p class="mt-2 text-slate-700">Secure offtake agreements and downstream customers for clean energy & specialty gases.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="font-bold">Advisory / Outsourced Commercial</h3>
+          <p class="mt-2 text-slate-700">Plug‑in origination/commercial arm for producers and investors—faster and cheaper.</p>
+        </div>
+      </div>
+
+      <!-- Snapshot table -->
+      <div class="mt-10 card p-6 overflow-x-auto">
+        <h3 class="font-semibold">Financial Snapshot (Selected Figures)</h3>
+        <p class="text-sm text-slate-600 mt-1">Annual net income projections from planning model.</p>
+        <table class="mt-4 min-w-full text-sm">
+          <thead>
+            <tr class="text-left text-slate-600">
+              <th class="py-2 pr-6">Year</th>
+              <th class="py-2 pr-6">Annual Net Income</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="py-2 pr-6">2025</td><td class="py-2 pr-6">($519,600)</td></tr>
+            <tr><td class="py-2 pr-6">2026</td><td class="py-2 pr-6">$180,194</td></tr>
+            <tr><td class="py-2 pr-6">2027</td><td class="py-2 pr-6">$3,469,650</td></tr>
+            <tr><td class="py-2 pr-6">2028</td><td class="py-2 pr-6">$7,037,535</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold">Milestones</h2>
+      <div class="mt-8 grid lg:grid-cols-4 gap-6">
+        <div class="card p-6">
+          <div class="text-xs font-semibold text-slate-500">Q3 2025</div>
+          <h3 class="mt-1 font-bold">PACC Formed</h3>
+          <ul class="mt-2 text-sm space-y-1 list-disc list-inside text-slate-700">
+            <li>Exclusive agreement to market K2 hydrogen molecules</li>
+            <li>Engage customers for commercial agreements</li>
+            <li>Convert existing robust customer funnel</li>
+          </ul>
+        </div>
+        <div class="card p-6">
+          <div class="text-xs font-semibold text-slate-500">Q2 2026</div>
+          <h3 class="mt-1 font-bold">K2 Begins Commercial Operation</h3>
+          <ul class="mt-2 text-sm space-y-1 list-disc list-inside text-slate-700">
+            <li>PACC customers start receiving product</li>
+            <li>Complete mid/back‑office operations</li>
+            <li>Sign exclusive agreement for K4 product</li>
+          </ul>
+        </div>
+        <div class="card p-6">
+          <div class="text-xs font-semibold text-slate-500">Q4 2026</div>
+          <h3 class="mt-1 font-bold">K2 Plant Fully Loaded</h3>
+          <ul class="mt-2 text-sm space-y-1 list-disc list-inside text-slate-700">
+            <li>Sales & ops reach full efficiency and capacity</li>
+            <li>Build strong K4 customer funnel</li>
+            <li>Optimize customer loading & midstream utilization</li>
+          </ul>
+        </div>
+        <div class="card p-6">
+          <div class="text-xs font-semibold text-slate-500">Q1 2027</div>
+          <h3 class="mt-1 font-bold">Expand Markets</h3>
+          <ul class="mt-2 text-sm space-y-1 list-disc list-inside text-slate-700">
+            <li>Onboard additional producers (Avina, Ambient, Corterra, Independence, Bevfuel)</li>
+            <li>Develop pipeline for new products & services</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Org Structure (simple visual) -->
+  <section id="org" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold">Corporate Structure</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="md:col-span-1">
+          <p class="text-slate-600">Platform subsidiaries enable specialized services across the value chain.</p>
+        </div>
+        <div class="md:col-span-2 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="card p-4"><div class="text-sm font-semibold">PACC Holding LLC</div><div class="text-xs text-slate-600">Parent</div></div>
+          <div class="card p-4"><div class="text-sm font-semibold">PACC Producer Services LLC</div><div class="text-xs text-slate-600">Origination & offtake</div></div>
+          <div class="card p-4"><div class="text-sm font-semibold">PACC Logistics LLC</div><div class="text-xs text-slate-600">Midstream & delivery</div></div>
+          <div class="card p-4"><div class="text-sm font-semibold">PACC Settlements LLC</div><div class="text-xs text-slate-600">Trading & settlement</div></div>
+          <div class="card p-4"><div class="text-sm font-semibold">PACC DevCo LLC</div><div class="text-xs text-slate-600">Development</div></div>
+          <div class="card p-4"><div class="text-sm font-semibold">PACC Supply LLC</div><div class="text-xs text-slate-600">Supply & marketing</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section id="leadership" class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between flex-wrap gap-4">
+        <h2 class="text-2xl font-extrabold">Leadership Team</h2>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <article class="card p-6">
+          <h3 class="text-lg font-bold">Andrew Carman</h3>
+          <div class="text-sm text-slate-600">Co‑Founder / CEO</div>
+          <p class="mt-3 text-sm text-slate-700">Senior energy executive with deep hydrogen & industrial gases expertise. Led Uniper’s first global hydrogen deal and North American strategy; built Nikola’s hydrogen supply strategy for first commercial FCEV trucks; a decade at Linde culminating in P&L leadership of the Western U.S. onsite business (&gt;$100M).</p>
+        </article>
+        <article class="card p-6">
+          <h3 class="text-lg font-bold">Patrick Charette</h3>
+          <div class="text-sm text-slate-600">Co‑Founder / CCO</div>
+          <p class="mt-3 text-sm text-slate-700">Energy executive & entrepreneur. As Head of Commercial at BayoTech Hydrogen, launched trading & logistics integrating production, distribution, and third‑party sourcing. At Nikola, expanded fueling & infrastructure strategy; prior roles at Linde and Praxair spanning specialty gases and large‑scale pipelines; former airline captain.</p>
+        </article>
+        <article class="card p-6">
+          <h3 class="text-lg font-bold">Lance Titus</h3>
+          <div class="text-sm text-slate-600">Board Member</div>
+          <p class="mt-3 text-sm text-slate-700">President, Gexa Energy; ex‑Uniper New Energies (Americas) lead; ex‑BP structured products. Closed $20B+ in transactions including 4 GW long‑term renewable offtake; serves on industry advisory boards for energy markets & commodities.</p>
+        </article>
+        <article class="card p-6">
+          <h3 class="text-lg font-bold">Ryan McGeachie</h3>
+          <div class="text-sm text-slate-600">Board Member</div>
+          <p class="mt-3 text-sm text-slate-700">Accomplished executive across global power, hydrogen, and commodities. Built Nikola’s Hyla division; advised Trafigura on integrated hydrogen value chains; broad leadership across trading, risk management, and infrastructure.</p>
+        </article>
+        <article class="card p-6">
+          <h3 class="text-lg font-bold">Howard Brodie</h3>
+          <div class="text-sm text-slate-600">Board Member</div>
+          <p class="mt-3 text-sm text-slate-700">Experienced governance and strategy leader (bio summary placeholder based on board listing).</p>
+        </article>
+        <article class="card p-6">
+          <h3 class="text-lg font-bold">David Cynamon</h3>
+          <div class="text-sm text-slate-600">Board Member</div>
+          <p class="mt-3 text-sm text-slate-700">Seasoned investor and board director (bio summary placeholder based on board listing).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl font-extrabold">Get in Touch</h2>
+          <p class="mt-2 text-slate-600">Let’s discuss offtake, logistics, or partnership opportunities.</p>
+          <div class="mt-6 grid gap-3 text-sm">
+            <div class="card p-4 flex items-center justify-between"><div><div class="font-semibold">Andrew Carman</div><div class="text-slate-600">Co‑Founder / CEO</div></div><a href="tel:+18474094432" class="px-3 py-2 rounded-lg bg-slate-900 text-white font-semibold">(847) 409‑4432</a></div>
+            <div class="card p-4 flex items-center justify-between"><div><div class="font-semibold">Pat Charette</div><div class="text-slate-600">Co‑Founder / CCO</div></div><a href="tel:+12819005465" class="px-3 py-2 rounded-lg bg-slate-900 text-white font-semibold">(281) 900‑5465</a></div>
+          </div>
+        </div>
+        <form class="card p-6" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.');">
+          <h3 class="text-lg font-bold">Send a Message</h3>
+          <div class="mt-4 grid grid-cols-1 gap-4">
+            <input required class="w-full rounded-xl border border-slate-300 px-4 py-3" placeholder="Your name" />
+            <input required type="email" class="w-full rounded-xl border border-slate-300 px-4 py-3" placeholder="Email" />
+            <input class="w-full rounded-xl border border-slate-300 px-4 py-3" placeholder="Company" />
+            <textarea required class="w-full rounded-xl border border-slate-300 px-4 py-3" rows="4" placeholder="How can we help?" ></textarea>
+            <button class="rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold px-5 py-3">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg brand-gradient"></div>
+        <div class="font-bold">PACC</div>
+      </div>
+      <nav class="flex items-center gap-4 text-slate-600">
+        <a href="#mission" class="hover:text-slate-800">Mission</a>
+        <a href="#approach" class="hover:text-slate-800">Approach</a>
+        <a href="#revenue" class="hover:text-slate-800">Revenue</a>
+        <a href="#leadership" class="hover:text-slate-800">Team</a>
+        <a href="#contact" class="hover:text-slate-800">Contact</a>
+      </nav>
+      <div class="text-slate-500">© <span id="year"></span> PACC. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    btn?.addEventListener('click', ()=> nav.classList.toggle('hidden'));
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
