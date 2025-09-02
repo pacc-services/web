@@ -1,19 +1,20 @@
 <template>
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200 transition-all duration-300"
-    :class="{ 'shadow-lg': isScrolled }">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24 sm:h-28">
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-white via-white to-slate-50/95 backdrop-blur-lg border-b transition-all duration-300"
+    :class="{ 'shadow-xl border-brand/20': isScrolled, 'border-slate-200': !isScrolled }">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
       <a href="#" class="flex items-center group">
-        <img :src="paccLogo" alt="PACC" class="h-16 sm:h-32 lg:h-42 w-auto transition-transform duration-300 group-hover:scale-105" />
+        <img :src="paccLogo" alt="PACC" class="h-12 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-105" />
       </a>
       
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-semibold">
+      <nav class="hidden lg:flex items-center gap-2 xl:gap-4 text-sm font-medium">
         <a 
           v-for="item in navItems" 
           :key="item.href"
           :href="item.href" 
-          class="hover:text-brand transition-colors px-2 py-1 rounded-lg hover:bg-brand/5"
+          class="relative px-3 py-2 rounded-lg transition-all duration-300 hover:text-brand hover:bg-gradient-to-r hover:from-brand/5 hover:to-brand-green/5 group"
         >
           {{ item.label }}
+          <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-brand to-brand-green transition-all duration-300 group-hover:w-full"></span>
         </a>
       </nav>
       

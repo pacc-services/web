@@ -69,27 +69,22 @@ import goldenGateBridge from '@/assets/images/golden_gate_bridge.jpg'
 @keyframes fade-in-up {
   0% {
     opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    filter: blur(4px);
-  }
-  50% {
-    filter: blur(2px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes fade-in-left {
   0% {
     opacity: 0;
-    transform: translateX(40px) rotate(-2deg);
+    transform: translateX(30px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0) rotate(0);
+    transform: translateX(0);
   }
 }
 
@@ -105,12 +100,12 @@ import goldenGateBridge from '@/assets/images/golden_gate_bridge.jpg'
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  will-change: transform, opacity, filter;
+  animation: fade-in-up 0.8s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 .animate-fade-in-left {
-  animation: fade-in-left 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: fade-in-left 0.8s ease-out forwards;
   will-change: transform, opacity;
 }
 
