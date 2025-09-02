@@ -126,13 +126,13 @@
 
   .card {
     @apply rounded-2xl shadow-lg;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    will-change: transform, box-shadow;
   }
   
   .card:hover {
-    @apply shadow-2xl;
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
   }
 
   /* Scroll animations with Safari optimization */
@@ -209,7 +209,7 @@
 
   /* Hover effects */
   .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-2;
+    @apply transition-all duration-200 ease-out hover:-translate-y-1;
   }
 
   .hover-glow {

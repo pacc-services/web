@@ -11,7 +11,6 @@
           :member="member"
           :data-animate="'fade-up'"
           :data-animate-delay="index * 100"
-          class="hover-lift"
         />
       </div>
       
