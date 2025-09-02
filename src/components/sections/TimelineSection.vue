@@ -1,9 +1,6 @@
 <template>
-  <section id="timeline" class="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-    <div class="absolute bottom-1/3 left-1/3 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-800"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+  <section id="timeline" class="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl font-extrabold">Milestones</h2>
       <div class="mt-8 grid lg:grid-cols-4 gap-6">
         <MilestoneCard

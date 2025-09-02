@@ -1,9 +1,14 @@
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="{ 'bg-white/95 backdrop-blur-lg shadow-xl': isScrolled, 'bg-transparent': !isScrolled }">
-    <div class="flex items-center justify-between px-6 lg:px-12 h-20">
+    <div class="flex items-center justify-between px-6 lg:px-12 h-24 sm:h-28">
       <a href="#" class="flex items-center group">
-        <img :src="paccLogo" alt="PACC" class="h-14 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-105" />
+        <img 
+          :src="paccLogo" 
+          alt="PACC" 
+          class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-300 group-hover:scale-105"
+          :style="!isScrolled ? 'filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)) drop-shadow(0 0 30px rgba(255, 255, 255, 1)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 80px rgba(255, 255, 255, 0.6))' : ''"
+        />
       </a>
       
       <nav class="hidden lg:flex items-center gap-2 xl:gap-4 text-sm font-medium">

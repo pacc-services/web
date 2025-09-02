@@ -1,9 +1,6 @@
 <template>
-  <section id="leadership" class="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-violet-50 to-purple-50"></div>
-    <div class="absolute top-1/4 left-0 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-    <div class="absolute bottom-0 right-1/3 w-72 h-72 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-600"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+  <section id="leadership" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between flex-wrap gap-4" data-animate="fade-up">
         <h2 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent">Leadership Team</h2>
       </div>
@@ -19,10 +16,10 @@
       </div>
       
       <div class="mt-20 pt-12 border-t border-slate-200" data-animate="fade-up">
-        <h3 class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent">
+        <h3 class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent select-none">
           Partner Experience
         </h3>
-        <p class="text-center text-slate-600 mb-16 max-w-3xl mx-auto text-lg">
+        <p class="text-center text-slate-700 mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
           Our team brings deep relationships and proven experience from leading organizations across the hydrogen and energy value chain
         </p>
         
@@ -46,7 +43,7 @@
         </div>
         
         <div class="mt-12 text-center">
-          <p class="text-base text-slate-600 font-medium">
+          <p class="text-base text-slate-700 font-medium">
             Building the future of clean energy through strategic partnerships
           </p>
         </div>

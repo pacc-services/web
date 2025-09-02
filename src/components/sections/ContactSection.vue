@@ -1,7 +1,5 @@
 <template>
-  <section id="contact" class="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50"></div>
-    <div class="absolute top-0 left-1/2 w-96 h-96 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+  <section id="contact" class="relative py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-200">
     <div 
       class="absolute inset-0 opacity-5"
       :style="`background-image: url('${bridgeBackground}'); background-size: cover; background-position: center;`"

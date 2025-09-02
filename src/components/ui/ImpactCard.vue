@@ -1,5 +1,5 @@
 <template>
-  <div class="card glass p-6 md:p-8">
+  <div class="card bg-white/60 backdrop-blur-lg p-6 md:p-8">
     <h2 class="text-xl font-bold">Our Impact</h2>
     <p class="mt-3 text-slate-700">
       PACC accelerates the commercialization of clean molecules by unlocking new markets, reducing risks to producers, and delivering a reliable supply to customers.
