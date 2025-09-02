@@ -1,9 +1,9 @@
 <template>
-  <header class="sticky top-0 z-50 bg-gradient-to-r from-white via-white to-slate-50/95 backdrop-blur-lg border-b transition-all duration-300"
-    :class="{ 'shadow-xl border-brand/20': isScrolled, 'border-slate-200': !isScrolled }">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    :class="{ 'bg-white/95 backdrop-blur-lg shadow-xl': isScrolled, 'bg-transparent': !isScrolled }">
+    <div class="flex items-center justify-between px-6 lg:px-12 h-20">
       <a href="#" class="flex items-center group">
-        <img :src="paccLogo" alt="PACC" class="h-12 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-105" />
+        <img :src="paccLogo" alt="PACC" class="h-14 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-105" />
       </a>
       
       <nav class="hidden lg:flex items-center gap-2 xl:gap-4 text-sm font-medium">
@@ -11,7 +11,8 @@
           v-for="item in navItems" 
           :key="item.href"
           :href="item.href" 
-          class="relative px-3 py-2 rounded-lg transition-all duration-300 hover:text-brand hover:bg-gradient-to-r hover:from-brand/5 hover:to-brand-green/5 group"
+          class="relative px-3 py-2 rounded-lg transition-all duration-300 group"
+          :class="isScrolled ? 'hover:text-brand hover:bg-brand/5' : 'text-white/90 hover:text-white hover:bg-white/10'"
         >
           {{ item.label }}
           <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-brand to-brand-green transition-all duration-300 group-hover:w-full"></span>
@@ -20,7 +21,8 @@
       
       <button
         @click="toggleMobileMenu"
-        class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 hover:bg-slate-100"
+        class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300"
+        :class="isScrolled ? 'border border-slate-300 hover:bg-slate-100' : 'border border-white/30 hover:bg-white/10 text-white'"
         aria-label="Open Menu"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -30,14 +32,15 @@
     </div>
     
     <Transition name="slide">
-      <div v-if="isMobileMenuOpen" class="lg:hidden border-t border-slate-200 bg-white">
-        <div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm font-semibold">
+      <div v-if="isMobileMenuOpen" class="lg:hidden absolute top-full left-0 right-0 border-t bg-white/95 backdrop-blur-lg shadow-xl"
+        :class="isScrolled ? 'border-slate-200' : 'border-white/20'">
+        <div class="px-6 py-3 grid grid-cols-2 gap-3 text-sm font-semibold">
           <a 
             v-for="item in navItems" 
             :key="item.href"
             :href="item.href"
             @click="isMobileMenuOpen = false"
-            class="py-2 hover:text-sky-700 transition-colors"
+            class="py-2 hover:text-brand transition-colors"
           >
             {{ item.label }}
           </a>

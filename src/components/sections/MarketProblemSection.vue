@@ -1,6 +1,9 @@
 <template>
-  <section id="problem" class="py-16 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="problem" class="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50"></div>
+    <div class="absolute top-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-400"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
       <div class="grid md:grid-cols-2 gap-8">
         <div>
           <h2 class="text-2xl font-extrabold">Market Problem</h2>

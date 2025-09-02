@@ -1,6 +1,9 @@
 <template>
-  <section id="revenue" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="revenue" class="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50"></div>
+    <div class="absolute top-1/2 left-0 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-600"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
       <div class="flex items-end justify-between flex-wrap gap-4" data-animate="fade-up">
         <h2 class="text-3xl sm:text-4xl font-extrabold">Revenue Streams</h2>
         <span class="text-sm px-4 py-2 rounded-full bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 border border-emerald-200 font-bold animate-pulse">

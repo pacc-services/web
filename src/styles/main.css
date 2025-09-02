@@ -168,4 +168,17 @@
   .logo-carousel:hover .logo-track {
     animation-play-state: paused;
   }
+
+  /* Animation delays for background blobs */
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
 }

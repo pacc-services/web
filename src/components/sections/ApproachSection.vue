@@ -1,6 +1,8 @@
 <template>
-  <section id="approach" class="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="approach" class="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-cyan-50 to-white"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/50"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
       <div class="grid md:grid-cols-3 gap-8">
         <div class="md:col-span-1 approach-header">
           <h2 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent mb-2">Our Approach</h2>
