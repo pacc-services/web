@@ -86,11 +86,6 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Board Member',
     role: '',
-    bio: 'Global commodities executive with comprehensive experience across traditional and emerging energy markets. Specialized in building and scaling new business platforms.',
-  },
-  {
-    name: 'Board Member',
-    role: '',
     bio: 'Strategic advisor with extensive board experience across energy and infrastructure sectors. Focused on governance excellence and sustainable growth strategies.',
   },
 ]
