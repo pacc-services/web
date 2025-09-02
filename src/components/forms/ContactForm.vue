@@ -44,9 +44,20 @@ const form = reactive({
 })
 
 const handleSubmit = () => {
-  alert("Thanks! We'll be in touch.")
-  Object.keys(form).forEach(key => {
-    form[key as keyof typeof form] = ''
-  })
+  const subject = encodeURIComponent('PACC Website Inquiry')
+  const body = encodeURIComponent(
+    `Name: ${form.name}\n` +
+    `Email: ${form.email}\n` +
+    `Company: ${form.company}\n` +
+    `Message:\n${form.message}`
+  )
+  
+  window.location.href = `mailto:info@pacc.tech?subject=${subject}&body=${body}`
+  
+  setTimeout(() => {
+    Object.keys(form).forEach(key => {
+      form[key as keyof typeof form] = ''
+    })
+  }, 1000)
 }
 </script>

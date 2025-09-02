@@ -4,11 +4,12 @@
       <div class="font-semibold">{{ contact.name }}</div>
       <div class="text-slate-600">{{ contact.role }}</div>
     </div>
-    <span
-      class="px-3 py-2 rounded-lg bg-slate-900 text-white font-semibold"
+    <a
+      href="mailto:info@pacc.tech"
+      class="px-3 py-2 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
     >
       {{ contact.phone }}
-    </span>
+    </a>
   </div>
 </template>
 

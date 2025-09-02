@@ -33,14 +33,14 @@ import bridgeBackground from '@/assets/images/image45.png'
 
 const contacts: ContactInfo[] = [
   {
-    name: '[Redacted]',
-    role: 'Co‑Founder / CEO',
-    phone: '[Redacted]',
+    name: 'Leadership',
+    role: 'Executive Team',
+    phone: 'Contact Us',
   },
   {
-    name: '[Redacted]',
-    role: 'Co‑Founder / CCO',
-    phone: '[Redacted]',
+    name: 'Commercial',
+    role: 'Business Development',
+    phone: 'Contact Us',
   },
 ]
 </script>

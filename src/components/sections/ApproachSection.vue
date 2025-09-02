@@ -14,7 +14,7 @@
             :key="approach.title"
             :title="approach.title"
             :description="approach.description"
-            :data-animate="'fade-up'"
+            :data-animate="index % 2 === 0 ? 'slide-left' : 'slide-right'"
             :data-animate-delay="(index + 1) * 100"
             class="hover-lift"
           />

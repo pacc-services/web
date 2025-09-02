@@ -62,6 +62,22 @@
     @apply scale-100;
   }
 
+  [data-animate="slide-left"] {
+    @apply translate-x-12 opacity-0;
+  }
+
+  [data-animate="slide-left"].animate-in {
+    @apply translate-x-0 opacity-100;
+  }
+
+  [data-animate="slide-right"] {
+    @apply -translate-x-12 opacity-0;
+  }
+
+  [data-animate="slide-right"].animate-in {
+    @apply translate-x-0 opacity-100;
+  }
+
   /* Stagger animations */
   [data-animate-delay="100"] {
     transition-delay: 100ms;
