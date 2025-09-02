@@ -8,10 +8,10 @@ export default {
     extend: {
       colors: {
         brand: {
-          DEFAULT: '#0b4d82',
-          light: '#0ea5e9',
-          dark: '#073a61',
-          green: '#4CAF50',
+          DEFAULT: '#00497a',
+          light: '#0066a6',
+          dark: '#003355',
+          green: '#5cb85c',
         },
       },
       fontFamily: {
