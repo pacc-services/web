@@ -13,18 +13,23 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 8rem; /* Account for fixed header */
+    scroll-padding-top: 5rem; /* Account for fixed header */
+  }
+  
+  body {
+    overflow-x: hidden;
+    width: 100%;
   }
   
   @media (min-width: 640px) {
     html {
-      scroll-padding-top: 9rem;
+      scroll-padding-top: 6rem;
     }
   }
   
   @media (min-width: 1024px) {
     html {
-      scroll-padding-top: 10rem;
+      scroll-padding-top: 6rem;
     }
   }
 }
@@ -129,5 +134,38 @@
 
   .hover-glow {
     @apply transition-all duration-300 hover:shadow-2xl hover:shadow-brand/20;
+  }
+
+  /* Logo carousel */
+  .logo-carousel {
+    @apply relative overflow-hidden;
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  }
+
+  .logo-track {
+    @apply flex items-center gap-12 animate-scroll;
+    width: max-content;
+  }
+
+  .logo-item {
+    @apply flex-shrink-0;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .logo-carousel:hover .logo-track {
+    animation-play-state: paused;
   }
 }
