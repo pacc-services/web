@@ -31,11 +31,13 @@ interface Bubble {
 const bubbles = ref<Bubble[]>([])
 
 onMounted(() => {
-  // Generate random bubbles
+  // Generate random bubbles - more centered on mobile
+  const isMobile = window.innerWidth < 768
   for (let i = 0; i < 8; i++) {
     bubbles.value.push({
       id: i,
-      left: Math.random() * 100,
+      // On mobile, center bubbles between 20% and 80%, on desktop use full width
+      left: isMobile ? 20 + Math.random() * 60 : Math.random() * 100,
       duration: 15 + Math.random() * 20,
       delay: Math.random() * 10,
       size: 30 + Math.random() * 40,
