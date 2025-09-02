@@ -93,11 +93,6 @@ const teamMembers: TeamMember[] = [
     role: '',
     bio: 'Strategic advisor with extensive board experience across energy and infrastructure sectors. Focused on governance excellence and sustainable growth strategies.',
   },
-  {
-    name: 'Board Member',
-    role: '',
-    bio: 'Investment professional with deep expertise in energy transition and growth capital. Strong track record in value creation and strategic partnerships.',
-  },
 ]
 
 const companyLogos = [
