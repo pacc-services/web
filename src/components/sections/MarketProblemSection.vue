@@ -1,5 +1,5 @@
 <template>
-  <section id="problem" class="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-200">
+  <section id="problem" class="scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-8">
         <div>
@@ -10,7 +10,7 @@
             </li>
           </ul>
         </div>
-        <div id="solution" class="card p-6 relative overflow-hidden">
+        <div id="solution" class="scroll-mt-28 card p-6 relative overflow-hidden">
           <img 
             :src="bridgeImage" 
             alt="Bridge representing connection" 

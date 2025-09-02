@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="relative py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-200">
+  <section id="contact" class="scroll-mt-28 relative py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-200">
     <div 
       class="absolute inset-0 opacity-5"
       :style="`background-image: url('${bridgeBackground}'); background-size: cover; background-position: center;`"
