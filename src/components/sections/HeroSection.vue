@@ -1,7 +1,7 @@
 <template>
-  <section class="relative isolate overflow-hidden min-h-screen flex items-center hero-section">
+  <section class="relative isolate overflow-hidden min-h-screen flex items-center">
     <div 
-      class="hero-background absolute inset-0 bg-cover bg-center"
+      class="absolute inset-0 bg-cover bg-center"
       :style="`background-image: url('${goldenGateBridge}')`"
     ></div>
     <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-brand/50 to-transparent"></div>
@@ -9,13 +9,13 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 w-full z-10">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div class="space-y-6">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white drop-shadow-lg animate-fade-in-up">
+          <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white drop-shadow-lg">
             The bridge between clean molecule producers and customers
           </h1>
-          <p id="mission" class="text-lg sm:text-xl lg:text-2xl leading-relaxed text-white/90 drop-shadow animate-fade-in-up animation-delay-200">
+          <p id="mission" class="hero-text text-lg sm:text-xl lg:text-2xl leading-relaxed text-white/90 drop-shadow">
             Our mission is to become the trusted bridge between producers and customers of the energy transition—delivering scale, certainty, and value across dislocated markets.
           </p>
-          <div class="flex flex-wrap gap-4 animate-fade-in-up animation-delay-400">
+          <div class="hero-buttons flex flex-wrap gap-4">
             <BaseButton href="#contact" variant="primary" class="transform hover:scale-110 transition-all duration-300">
               Talk to Us
             </BaseButton>
@@ -23,11 +23,11 @@
               How We Work
             </BaseButton>
           </div>
-          <div class="text-sm text-white/70 animate-fade-in animation-delay-600">
+          <div class="hero-subtitle text-sm text-white/70">
             Hydrogen & specialty gases • Logistics • Market‑making
           </div>
         </div>
-        <div class="lg:pl-8 animate-fade-in-left animation-delay-800">
+        <div class="lg:pl-8 hero-card">
           <ImpactCard class="hover-glow" />
         </div>
       </div>
@@ -43,90 +43,39 @@ import goldenGateBridge from '@/assets/images/golden_gate_bridge.jpg'
 </script>
 
 <style scoped>
-/* Safari-optimized parallax effect */
-.hero-section {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+.hero-title {
+  opacity: 0;
+  animation: fadeInSimple 0.8s ease-out 0.2s forwards;
 }
 
-.hero-background {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  perspective: 1000;
-  -webkit-perspective: 1000;
-  will-change: transform;
+.hero-text {
+  opacity: 0;
+  animation: fadeInSimple 0.8s ease-out 0.4s forwards;
 }
 
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .hero-background {
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-  }
+.hero-buttons {
+  opacity: 0;
+  animation: fadeInSimple 0.8s ease-out 0.6s forwards;
 }
 
-@keyframes fade-in-up {
-  0% {
+.hero-subtitle {
+  opacity: 0;
+  animation: fadeInSimple 0.8s ease-out 0.8s forwards;
+}
+
+.hero-card {
+  opacity: 0;
+  animation: fadeInSimple 0.8s ease-out 1s forwards;
+}
+
+@keyframes fadeInSimple {
+  from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@keyframes fade-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
-  will-change: transform, opacity;
-}
-
-.animate-fade-in-left {
-  animation: fade-in-left 0.8s ease-out forwards;
-  will-change: transform, opacity;
-}
-
-.animate-fade-in {
-  animation: fade-in 1s ease-out forwards;
-  will-change: transform, opacity;
-}
-
-.animation-delay-200 {
-  animation-delay: 200ms;
-}
-
-.animation-delay-400 {
-  animation-delay: 400ms;
-}
-
-.animation-delay-600 {
-  animation-delay: 600ms;
-}
-
-.animation-delay-800 {
-  animation-delay: 800ms;
 }
 </style>

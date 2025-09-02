@@ -23,50 +23,19 @@
           Our team brings deep relationships and proven experience from leading organizations across the hydrogen and energy value chain
         </p>
         
-        <!-- Featured Partners -->
-        <div class="mb-16">
-          <h4 class="text-center text-sm uppercase tracking-wider text-slate-500 mb-8">Featured Partners</h4>
-          <div class="relative overflow-hidden">
-            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-            <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
-            <div class="flex items-center justify-center gap-x-16 gap-y-8 px-8 flex-wrap">
-              <div
-                v-for="(logo, index) in featuredLogos"
-                :key="logo.name"
-                :data-animate="'scale'"
-                :data-animate-delay="index * 150"
-                class="group relative flex-shrink-0"
-              >
-                <div class="relative">
-                  <img 
-                    :src="logo.src"
-                    :alt="logo.name"
-                    class="h-20 sm:h-24 lg:h-28 w-auto filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-700 transform hover:scale-110"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-brand/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
-                </div>
-                <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span class="text-sm font-bold text-brand whitespace-nowrap bg-white px-3 py-1 rounded-full shadow-lg">{{ logo.name }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Additional Partners Carousel -->
+        <!-- Industry Network Carousel -->
         <div class="relative overflow-hidden py-8">
-          <h4 class="text-center text-sm uppercase tracking-wider text-slate-500 mb-8">Industry Network</h4>
-          <div class="logo-carousel">
+          <div class="logo-carousel px-8">
             <div class="logo-track">
               <div
-                v-for="(logo, index) in [...additionalLogos, ...additionalLogos]"
+                v-for="(logo, index) in [...companyLogos, ...companyLogos]"
                 :key="`${logo.name}-${index}`"
-                class="logo-item"
+                class="logo-item px-6"
               >
                 <img 
                   :src="logo.src"
                   :alt="logo.name"
-                  class="h-12 sm:h-16 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                  class="h-12 sm:h-16 w-auto opacity-80 hover:opacity-100 transition-all duration-500"
                 />
               </div>
             </div>
@@ -88,7 +57,16 @@ import TeamMemberCard from '@/components/ui/TeamMemberCard.vue'
 import type { TeamMember } from '@/types'
 import lindeLogo from '@/assets/images/image35.png'
 import bayotechLogo from '@/assets/images/image9.png'
-import nikolaLogo from '@/assets/images/image10.png'
+import bpLogo from '@/assets/images/bp.png'
+import deltaLogo from '@/assets/images/delta.png'
+import gridstorLogo from '@/assets/images/gridstor.png'
+import guzmanLogo from '@/assets/images/guzman.png'
+import nikolaLogo from '@/assets/images/nikola.png'
+import nexteraLogo from '@/assets/images/nextera.png'
+import tdLogo from '@/assets/images/td.png'
+import twinEagleLogo from '@/assets/images/twin-eagle.png'
+import uniperLogo from '@/assets/images/uniper.png'
+import xcelLogo from '@/assets/images/xcel-energy.png'
 
 const teamMembers: TeamMember[] = [
   {
@@ -123,17 +101,18 @@ const teamMembers: TeamMember[] = [
   },
 ]
 
-const featuredLogos = [
+const companyLogos = [
   { name: 'Linde', src: lindeLogo },
   { name: 'BayoTech', src: bayotechLogo },
+  { name: 'BP', src: bpLogo },
+  { name: 'Delta', src: deltaLogo },
+  { name: 'GridStor', src: gridstorLogo },
+  { name: 'Guzman Energy', src: guzmanLogo },
   { name: 'Nikola', src: nikolaLogo },
-]
-
-const additionalLogos = [
-  { name: 'Partner 1', src: lindeLogo },
-  { name: 'Partner 2', src: bayotechLogo },
-  { name: 'Partner 3', src: nikolaLogo },
-  { name: 'Partner 4', src: lindeLogo },
-  { name: 'Partner 5', src: bayotechLogo },
+  { name: 'NextEra', src: nexteraLogo },
+  { name: 'TD', src: tdLogo },
+  { name: 'Twin Eagle', src: twinEagleLogo },
+  { name: 'Uniper', src: uniperLogo },
+  { name: 'Xcel Energy', src: xcelLogo },
 ]
 </script>
