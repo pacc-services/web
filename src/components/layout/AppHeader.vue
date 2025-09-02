@@ -1,13 +1,15 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out"
     :class="{ 'bg-white/95 backdrop-blur-lg shadow-xl': isScrolled, 'bg-transparent': !isScrolled }">
     <div class="flex items-center justify-between px-6 lg:px-12 h-24 sm:h-28">
       <a href="#" class="flex items-center group">
         <img 
           :src="paccLogo" 
           alt="PACC" 
-          class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-300 group-hover:scale-105"
-          :style="!isScrolled ? 'filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)) drop-shadow(0 0 30px rgba(255, 255, 255, 1)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 80px rgba(255, 255, 255, 0.6))' : ''"
+          class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-500 group-hover:scale-105"
+          :style="!isScrolled ? 
+            'filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 75px rgba(255, 255, 255, 0.5))' : 
+            'filter: none'"
         />
       </a>
       
@@ -63,8 +65,14 @@ import paccLogo from '@/assets/images/logo_full.png'
 const isMobileMenuOpen = ref(false)
 const isScrolled = ref(false)
 
+let scrollTimeout: number | null = null
+
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 20
+  // Debounce the scroll event slightly for smoother transitions
+  if (scrollTimeout) clearTimeout(scrollTimeout)
+  scrollTimeout = window.setTimeout(() => {
+    isScrolled.value = window.scrollY > 20
+  }, 10)
 }
 
 onMounted(() => {
@@ -73,6 +81,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  if (scrollTimeout) clearTimeout(scrollTimeout)
 })
 
 const navItems: NavItem[] = [
