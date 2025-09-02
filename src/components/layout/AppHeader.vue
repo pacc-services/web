@@ -1,11 +1,8 @@
 <template>
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg brand-gradient flex items-center justify-center text-white font-black">
-          P
-        </div>
-        <span class="font-extrabold tracking-tight text-slate-900">PACC</span>
+      <a href="#" class="flex items-center">
+        <img :src="paccLogo" alt="PACC" class="h-10 w-auto" />
       </a>
       
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
@@ -51,6 +48,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { NavItem } from '@/types'
+import paccLogo from '@/assets/images/image3.png'
 
 const isMobileMenuOpen = ref(false)
 

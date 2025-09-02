@@ -28,14 +28,14 @@ import type { ContactInfo } from '@/types'
 
 const contacts: ContactInfo[] = [
   {
-    name: 'Andrew Carman',
+    name: '[Redacted]',
     role: 'Co‑Founder / CEO',
-    phone: '(847) 409‑4432',
+    phone: '[Redacted]',
   },
   {
-    name: 'Pat Charette',
+    name: '[Redacted]',
     role: 'Co‑Founder / CCO',
-    phone: '(281) 900‑5465',
+    phone: '[Redacted]',
   },
 ]
 </script>

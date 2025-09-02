@@ -1,9 +1,8 @@
 <template>
   <footer class="py-10 border-t border-slate-200 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg brand-gradient"></div>
-        <div class="font-bold">PACC</div>
+      <div class="flex items-center">
+        <img :src="paccLogo" alt="PACC" class="h-8 w-auto" />
       </div>
       
       <nav class="flex items-center gap-4 text-slate-600">
@@ -27,6 +26,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { NavItem } from '@/types'
+import paccLogo from '@/assets/images/image3.png'
 
 const currentYear = computed(() => new Date().getFullYear())
 

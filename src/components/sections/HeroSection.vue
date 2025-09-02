@@ -1,7 +1,11 @@
 <template>
   <section class="relative isolate overflow-hidden">
-    <div class="absolute inset-0 brand-gradient opacity-10"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 lg:pt-24 lg:pb-16">
+    <div 
+      class="absolute inset-0 bg-cover bg-center opacity-30"
+      :style="`background-image: url('${goldenGateBridge}')`"
+    ></div>
+    <div class="absolute inset-0 brand-gradient opacity-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 lg:pt-24 lg:pb-16">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
           <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-slate-900">
@@ -33,4 +37,5 @@
 <script setup lang="ts">
 import BaseButton from '@/components/ui/BaseButton.vue'
 import ImpactCard from '@/components/ui/ImpactCard.vue'
+import goldenGateBridge from '@/assets/images/image1.png'
 </script>

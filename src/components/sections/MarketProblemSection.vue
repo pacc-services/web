@@ -10,8 +10,14 @@
             </li>
           </ul>
         </div>
-        <div id="solution" class="card p-6">
-          <h3 class="text-xl font-bold">PACC Solution</h3>
+        <div id="solution" class="card p-6 relative overflow-hidden">
+          <img 
+            :src="bridgeImage" 
+            alt="Bridge representing connection" 
+            class="absolute inset-0 w-full h-full object-cover opacity-10"
+          />
+          <div class="relative z-10">
+            <h3 class="text-xl font-bold">PACC Solution</h3>
           <p class="mt-2 text-slate-700">
             PACC connects producers and customers, turning stranded molecules into scalable markets.
           </p>
@@ -20,6 +26,7 @@
               {{ solution }}
             </li>
           </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -27,6 +34,8 @@
 </template>
 
 <script setup lang="ts">
+import bridgeImage from '@/assets/images/image45.png'
+
 const problems = [
   {
     title: 'Stranded Molecules',
