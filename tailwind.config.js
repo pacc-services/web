@@ -7,8 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: '#0ea5e9',
-        'brand-dark': '#0284c7',
+        brand: {
+          DEFAULT: '#0b4d82',
+          light: '#0ea5e9',
+          dark: '#073a61',
+          green: '#4CAF50',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'],

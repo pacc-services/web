@@ -1,14 +1,17 @@
 <template>
-  <section id="leadership" class="py-16 bg-slate-50 border-t border-slate-200">
+  <section id="leadership" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between flex-wrap gap-4">
-        <h2 class="text-2xl font-extrabold">Leadership Team</h2>
+      <div class="flex items-end justify-between flex-wrap gap-4" data-animate="fade-up">
+        <h2 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent">Leadership Team</h2>
       </div>
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <TeamMemberCard
-          v-for="member in teamMembers"
+          v-for="(member, index) in teamMembers"
           :key="member.name"
           :member="member"
+          :data-animate="'fade-up'"
+          :data-animate-delay="index * 100"
+          class="hover-lift"
         />
       </div>
     </div>

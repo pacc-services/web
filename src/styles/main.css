@@ -5,8 +5,10 @@
 
 @layer base {
   :root {
-    --brand: #0ea5e9;
-    --brand-dark: #0284c7;
+    --brand: #0b4d82;
+    --brand-light: #0ea5e9;
+    --brand-dark: #073a61;
+    --brand-green: #4CAF50;
   }
 
   html {
@@ -20,10 +22,73 @@
   }
 
   .brand-gradient {
-    background: linear-gradient(135deg, var(--brand), #22c55e);
+    background: linear-gradient(135deg, var(--brand), var(--brand-green));
   }
 
   .card {
-    @apply rounded-2xl shadow-lg;
+    @apply rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* Scroll animations with Safari optimization */
+  [data-animate] {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+    -webkit-transform: translateY(2rem);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+  }
+
+  [data-animate].animate-in {
+    @apply opacity-100 translate-y-0;
+    -webkit-transform: translateY(0);
+  }
+
+  [data-animate="fade-up"] {
+    @apply translate-y-12;
+  }
+
+  [data-animate="fade-left"] {
+    @apply translate-x-12 translate-y-0;
+  }
+
+  [data-animate="fade-right"] {
+    @apply -translate-x-12 translate-y-0;
+  }
+
+  [data-animate="scale"] {
+    @apply scale-95;
+  }
+
+  [data-animate="scale"].animate-in {
+    @apply scale-100;
+  }
+
+  /* Stagger animations */
+  [data-animate-delay="100"] {
+    transition-delay: 100ms;
+  }
+
+  [data-animate-delay="200"] {
+    transition-delay: 200ms;
+  }
+
+  [data-animate-delay="300"] {
+    transition-delay: 300ms;
+  }
+
+  [data-animate-delay="400"] {
+    transition-delay: 400ms;
+  }
+
+  [data-animate-delay="500"] {
+    transition-delay: 500ms;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-brand/20;
   }
 }

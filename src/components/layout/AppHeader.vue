@@ -1,16 +1,17 @@
 <template>
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="#" class="flex items-center">
-        <img :src="paccLogo" alt="PACC" class="h-10 w-auto" />
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200 transition-all duration-300"
+    :class="{ 'shadow-lg': isScrolled }">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 sm:h-24">
+      <a href="#" class="flex items-center group">
+        <img :src="paccLogo" alt="PACC" class="h-14 sm:h-16 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105" />
       </a>
       
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-semibold">
         <a 
           v-for="item in navItems" 
           :key="item.href"
           :href="item.href" 
-          class="hover:text-sky-700 transition-colors"
+          class="hover:text-brand transition-colors px-2 py-1 rounded-lg hover:bg-brand/5"
         >
           {{ item.label }}
         </a>
@@ -18,7 +19,7 @@
       
       <button
         @click="toggleMobileMenu"
-        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 hover:bg-slate-100"
+        class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 hover:bg-slate-100"
         aria-label="Open Menu"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -28,7 +29,7 @@
     </div>
     
     <Transition name="slide">
-      <div v-if="isMobileMenuOpen" class="md:hidden border-t border-slate-200 bg-white">
+      <div v-if="isMobileMenuOpen" class="lg:hidden border-t border-slate-200 bg-white">
         <div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm font-semibold">
           <a 
             v-for="item in navItems" 
@@ -46,11 +47,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import type { NavItem } from '@/types'
-import paccLogo from '@/assets/images/image3.png'
+import paccLogo from '@/assets/images/logo_full.png'
 
 const isMobileMenuOpen = ref(false)
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 20
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 const navItems: NavItem[] = [
   { label: 'Mission', href: '#mission' },

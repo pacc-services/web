@@ -1,19 +1,22 @@
 <template>
-  <section id="revenue" class="py-16 bg-white border-t border-slate-200">
+  <section id="revenue" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between flex-wrap gap-4">
-        <h2 class="text-2xl font-extrabold">Revenue Streams</h2>
-        <span class="text-sm px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+      <div class="flex items-end justify-between flex-wrap gap-4" data-animate="fade-up">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Revenue Streams</h2>
+        <span class="text-sm px-4 py-2 rounded-full bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 border border-emerald-200 font-bold animate-pulse">
           CAGR 27%
         </span>
       </div>
       
-      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <RevenueCard
-          v-for="stream in revenueStreams"
+          v-for="(stream, index) in revenueStreams"
           :key="stream.title"
           :title="stream.title"
           :description="stream.description"
+          :data-animate="'scale'"
+          :data-animate-delay="index * 100"
+          class="hover-glow"
         />
       </div>
       

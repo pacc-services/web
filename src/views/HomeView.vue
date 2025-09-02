@@ -26,4 +26,7 @@ import TimelineSection from '@/components/sections/TimelineSection.vue'
 import OrgStructureSection from '@/components/sections/OrgStructureSection.vue'
 import LeadershipSection from '@/components/sections/LeadershipSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
+import { useScrollAnimation } from '@/composables/useScrollAnimation'
+
+useScrollAnimation()
 </script>
