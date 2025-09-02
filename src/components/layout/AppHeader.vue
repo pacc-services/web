@@ -6,10 +6,10 @@
         <img 
           :src="paccLogo" 
           alt="PACC" 
-          class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-500 group-hover:scale-105"
+          class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-500 delay-75 group-hover:scale-105"
           :style="!isScrolled ? 
-            'filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 75px rgba(255, 255, 255, 0.4))' : 
-            'filter: none'"
+            'filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 75px rgba(255, 255, 255, 0.4)); opacity: 1' : 
+            'filter: none; opacity: 1'"
         />
       </a>
       
@@ -76,6 +76,8 @@ const handleScroll = () => {
 }
 
 onMounted(() => {
+  // Check initial scroll position immediately
+  isScrolled.value = window.scrollY > 20
   window.addEventListener('scroll', handleScroll)
 })
 
