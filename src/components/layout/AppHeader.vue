@@ -8,7 +8,7 @@
           alt="PACC" 
           class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-500 group-hover:scale-105"
           :style="!isScrolled ? 
-            'filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 75px rgba(255, 255, 255, 0.5))' : 
+            'filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 75px rgba(255, 255, 255, 0.4))' : 
             'filter: none'"
         />
       </a>

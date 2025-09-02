@@ -5,10 +5,10 @@
 
 @layer base {
   :root {
-    --brand: #0b4d82;
-    --brand-light: #0ea5e9;
-    --brand-dark: #073a61;
-    --brand-green: #4CAF50;
+    --brand: #00497a;
+    --brand-light: #0066a6;
+    --brand-dark: #003355;
+    --brand-green: #5cb85c;
   }
 
   html {
