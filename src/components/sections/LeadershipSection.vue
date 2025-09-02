@@ -14,6 +14,19 @@
           class="hover-lift"
         />
       </div>
+      
+      <div class="mt-16" data-animate="fade-up">
+        <h3 class="text-xl font-bold text-center mb-8 text-slate-700">Partner Experience</h3>
+        <div class="flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale">
+          <img 
+            v-for="logo in companyLogos"
+            :key="logo.name"
+            :src="logo.src"
+            :alt="logo.name"
+            class="h-12 sm:h-16 w-auto hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -21,6 +34,9 @@
 <script setup lang="ts">
 import TeamMemberCard from '@/components/ui/TeamMemberCard.vue'
 import type { TeamMember } from '@/types'
+import lindeLogo from '@/assets/images/image35.png'
+import bayotechLogo from '@/assets/images/image11.png'
+import nikolaLogo from '@/assets/images/image10.png'
 
 const teamMembers: TeamMember[] = [
   {
@@ -53,5 +69,11 @@ const teamMembers: TeamMember[] = [
     role: '',
     bio: 'Investment professional with deep expertise in energy transition and growth capital. Strong track record in value creation and strategic partnerships.',
   },
+]
+
+const companyLogos = [
+  { name: 'Linde', src: lindeLogo },
+  { name: 'BayoTech', src: bayotechLogo },
+  { name: 'Nikola', src: nikolaLogo },
 ]
 </script>

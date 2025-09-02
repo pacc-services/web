@@ -5,7 +5,8 @@
       :style="`background-image: url('${goldenGateBridge}')`"
     ></div>
     <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-brand/50 to-transparent"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 w-full">
+    <HydrogenBubbles />
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 w-full z-10">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div class="space-y-6">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white drop-shadow-lg animate-fade-in-up">
@@ -37,6 +38,7 @@
 <script setup lang="ts">
 import BaseButton from '@/components/ui/BaseButton.vue'
 import ImpactCard from '@/components/ui/ImpactCard.vue'
+import HydrogenBubbles from '@/components/ui/HydrogenBubbles.vue'
 import goldenGateBridge from '@/assets/images/golden_gate_bridge.jpg'
 </script>
 
@@ -65,46 +67,56 @@ import goldenGateBridge from '@/assets/images/golden_gate_bridge.jpg'
 }
 
 @keyframes fade-in-up {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px) scale(0.95);
+    filter: blur(4px);
   }
-  to {
+  50% {
+    filter: blur(2px);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
 @keyframes fade-in-left {
-  from {
+  0% {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(40px) rotate(-2deg);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) rotate(0);
   }
 }
 
 @keyframes fade-in {
-  from {
+  0% {
     opacity: 0;
+    transform: scale(0.9);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 1s ease-out forwards;
+  animation: fade-in-up 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: transform, opacity, filter;
 }
 
 .animate-fade-in-left {
-  animation: fade-in-left 1s ease-out forwards;
+  animation: fade-in-left 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: transform, opacity;
 }
 
 .animate-fade-in {
   animation: fade-in 1s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 .animation-delay-200 {

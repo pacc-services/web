@@ -13,6 +13,19 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 8rem; /* Account for fixed header */
+  }
+  
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 9rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 10rem;
+    }
   }
 }
 
@@ -26,15 +39,25 @@
   }
 
   .card {
-    @apply rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply rounded-2xl shadow-lg;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover {
+    @apply shadow-2xl;
+    transform: translateY(-8px) rotateX(-2deg);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 
   /* Scroll animations with Safari optimization */
   [data-animate] {
-    @apply opacity-0 translate-y-8 transition-all duration-700;
+    @apply opacity-0 translate-y-8;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-transform: translateY(2rem);
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000px;
+    will-change: transform, opacity;
   }
 
   [data-animate].animate-in {

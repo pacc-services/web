@@ -1,9 +1,9 @@
 <template>
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200 transition-all duration-300"
     :class="{ 'shadow-lg': isScrolled }">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 sm:h-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24 sm:h-28">
       <a href="#" class="flex items-center group">
-        <img :src="paccLogo" alt="PACC" class="h-14 sm:h-16 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105" />
+        <img :src="paccLogo" alt="PACC" class="h-16 sm:h-32 lg:h-42 w-auto transition-transform duration-300 group-hover:scale-105" />
       </a>
       
       <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-semibold">
