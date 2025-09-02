@@ -1,5 +1,5 @@
 <template>
-  <section id="approach" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200">
+  <section id="approach" class="scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
         <div class="md:col-span-1 approach-header">

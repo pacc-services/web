@@ -94,7 +94,6 @@ const navItems: NavItem[] = [
   { label: 'Market', href: '#problem' },
   { label: 'Solution', href: '#solution' },
   { label: 'Revenue', href: '#revenue' },
-  { label: 'Timeline', href: '#timeline' },
   { label: 'Team', href: '#leadership' },
   { label: 'Contact', href: '#contact' },
 ]

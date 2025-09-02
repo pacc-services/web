@@ -1,11 +1,8 @@
 <template>
-  <section id="revenue" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-t border-slate-200">
+  <section id="revenue" class="scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between flex-wrap gap-4" data-animate="fade-up">
         <h2 class="text-3xl sm:text-4xl font-extrabold">Revenue Streams</h2>
-        <span class="text-sm px-4 py-2 rounded-full bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 border border-emerald-200 font-bold animate-pulse">
-          CAGR 27%
-        </span>
       </div>
       
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -20,15 +17,14 @@
         />
       </div>
       
-      <FinancialSnapshot :data="financialData" />
+      
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import RevenueCard from '@/components/ui/RevenueCard.vue'
-import FinancialSnapshot from '@/components/ui/FinancialSnapshot.vue'
-import type { RevenueStream, FinancialData } from '@/types'
+import type { RevenueStream } from '@/types'
 
 const revenueStreams: RevenueStream[] = [
   {
@@ -49,10 +45,5 @@ const revenueStreams: RevenueStream[] = [
   },
 ]
 
-const financialData: FinancialData[] = [
-  { year: '2025', netIncome: '($519,600)' },
-  { year: '2026', netIncome: '$180,194' },
-  { year: '2027', netIncome: '$3,469,650' },
-  { year: '2028', netIncome: '$7,037,535' },
-]
+ 
 </script>

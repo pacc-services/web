@@ -12,7 +12,7 @@
           <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white drop-shadow-lg">
             The bridge between clean molecule producers and customers
           </h1>
-          <p id="mission" class="hero-text text-lg sm:text-xl lg:text-2xl leading-relaxed text-white/90 drop-shadow">
+          <p id="mission" class="scroll-mt-28 hero-text text-lg sm:text-xl lg:text-2xl leading-relaxed text-white/90 drop-shadow">
             Our mission is to become the trusted bridge between producers and customers of the energy transition—delivering scale, certainty, and value across dislocated markets.
           </p>
           <div class="hero-buttons flex flex-wrap gap-4">
