@@ -7,7 +7,7 @@
       <MarketProblemSection />
       <RevenueSection />
       <OrgStructureSection />
-      <LeadershipSection />
+      //<LeadershipSection />
       <ContactSection />
     </main>
     <AppFooter />
@@ -22,7 +22,7 @@ import ApproachSection from '@/components/sections/ApproachSection.vue'
 import MarketProblemSection from '@/components/sections/MarketProblemSection.vue'
 import RevenueSection from '@/components/sections/RevenueSection.vue'
 import OrgStructureSection from '@/components/sections/OrgStructureSection.vue'
-import LeadershipSection from '@/components/sections/LeadershipSection.vue'
+//import LeadershipSection from '@/components/sections/LeadershipSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
 
