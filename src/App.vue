@@ -13,7 +13,7 @@
         height: bubble.size + 'px',
       }"
       @animationend="removeBubble(bubble.id)"
-    >
+    > 
       <span class="h2-text">H₂</span>
     </div> -->
   </div>
