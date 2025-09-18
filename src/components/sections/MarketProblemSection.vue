@@ -1,5 +1,5 @@
 <template>
-  <section id="problem" class="scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-200">
+  <section id="problem" class="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-8">
         <div>
@@ -10,22 +10,19 @@
             </li>
           </ul>
         </div>
-        <div id="solution" class="scroll-mt-28 card p-6 relative overflow-hidden">
-          <img 
-            :src="bridgeImage" 
-            alt="Bridge representing connection" 
-            class="absolute inset-0 w-full h-full object-cover opacity-10"
-          />
+        <div id="solution" class="card p-6 relative overflow-hidden">
+          <img :src="bridgeImage" alt="Bridge representing connection"
+            class="absolute inset-0 w-full h-full object-cover opacity-10" />
           <div class="relative z-10">
             <h3 class="text-xl font-bold">PACC Solution</h3>
-          <p class="mt-2 text-slate-700">
-            PACC connects producers and customers, turning stranded molecules into scalable markets.
-          </p>
-          <ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
-            <li v-for="solution in solutions" :key="solution">
-              {{ solution }}
-            </li>
-          </ul>
+            <p class="mt-2 text-slate-700">
+              PACC connects producers and customers, turning stranded molecules into scalable markets.
+            </p>
+            <ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+              <li v-for="solution in solutions" :key="solution">
+                {{ solution }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>

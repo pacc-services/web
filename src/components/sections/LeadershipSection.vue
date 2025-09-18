@@ -1,46 +1,40 @@
 <template>
-  <section id="leadership" class="scroll-mt-28 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200">
+  <section id="leadership"
+    class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between flex-wrap gap-4" data-animate="fade-up">
-        <h2 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent">Leadership Team</h2>
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent">
+          Leadership Team</h2>
       </div>
       <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <TeamMemberCard
-          v-for="(member, index) in teamMembers"
-          :key="member.name"
-          :member="member"
-          :data-animate="'fade-up'"
-          :data-animate-delay="index * 100"
-        />
+        <TeamMemberCard v-for="(member, index) in teamMembers" :key="member.name" :member="member"
+          :data-animate="'fade-up'" :data-animate-delay="index * 100" />
       </div>
-      
+
       <div class="mt-20 pt-12 border-t border-slate-200" data-animate="fade-up">
-        <h3 class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent select-none">
+        <h3
+          class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent select-none">
           Partner Experience
         </h3>
         <p class="text-center text-slate-700 mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
-          Our team brings deep relationships and proven experience from leading organizations across the hydrogen and energy value chain
+          Our team brings deep relationships and proven experience from leading organizations across the hydrogen and
+          energy value chain
         </p>
-        
+
         <!-- Industry Network Carousel -->
         <div class="relative overflow-hidden py-8">
           <div class="logo-carousel px-8">
             <div class="logo-track">
-              <div
-                v-for="(logo, index) in [...companyLogos, ...companyLogos]"
-                :key="`${logo.name}-${index}`"
-                class="logo-item px-6"
-              >
-                <img 
-                  :src="logo.src"
-                  :alt="logo.name"
-                  class="h-12 sm:h-16 w-auto opacity-80 hover:opacity-100 transition-all duration-500"
-                />
+              <div v-for="(logo, index) in [...companyLogos, ...companyLogos]" :key="`${logo.name}-${index}`"
+                class="logo-item px-6">
+                <img :src="logo.src" :alt="logo.name"
+                  class="h-12 sm:h-16 w-auto opacity-80 hover:opacity-100 transition-all duration-500" />
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="mt-12 text-center">
           <p class="text-base text-slate-700 font-medium">
             Building the future of clean energy through strategic partnerships

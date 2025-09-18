@@ -5,7 +5,7 @@
       <div class="text-slate-600">{{ contact.role }}</div>
     </div>
     <a
-      href="mailto:info@pacc.tech"
+      href="mailto:pat@pacc.services"
       class="px-3 py-2 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
     >
       {{ contact.phone }}

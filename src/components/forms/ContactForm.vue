@@ -52,7 +52,7 @@ const handleSubmit = () => {
     `Message:\n${form.message}`
   )
   
-  window.location.href = `mailto:info@pacc.tech?subject=${subject}&body=${body}`
+  window.location.href = `mailto:pat@pacc.services?subject=${subject}&body=${body}`
   
   setTimeout(() => {
     Object.keys(form).forEach(key => {
