@@ -37,7 +37,7 @@
 
         <div class="mt-12 text-center">
           <p class="text-base text-slate-700 font-medium">
-            Building the future of clean energy through strategic partnerships
+            Building the future of energy through strategic partnerships
           </p>
         </div>
       </div>
