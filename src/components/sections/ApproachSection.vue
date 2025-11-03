@@ -8,7 +8,7 @@
             class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent mb-2">
             Our Approach</h2>
           <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-            We de‑risk production, aggregate demand, and create structured pathways for clean molecules.
+            We de‑risk production, aggregate demand, and create structured pathways for molecules.
           </p>
         </div>
         <div class="md:col-span-2 grid sm:grid-cols-2 gap-6">
