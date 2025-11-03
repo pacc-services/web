@@ -81,7 +81,7 @@ const navItems: NavItem[] = [
   { label: 'Approach', href: '#approach' },
   { label: 'Market', href: '#problem' },
   { label: 'Solution', href: '#solution' },
-  { label: 'Revenue', href: '#revenue' },
+  //{ label: 'Revenue', href: '#revenue' },
   { label: 'Contact', href: '#contact' },
 ]
 
