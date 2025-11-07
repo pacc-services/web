@@ -30,3 +30,5 @@ import paccLogo from '@/assets/images/logo_full.png'
 
 const currentYear = computed(() => new Date().getFullYear())
 
+const footerLinks: NavItem[] = []
+</script>
