@@ -23,6 +23,7 @@
         </p>
 
         <!-- Industry Network Carousel -->
+        <!--
         <div class="relative overflow-hidden py-8">
           <div class="logo-carousel px-8">
             <div class="logo-track">
@@ -34,7 +35,7 @@
             </div>
           </div>
         </div>
-
+-->
         <div class="mt-12 text-center">
           <p class="text-base text-slate-700 font-medium">
             Building the future of energy through strategic partnerships
@@ -48,42 +49,35 @@
 <script setup lang="ts">
 import TeamMemberCard from '@/components/ui/TeamMemberCard.vue'
 import type { TeamMember } from '@/types'
-import lindeLogo from '@/assets/images/image35.png'
-import bayotechLogo from '@/assets/images/image9.png'
-import bpLogo from '@/assets/images/bp.png'
-import deltaLogo from '@/assets/images/delta.png'
-import gridstorLogo from '@/assets/images/gridstor.png'
-import guzmanLogo from '@/assets/images/guzman.png'
-import nikolaLogo from '@/assets/images/nikola.png'
-import nexteraLogo from '@/assets/images/nextera.png'
-import tdLogo from '@/assets/images/td.png'
-import twinEagleLogo from '@/assets/images/twin-eagle.png'
-import uniperLogo from '@/assets/images/uniper.png'
-import xcelLogo from '@/assets/images/xcel-energy.png'
+//import lindeLogo from '@/assets/images/image35.png'
+//import bayotechLogo from '@/assets/images/image9.png'
+//import bpLogo from '@/assets/images/bp.png'
+//import deltaLogo from '@/assets/images/delta.png'
+//import gridstorLogo from '@/assets/images/gridstor.png'
+//import guzmanLogo from '@/assets/images/guzman.png'
+//import nikolaLogo from '@/assets/images/nikola.png'
+//import nexteraLogo from '@/assets/images/nextera.png'
+//import tdLogo from '@/assets/images/td.png'
+//import twinEagleLogo from '@/assets/images/twin-eagle.png'
+//import uniperLogo from '@/assets/images/uniper.png'
+//import xcelLogo from '@/assets/images/xcel-energy.png'
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'Co‑Founder / CEO',
-    role: '',
-    bio: 'Senior energy executive with over 20 years of experience in hydrogen and industrial gases. Proven track record in developing global strategies and building strategic partnerships across the energy transition value chain.',
+    name: 'Andrew Carmen',
+    role: 'CEO',
+    bio: 'A senior energy executive with extensive experience in hydrogen, industrial gases, and clean fuels. At Uniper, executed the company’s first global hydrogen deal, developed and implemented the North American hydrogen strategy, and built strategic relationships with leading players across the industry.  Previously at Nikola, developed, led, and executed the hydrogen supply strategy to fuel the first commercial FCEV Class 8 trucks in North America, working across the full hydrogen value chain from production through distribution and dispensing.Spent over a decade at Linde in progressively senior commercial roles, ultimately leading the Western U.S. onsite business with full P&L responsibility exceeding $100 million.',
+    linkedin: 'https://www.linkedin.com/in/andrew-carman-mba-a086a5b'
   },
   {
-    name: 'Co‑Founder / CCO',
-    role: '',
-    bio: 'Accomplished commercial leader with extensive experience in energy trading and logistics. Expert in structuring complex transactions and developing scalable market solutions.',
-  },
-  {
-    name: 'Board Member',
-    role: '',
-    bio: 'Distinguished energy industry veteran with deep expertise in power markets and renewable energy. Successfully executed multiple billion-dollar transactions in the clean energy sector.',
-  },
-  {
-    name: 'Board Member',
-    role: '',
-    bio: 'Strategic advisor with extensive board experience across energy and infrastructure sectors. Focused on governance excellence and sustainable growth strategies.',
+    name: 'Patrick Charette',
+    role: 'CCO',
+    bio: 'An energy executive and entrepreneur with extensive leadership experience in hydrogen and industrial gases. As Head of Commercial at BayoTech Hydrogen, led all commercial activities, set strategy, and pioneered the launch of a hydrogen molecule trading and logistics company that integrated production, distribution, and third-party sourcing. At Nikola Corporation, expanded hydrogen fueling and infrastructure strategy while securing significant government and industry partnerships. Earlier leadership roles with Linde and Praxair built expertise in specialty gases and large-scale pipeline networks. A foundation as an airline captain instilled the operational discipline and decision-making under pressure that continue to shape an executive approach to scaling clean energy businesses',
+    linkedin: 'https://www.linkedin.com/in/patrick-charette'
   },
 ]
 
+/**
 const companyLogos = [
   { name: 'Linde', src: lindeLogo },
   { name: 'BayoTech', src: bayotechLogo },
@@ -98,4 +92,5 @@ const companyLogos = [
   { name: 'Uniper', src: uniperLogo },
   { name: 'Xcel Energy', src: xcelLogo },
 ]
+**/
 </script>
