@@ -1,9 +1,11 @@
 <template>
   <article class="card p-6">
-    <h3 class="text-lg font-bold">{{ member.name }}</h3>
-    <div class="text-sm text-slate-600">{{ member.role }}</div>
-    <p class="mt-3 text-sm text-slate-700 leading-relaxed">{{ member.bio }}</p>
-    <div class="mt-4">
+    <div class="flex flex-col items-center text-center">
+      <img :src="member.image" :alt="member.name"
+        class="w-24 h-24 rounded-full object-cover mb-4 border-2 border-slate-200" />
+      <h3 class="text-lg font-bold">{{ member.name }}</h3>
+      <div class="text-sm text-slate-600 mb-3">{{ member.role }}</div>
+      <p class="text-sm text-slate-700 leading-relaxed mb-4">{{ member.bio }}</p>
       <a :href="member.linkedin" target="_blank" rel="noopener noreferrer"
         class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200">
         <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">

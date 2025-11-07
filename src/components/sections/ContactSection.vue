@@ -5,17 +5,14 @@
       :style="`background-image: url('${bridgeBackground}'); background-size: cover; background-position: center;`"
     ></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-8 items-start">
-        <div>
-          <h2 class="text-2xl font-extrabold">Get in Touch</h2>
-          <p class="mt-2 text-slate-600">
-            Let's discuss offtake, logistics, or partnership opportunities.
-          </p>
-          <div class="mt-6 grid gap-3 text-sm">
-            <ContactCard v-for="contact in contacts" :key="contact.name" :contact="contact" />
-          </div>
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl font-extrabold">Get in Touch</h2>
+        <p class="mt-2 text-slate-600">
+          Let's discuss offtake, logistics, or partnership opportunities.
+        </p>
+        <div class="mt-6 grid gap-3 text-sm max-w-md mx-auto">
+          <ContactCard v-for="contact in contacts" :key="contact.name" :contact="contact" />
         </div>
-        <!--<ContactForm />-->
       </div>
     </div>
   </section>

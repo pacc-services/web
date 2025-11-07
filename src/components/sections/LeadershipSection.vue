@@ -53,6 +53,8 @@
 <script setup lang="ts">
 import TeamMemberCard from '@/components/ui/TeamMemberCard.vue'
 import type { TeamMember } from '@/types'
+import andrewImage from '@/assets/images/andrew.png'
+import patrickImage from '@/assets/images/image.png'
 //import lindeLogo from '@/assets/images/image35.png'
 //import bayotechLogo from '@/assets/images/image9.png'
 //import bpLogo from '@/assets/images/bp.png'
@@ -70,14 +72,16 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Andrew Carmen',
     role: 'CEO',
-    bio: 'A senior energy executive with extensive experience in hydrogen, industrial gases, and clean fuels. At Uniper, executed the company’s first global hydrogen deal, developed and implemented the North American hydrogen strategy, and built strategic relationships with leading players across the industry.  Previously at Nikola, developed, led, and executed the hydrogen supply strategy to fuel the first commercial FCEV Class 8 trucks in North America, working across the full hydrogen value chain from production through distribution and dispensing.Spent over a decade at Linde in progressively senior commercial roles, ultimately leading the Western U.S. onsite business with full P&L responsibility exceeding $100 million.',
+    bio: "A senior energy executive with extensive experience in hydrogen, industrial gases, and clean fuels. At Uniper, executed the company's first global hydrogen deal, developed and implemented the North American hydrogen strategy, and built strategic relationships with leading players across the industry. Previously at Nikola, developed, led, and executed the hydrogen supply strategy to fuel the first commercial FCEV Class 8 trucks in North America, working across the full hydrogen value chain from production through distribution and dispensing.Spent over a decade at Linde in progressively senior commercial roles, ultimately leading the Western U.S. onsite business with full P&L responsibility exceeding $100 million.",
     linkedin: 'https://www.linkedin.com/in/andrew-carman-mba-a086a5b',
+    image: andrewImage,
   },
   {
     name: 'Patrick Charette',
     role: 'CCO',
     bio: 'An energy executive and entrepreneur with extensive leadership experience in hydrogen and industrial gases. As Head of Commercial at BayoTech Hydrogen, led all commercial activities, set strategy, and pioneered the launch of a hydrogen molecule trading and logistics company that integrated production, distribution, and third-party sourcing. At Nikola Corporation, expanded hydrogen fueling and infrastructure strategy while securing significant government and industry partnerships. Earlier leadership roles with Linde and Praxair built expertise in specialty gases and large-scale pipeline networks. A foundation as an airline captain instilled the operational discipline and decision-making under pressure that continue to shape an executive approach to scaling clean energy businesses',
     linkedin: 'https://www.linkedin.com/in/patrick-charette',
+    image: patrickImage,
   },
 ]
 
