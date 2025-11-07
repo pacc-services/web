@@ -32,5 +32,6 @@ const contacts: ContactInfo[] = [
     role: 'Executive Team',
     phone: 'Contact Us',
   }
+]
   
 </script>
