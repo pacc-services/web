@@ -1,8 +1,8 @@
 <template>
   <article class="card p-6">
-    <div class="flex flex-col items-center text-center">
+    <div class="flex flex-col items-center text-left">
       <img :src="member.image" :alt="member.name"
-        class="w-24 h-24 rounded-full object-cover mb-4 border-2 border-slate-200" />
+        class="w-24 h-24 rounded-full object-top object-cover mb-4 border-2 border-slate-200" />
       <h3 class="text-lg font-bold">{{ member.name }}</h3>
       <div class="text-sm text-slate-600 mb-3">{{ member.role }}</div>
       <p class="text-sm text-slate-700 leading-relaxed mb-4">{{ member.bio }}</p>

@@ -1,16 +1,24 @@
 <template>
-  <section id="leadership"
-    class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200">
+  <section
+    id="leadership"
+    class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between flex-wrap gap-4" data-animate="fade-up">
         <h2
-          class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent">
+          class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent"
+        >
           Leadership Team
         </h2>
       </div>
       <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <TeamMemberCard v-for="(member, index) in teamMembers" :key="member.name" :member="member"
-          :data-animate="'fade-up'" :data-animate-delay="index * 100" />
+        <TeamMemberCard
+          v-for="(member, index) in teamMembers"
+          :key="member.name"
+          :member="member"
+          :data-animate="'fade-up'"
+          :data-animate-delay="index * 100"
+        />
       </div>
 
       <!--
@@ -45,8 +53,7 @@
         </p>
       </div>
     </div>
-    -->
-    </div>
+    --></div>
   </section>
 </template>
 
