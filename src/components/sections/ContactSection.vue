@@ -31,11 +31,6 @@ const contacts: ContactInfo[] = [
     name: 'Leadership',
     role: 'Executive Team',
     phone: 'Contact Us',
-  },
-  {
-    name: 'Commercial',
-    role: 'Business Development',
-    phone: 'Contact Us',
-  },
-]
+  }
+  
 </script>
