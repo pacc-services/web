@@ -15,67 +15,67 @@
     scroll-behavior: smooth;
     scroll-padding-top: 8rem; /* Account for fixed header */
   }
-  
+
   body {
     overflow-x: hidden;
     width: 100%;
   }
-  
+
   /* Text selection styles */
   ::selection {
     background-color: rgba(11, 77, 130, 0.2);
     color: var(--brand-dark);
   }
-  
+
   ::-moz-selection {
     background-color: rgba(11, 77, 130, 0.2);
     color: var(--brand-dark);
   }
-  
+
   /* Focus styles for accessibility */
   *:focus-visible {
     outline: 2px solid var(--brand);
     outline-offset: 2px;
   }
-  
+
   /* Smooth antialiasing for better text rendering */
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   /* Prevent text selection on UI elements */
-  button, 
-  a, 
+  button,
+  a,
   nav {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
   }
-  
+
   /* Allow text selection on content */
-  p, 
-  h1, 
-  h2, 
-  h3, 
-  h4, 
-  h5, 
-  h6, 
-  li, 
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
   span:not(.logo-item span) {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
   }
-  
+
   @media (min-width: 640px) {
     html {
       scroll-padding-top: 9rem;
     }
   }
-  
+
   @media (min-width: 1024px) {
     html {
       scroll-padding-top: 12rem;
@@ -87,26 +87,26 @@
   .glass {
     @apply bg-white/75 backdrop-blur-lg;
   }
-  
+
   /* Cursor styles for interactive elements */
   button:not(:disabled),
   a,
-  [role="button"] {
+  [role='button'] {
     cursor: pointer;
   }
-  
+
   button:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
-  
+
   /* Better link defaults */
   a {
     position: relative;
     text-decoration: none;
     transition: color 0.2s ease;
   }
-  
+
   /* Image selection prevention */
   img {
     -webkit-user-select: none;
@@ -126,10 +126,12 @@
 
   .card {
     @apply rounded-2xl shadow-lg;
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    transition:
+      transform 0.2s ease-out,
+      box-shadow 0.2s ease-out;
     will-change: transform, box-shadow;
   }
-  
+
   .card:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
@@ -150,60 +152,60 @@
     -webkit-transform: translateY(0);
   }
 
-  [data-animate="fade-up"] {
+  [data-animate='fade-up'] {
     @apply translate-y-12;
   }
 
-  [data-animate="fade-left"] {
+  [data-animate='fade-left'] {
     @apply translate-x-12 translate-y-0;
   }
 
-  [data-animate="fade-right"] {
+  [data-animate='fade-right'] {
     @apply -translate-x-12 translate-y-0;
   }
 
-  [data-animate="scale"] {
+  [data-animate='scale'] {
     @apply scale-95;
   }
 
-  [data-animate="scale"].animate-in {
+  [data-animate='scale'].animate-in {
     @apply scale-100;
   }
 
-  [data-animate="slide-left"] {
+  [data-animate='slide-left'] {
     @apply translate-x-12 opacity-0;
   }
 
-  [data-animate="slide-left"].animate-in {
+  [data-animate='slide-left'].animate-in {
     @apply translate-x-0 opacity-100;
   }
 
-  [data-animate="slide-right"] {
+  [data-animate='slide-right'] {
     @apply -translate-x-12 opacity-0;
   }
 
-  [data-animate="slide-right"].animate-in {
+  [data-animate='slide-right'].animate-in {
     @apply translate-x-0 opacity-100;
   }
 
   /* Stagger animations */
-  [data-animate-delay="100"] {
+  [data-animate-delay='100'] {
     transition-delay: 100ms;
   }
 
-  [data-animate-delay="200"] {
+  [data-animate-delay='200'] {
     transition-delay: 200ms;
   }
 
-  [data-animate-delay="300"] {
+  [data-animate-delay='300'] {
     transition-delay: 300ms;
   }
 
-  [data-animate-delay="400"] {
+  [data-animate-delay='400'] {
     transition-delay: 400ms;
   }
 
-  [data-animate-delay="500"] {
+  [data-animate-delay='500'] {
     transition-delay: 500ms;
   }
 
@@ -253,11 +255,11 @@
   .animation-delay-400 {
     animation-delay: 400ms;
   }
-  
+
   .animation-delay-600 {
     animation-delay: 600ms;
   }
-  
+
   .animation-delay-800 {
     animation-delay: 800ms;
   }

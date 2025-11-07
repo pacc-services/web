@@ -15,7 +15,7 @@
             <ContactCard v-for="contact in contacts" :key="contact.name" :contact="contact" />
           </div>
         </div>
-        <ContactForm />
+        <!--<ContactForm />-->
       </div>
     </div>
   </section>
@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import ContactCard from '@/components/ui/ContactCard.vue'
-import ContactForm from '@/components/forms/ContactForm.vue'
+//import ContactForm from '@/components/forms/ContactForm.vue'
 import type { ContactInfo } from '@/types'
 import bridgeBackground from '@/assets/images/image45.png'
 

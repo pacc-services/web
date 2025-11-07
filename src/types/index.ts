@@ -6,7 +6,7 @@ export interface NavItem {
 export interface TeamMember {
   name: string
   role: string
-  bio: string,
+  bio: string
   linkedin: string
 }
 

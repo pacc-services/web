@@ -24,13 +24,15 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const buttonClasses = computed(() => {
-  const base = 'inline-flex items-center justify-center px-5 py-3 rounded-xl font-semibold transition-colors'
-  
+  const base =
+    'inline-flex items-center justify-center px-5 py-3 rounded-xl font-semibold transition-colors'
+
   const variants = {
-    primary: 'bg-brand text-white shadow-lg hover:bg-brand-dark transform hover:scale-105 transition-all',
+    primary:
+      'bg-brand text-white shadow-lg hover:bg-brand-dark transform hover:scale-105 transition-all',
     secondary: 'border-2 border-white text-white hover:bg-white hover:text-brand transition-all',
   }
-  
+
   return `${base} ${variants[props.variant]}`
 })
 </script>

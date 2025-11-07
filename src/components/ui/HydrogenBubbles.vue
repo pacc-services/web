@@ -66,7 +66,7 @@ onMounted(() => {
   animation: float-up 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(3px);
   border: 2px solid rgba(76, 175, 80, 0.3);
-  box-shadow: 
+  box-shadow:
     inset 0 2px 10px rgba(255, 255, 255, 0.3),
     0 0 20px rgba(76, 175, 80, 0.2);
 }

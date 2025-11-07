@@ -11,12 +11,16 @@
           </ul>
         </div>
         <div id="solution" class="card p-6 relative overflow-hidden">
-          <img :src="bridgeImage" alt="Bridge representing connection"
-            class="absolute inset-0 w-full h-full object-cover opacity-10" />
+          <img
+            :src="bridgeImage"
+            alt="Bridge representing connection"
+            class="absolute inset-0 w-full h-full object-cover opacity-10"
+          />
           <div class="relative z-10">
             <h3 class="text-xl font-bold">PACC Solution</h3>
             <p class="mt-2 text-slate-700">
-              PACC connects producers and customers, turning stranded molecules into scalable markets.
+              PACC connects producers and customers, turning stranded molecules into scalable
+              markets.
             </p>
             <ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
               <li v-for="solution in solutions" :key="solution">

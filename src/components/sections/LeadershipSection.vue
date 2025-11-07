@@ -5,25 +5,28 @@
       <div class="flex items-end justify-between flex-wrap gap-4" data-animate="fade-up">
         <h2
           class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent">
-          Leadership Team</h2>
+          Leadership Team
+        </h2>
       </div>
-      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <TeamMemberCard v-for="(member, index) in teamMembers" :key="member.name" :member="member"
           :data-animate="'fade-up'" :data-animate-delay="index * 100" />
       </div>
 
+      <!--
       <div class="mt-20 pt-12 border-t border-slate-200" data-animate="fade-up">
         <h3
-          class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent select-none">
+          class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent select-none"
+        >
           Partner Experience
         </h3>
         <p class="text-center text-slate-700 mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
-          Our team brings deep relationships and proven experience from leading organizations across the hydrogen and
-          energy value chain
+          Our team brings deep relationships and proven experience from leading organizations across
+          the hydrogen and energy value chain
         </p>
-
-        <!-- Industry Network Carousel -->
-        <!--
+-->
+      <!-- Industry Network Carousel -->
+      <!--
         <div class="relative overflow-hidden py-8">
           <div class="logo-carousel px-8">
             <div class="logo-track">
@@ -35,13 +38,14 @@
             </div>
           </div>
         </div>
--->
-        <div class="mt-12 text-center">
-          <p class="text-base text-slate-700 font-medium">
-            Building the future of energy through strategic partnerships
-          </p>
-        </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-base text-slate-700 font-medium">
+          Building the future of energy through strategic partnerships
+        </p>
       </div>
+    </div>
+    -->
     </div>
   </section>
 </template>
@@ -67,13 +71,13 @@ const teamMembers: TeamMember[] = [
     name: 'Andrew Carmen',
     role: 'CEO',
     bio: 'A senior energy executive with extensive experience in hydrogen, industrial gases, and clean fuels. At Uniper, executed the company’s first global hydrogen deal, developed and implemented the North American hydrogen strategy, and built strategic relationships with leading players across the industry.  Previously at Nikola, developed, led, and executed the hydrogen supply strategy to fuel the first commercial FCEV Class 8 trucks in North America, working across the full hydrogen value chain from production through distribution and dispensing.Spent over a decade at Linde in progressively senior commercial roles, ultimately leading the Western U.S. onsite business with full P&L responsibility exceeding $100 million.',
-    linkedin: 'https://www.linkedin.com/in/andrew-carman-mba-a086a5b'
+    linkedin: 'https://www.linkedin.com/in/andrew-carman-mba-a086a5b',
   },
   {
     name: 'Patrick Charette',
     role: 'CCO',
     bio: 'An energy executive and entrepreneur with extensive leadership experience in hydrogen and industrial gases. As Head of Commercial at BayoTech Hydrogen, led all commercial activities, set strategy, and pioneered the launch of a hydrogen molecule trading and logistics company that integrated production, distribution, and third-party sourcing. At Nikola Corporation, expanded hydrogen fueling and infrastructure strategy while securing significant government and industry partnerships. Earlier leadership roles with Linde and Praxair built expertise in specialty gases and large-scale pipeline networks. A foundation as an airline captain instilled the operational discipline and decision-making under pressure that continue to shape an executive approach to scaling clean energy businesses',
-    linkedin: 'https://www.linkedin.com/in/patrick-charette'
+    linkedin: 'https://www.linkedin.com/in/patrick-charette',
   },
 ]
 

@@ -19,18 +19,18 @@ const props = withDefaults(defineProps<Props>(), {
 
 const cardClasses = computed(() => {
   const base = 'card'
-  
+
   const variants = {
     default: '',
     glass: 'glass',
   }
-  
+
   const paddings = {
     sm: 'p-4',
     md: 'p-6',
     lg: 'p-8',
   }
-  
+
   return `${base} ${variants[props.variant]} ${paddings[props.padding]}`
 })
 </script>
