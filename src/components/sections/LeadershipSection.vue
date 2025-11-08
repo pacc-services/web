@@ -77,7 +77,7 @@ import patrickImage from '@/assets/images/image.png'
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'Andrew Carmen',
+    name: 'Andrew Carman',
     role: 'CEO',
     bio: "A senior energy executive with extensive experience in hydrogen, industrial gases, and clean fuels. At Uniper, executed the company's first global hydrogen deal, developed and implemented the North American hydrogen strategy, and built strategic relationships with leading players across the industry. Previously at Nikola, developed, led, and executed the hydrogen supply strategy to fuel the first commercial FCEV Class 8 trucks in North America, working across the full hydrogen value chain from production through distribution and dispensing.Spent over a decade at Linde in progressively senior commercial roles, ultimately leading the Western U.S. onsite business with full P&L responsibility exceeding $100 million.",
     linkedin: 'https://www.linkedin.com/in/andrew-carman-mba-a086a5b',
