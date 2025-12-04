@@ -7,8 +7,14 @@ test.describe('Navigation', () => {
     await expect(page).toHaveURL('/')
     await expect(page.locator('h1')).toContainText('bridge')
 
-    // Navigate to news
+    // Click News to scroll to news section
     await page.click('text=News')
+    await expect(page).toHaveURL('/')
+    await page.waitForTimeout(500)
+    await expect(page.locator('text=News & Announcements')).toBeVisible()
+
+    // Click "View All News" to go to news page
+    await page.click('text=View All News')
     await expect(page).toHaveURL('/news')
     await expect(page.locator('h1')).toContainText('News & Updates')
 
@@ -22,21 +28,21 @@ test.describe('Navigation', () => {
 
     // Click on a section link like Leadership
     await page.click('text=Leadership')
-    
+
     // Should navigate back to home
     await expect(page).toHaveURL('/')
-    
+
     // Wait a bit for scroll animation
     await page.waitForTimeout(300)
   })
 
   test('should navigate to article and back', async ({ page }) => {
     await page.goto('/news')
-    
+
     // Click on article
     await page.click('text=Read full article')
     await expect(page).toHaveURL(/\/news\/hydrogen-platform-launch/)
-    
+
     // Navigate back
     await page.click('text=Back to News')
     await expect(page).toHaveURL('/news')

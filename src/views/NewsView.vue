@@ -18,38 +18,52 @@
           <article
             v-for="article in articles"
             :key="article.slug"
-            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8"
+            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
           >
-            <div class="text-xs font-semibold text-brand uppercase tracking-wider mb-2">
-              {{ article.category }}
-            </div>
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 leading-tight">
-              {{ article.title }}
-            </h2>
-            <div class="text-sm text-slate-500 mb-4">
-              <span class="font-medium">{{ article.location }}</span> — {{ article.date }}
-            </div>
-            <p class="text-slate-700 leading-relaxed mb-4">
-              {{ article.excerpt }}
-            </p>
-            <router-link
-              :to="`/news/${article.slug}`"
-              class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
+            <!-- Article Image -->
+            <div
+              v-if="article.image"
+              class="bg-gradient-to-br from-brand/5 to-brand-green/5 p-12 flex items-center justify-center"
             >
-              Read full article
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+              <img
+                :src="article.image"
+                :alt="article.title"
+                class="h-32 w-auto object-contain"
+              />
+            </div>
+            
+            <div class="p-8">
+              <div class="text-xs font-semibold text-brand uppercase tracking-wider mb-2">
+                {{ article.category }}
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 leading-tight">
+                {{ article.title }}
+              </h2>
+              <div class="text-sm text-slate-500 mb-4">
+                <span class="font-medium">{{ article.location }}</span> — {{ article.date }}
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-4">
+                {{ article.excerpt }}
+              </p>
+              <router-link
+                :to="`/news/${article.slug}`"
+                class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </router-link>
+                Read full article
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </router-link>
+            </div>
           </article>
         </div>
 
@@ -98,7 +112,7 @@ onMounted(() => {
   originalTitle = document.title
   const ogTitleMeta = document.querySelector('meta[property="og:title"]')
   const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
-  
+
   if (ogTitleMeta) {
     originalOgTitle = ogTitleMeta.getAttribute('content') || ''
   }
@@ -108,11 +122,11 @@ onMounted(() => {
 
   // Update meta tags for news page
   document.title = 'News & Updates | PACC'
-  
+
   if (ogTitleMeta) {
     ogTitleMeta.setAttribute('content', 'PACC News & Updates')
   }
-  
+
   if (twitterTitleMeta) {
     twitterTitleMeta.setAttribute('content', 'PACC News & Updates')
   }
@@ -121,14 +135,14 @@ onMounted(() => {
 onUnmounted(() => {
   // Restore original meta tags when leaving the page
   document.title = originalTitle
-  
+
   const ogTitleMeta = document.querySelector('meta[property="og:title"]')
   const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
-  
+
   if (ogTitleMeta && originalOgTitle) {
     ogTitleMeta.setAttribute('content', originalOgTitle)
   }
-  
+
   if (twitterTitleMeta && originalTwitterTitle) {
     twitterTitleMeta.setAttribute('content', originalTwitterTitle)
   }

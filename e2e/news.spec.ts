@@ -45,7 +45,7 @@ test.describe('News Page', () => {
     await page.goto('/news/non-existent-article')
 
     await expect(page.locator('text=Article Not Found')).toBeVisible()
-    
+
     await page.click('text=Back to News')
     await expect(page).toHaveURL('/news')
   })
