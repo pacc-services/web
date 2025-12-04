@@ -5,6 +5,7 @@ export interface Article {
   location: string
   category: string
   excerpt: string
+  image?: string // Optional image URL for the article
   content: ArticleContent[]
 }
 

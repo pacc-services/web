@@ -1,11 +1,14 @@
 import type { Article } from '@/types/article'
+import paccLogo from '@/assets/images/logo_full.png'
 
 export const hydrogenPlatformLaunch: Article = {
   slug: 'hydrogen-platform-launch',
-  title: 'PACC Launches Revolutionary Hydrogen Market-Making Platform to Bridge Energy Transition Gap',
+  title:
+    'PACC Launches Revolutionary Hydrogen Market-Making Platform to Bridge Energy Transition Gap',
   date: 'December 4, 2025',
   location: 'San Francisco, CA',
   category: 'Press Release',
+  image: paccLogo,
   excerpt:
     'PACC, a pioneering hydrogen and specialty gases market-maker, today announced the official launch of its innovative platform designed to accelerate the energy transition by connecting molecule producers with enterprise customers at scale.',
   content: [

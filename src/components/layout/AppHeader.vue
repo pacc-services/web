@@ -122,8 +122,8 @@ const navItems: NavItem[] = [
   { label: 'Solution', href: '#solution' },
   { label: 'Leadership', href: '#leadership' },
   //{ label: 'Revenue', href: '#revenue' },
+  { label: 'News', href: '#news' },
   { label: 'Contact', href: '#contact' },
-  { label: 'News', href: '/news' },
 ]
 
 const toggleMobileMenu = () => {

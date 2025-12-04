@@ -8,6 +8,7 @@
       <!--<RevenueSection />-->
       <!-- <OrgStructureSection /> -->
       <LeadershipSection />
+      <NewsSection />
       <ContactSection />
     </main>
     <AppFooter />
@@ -20,6 +21,7 @@ import HeroSection from '@/components/sections/HeroSection.vue'
 import ApproachSection from '@/components/sections/ApproachSection.vue'
 import MarketProblemSection from '@/components/sections/MarketProblemSection.vue'
 import LeadershipSection from '@/components/sections/LeadershipSection.vue'
+import NewsSection from '@/components/sections/NewsSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
 
