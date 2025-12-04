@@ -81,11 +81,58 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getAllArticles } from '@/data/articles'
 
 const articles = getAllArticles()
+
+// Store original meta tags
+let originalTitle = ''
+let originalOgTitle = ''
+let originalTwitterTitle = ''
+
+onMounted(() => {
+  // Store original values
+  originalTitle = document.title
+  const ogTitleMeta = document.querySelector('meta[property="og:title"]')
+  const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
+  
+  if (ogTitleMeta) {
+    originalOgTitle = ogTitleMeta.getAttribute('content') || ''
+  }
+  if (twitterTitleMeta) {
+    originalTwitterTitle = twitterTitleMeta.getAttribute('content') || ''
+  }
+
+  // Update meta tags for news page
+  document.title = 'News & Updates | PACC'
+  
+  if (ogTitleMeta) {
+    ogTitleMeta.setAttribute('content', 'PACC News & Updates')
+  }
+  
+  if (twitterTitleMeta) {
+    twitterTitleMeta.setAttribute('content', 'PACC News & Updates')
+  }
+})
+
+onUnmounted(() => {
+  // Restore original meta tags when leaving the page
+  document.title = originalTitle
+  
+  const ogTitleMeta = document.querySelector('meta[property="og:title"]')
+  const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
+  
+  if (ogTitleMeta && originalOgTitle) {
+    ogTitleMeta.setAttribute('content', originalOgTitle)
+  }
+  
+  if (twitterTitleMeta && originalTwitterTitle) {
+    twitterTitleMeta.setAttribute('content', originalTwitterTitle)
+  }
+})
 </script>
 
 <style scoped>

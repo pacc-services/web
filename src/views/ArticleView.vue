@@ -139,7 +139,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
@@ -147,6 +147,66 @@ import { getArticleBySlug } from '@/data/articles'
 
 const route = useRoute()
 const article = computed(() => getArticleBySlug(route.params.slug as string))
+
+// Store original meta tags
+let originalTitle = ''
+let originalOgTitle = ''
+let originalTwitterTitle = ''
+
+const updateMetaTags = () => {
+  if (article.value) {
+    // Update page title and meta tags
+    document.title = `${article.value.title} | PACC News`
+    
+    const ogTitleMeta = document.querySelector('meta[property="og:title"]')
+    const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
+    
+    if (ogTitleMeta) {
+      ogTitleMeta.setAttribute('content', article.value.title)
+    }
+    
+    if (twitterTitleMeta) {
+      twitterTitleMeta.setAttribute('content', article.value.title)
+    }
+  }
+}
+
+onMounted(() => {
+  // Store original values
+  originalTitle = document.title
+  const ogTitleMeta = document.querySelector('meta[property="og:title"]')
+  const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
+  
+  if (ogTitleMeta) {
+    originalOgTitle = ogTitleMeta.getAttribute('content') || ''
+  }
+  if (twitterTitleMeta) {
+    originalTwitterTitle = twitterTitleMeta.getAttribute('content') || ''
+  }
+
+  updateMetaTags()
+})
+
+onUnmounted(() => {
+  // Restore original meta tags when leaving the page
+  document.title = originalTitle
+  
+  const ogTitleMeta = document.querySelector('meta[property="og:title"]')
+  const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
+  
+  if (ogTitleMeta && originalOgTitle) {
+    ogTitleMeta.setAttribute('content', originalOgTitle)
+  }
+  
+  if (twitterTitleMeta && originalTwitterTitle) {
+    twitterTitleMeta.setAttribute('content', originalTwitterTitle)
+  }
+})
+
+// Watch for article changes (if slug changes)
+watch(article, () => {
+  updateMetaTags()
+})
 </script>
 
 <style scoped>
