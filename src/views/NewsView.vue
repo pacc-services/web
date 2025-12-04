@@ -18,8 +18,7 @@
           <article
             v-for="article in articles"
             :key="article.slug"
-            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 cursor-pointer"
-            @click="navigateToArticle(article.slug)"
+            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8"
           >
             <div class="text-xs font-semibold text-brand uppercase tracking-wider mb-2">
               {{ article.category }}
@@ -82,17 +81,11 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getAllArticles } from '@/data/articles'
 
-const router = useRouter()
 const articles = getAllArticles()
-
-const navigateToArticle = (slug: string) => {
-  router.push(`/news/${slug}`)
-}
 </script>
 
 <style scoped>

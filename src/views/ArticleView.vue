@@ -34,7 +34,12 @@
                 </h3>
                 <ul v-else-if="block.type === 'list'" class="list-disc pl-6 space-y-2">
                   <li v-for="(item, itemIndex) in block.items" :key="itemIndex">
-                    <span v-html="formatListItem(item)"></span>
+                    <template v-if="item.includes(':')">
+                      <strong>{{ item.split(':')[0] }}:</strong>{{ item.split(':')[1] }}
+                    </template>
+                    <template v-else>
+                      {{ item }}
+                    </template>
                   </li>
                 </ul>
               </template>
@@ -142,11 +147,6 @@ import { getArticleBySlug } from '@/data/articles'
 
 const route = useRoute()
 const article = computed(() => getArticleBySlug(route.params.slug as string))
-
-const formatListItem = (item: string) => {
-  // Bold text before colons
-  return item.replace(/^([^:]+:)/, '<strong>$1</strong>')
-}
 </script>
 
 <style scoped>
