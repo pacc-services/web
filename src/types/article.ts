@@ -10,8 +10,10 @@ export interface Article {
 }
 
 export interface ArticleContent {
-  type: 'paragraph' | 'heading' | 'list'
+  type: 'paragraph' | 'heading' | 'list' | 'image'
   level?: number // for headings
   text?: string // for paragraphs and headings
   items?: string[] // for lists
+  src?: string // for images
+  alt?: string // for images
 }

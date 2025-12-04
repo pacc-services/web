@@ -13,8 +13,9 @@ export const hydrogenPlatformLaunch: Article = {
     'PACC, a pioneering hydrogen and specialty gases market-maker, today announced the official launch of its innovative platform designed to accelerate the energy transition by connecting molecule producers with enterprise customers at scale.',
   content: [
     {
-      type: 'paragraph',
-      text: 'PACC, a pioneering hydrogen and specialty gases market-maker, today announced the official launch of its innovative platform designed to accelerate the energy transition by connecting molecule producers with enterprise customers at scale.',
+      type: 'image',
+      src: paccLogo,
+      alt: 'PACC Logo',
     },
     {
       type: 'paragraph',

@@ -42,6 +42,14 @@
                     </template>
                   </li>
                 </ul>
+                <div v-else-if="block.type === 'image'" class="my-12 flex justify-center">
+                  <img
+                    :src="block.src"
+                    :alt="block.alt || ''"
+                    class="max-w-full h-auto"
+                    style="max-width: 150px; width: 100%;"
+                  />
+                </div>
               </template>
 
               <!-- About Section -->
