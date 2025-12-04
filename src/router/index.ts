@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import NewsView from '@/views/NewsView.vue'
+import ArticleView from '@/views/ArticleView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/news',
     name: 'news',
     component: NewsView,
+  },
+  {
+    path: '/news/:slug',
+    name: 'article',
+    component: ArticleView,
   },
 ]
 

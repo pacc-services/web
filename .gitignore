@@ -16,6 +16,10 @@ out/
 .vuepress/dist/
 tsconfig.tsbuildinfo
 
+# Test outputs
+test-results/
+playwright-report/
+
 # Environment variables
 .env
 .env.local

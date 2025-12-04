@@ -132,7 +132,17 @@ const toggleMobileMenu = () => {
 
 const handleNavClick = (href: string) => {
   if (href.startsWith('#')) {
-    scrollToSection(href)
+    // If we're not on the home page, navigate there first
+    if (router.currentRoute.value.path !== '/') {
+      router.push('/').then(() => {
+        // Wait for the route to change and then scroll
+        setTimeout(() => {
+          scrollToSection(href)
+        }, 100)
+      })
+    } else {
+      scrollToSection(href)
+    }
   } else {
     router.push(href)
   }
