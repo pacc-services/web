@@ -1,5 +1,5 @@
 import type { Article } from '@/types/article'
-import paccLogo from '@/assets/images/logo_full.png'
+import paccLogo from '@/assets/images/logo_full_cropped.png'
 
 export const paccExpandsToTexas: Article = {
   slug: 'pacc-expands-to-texas',
