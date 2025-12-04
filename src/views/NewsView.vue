@@ -180,8 +180,8 @@
 
         <!-- Back to Home Link -->
         <div class="mt-12 text-center">
-          <a
-            href="/"
+          <router-link
+            to="/"
             class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
           >
             <svg
@@ -197,7 +197,7 @@
               />
             </svg>
             Back to Home
-          </a>
+          </router-link>
         </div>
       </section>
     </main>
