@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PACC Services — Hydrogen Reactor Core Hero</title>
+    <title>PACC Services — Energy Grid Visualization Hero</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,72 +26,89 @@
     </header>
 
     <section id="hero" class="hero">
-      <canvas id="reactor-canvas"></canvas>
-      <div class="chamber-fog"></div>
-      <div class="hud-frame top-left"></div>
-      <div class="hud-frame top-right"></div>
-      <div class="hud-frame bottom-left"></div>
-      <div class="hud-frame bottom-right"></div>
+      <canvas id="grid-canvas"></canvas>
       
+      <div class="grid-visualization">
+        <div class="node-cluster cluster-1">
+          <div class="node active"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+        </div>
+        <div class="node-cluster cluster-2">
+          <div class="node"></div>
+          <div class="node active"></div>
+          <div class="node"></div>
+        </div>
+        <div class="node-cluster cluster-3">
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node active"></div>
+        </div>
+        <svg class="connections" width="100%" height="100%">
+          <line class="connection" x1="20%" y1="30%" x2="50%" y2="40%" />
+          <line class="connection" x1="50%" y1="40%" x2="80%" y2="35%" />
+          <line class="connection" x1="20%" y1="50%" x2="80%" y2="55%" />
+          <line class="connection" x1="25%" y1="70%" x2="75%" y2="70%" />
+        </svg>
+      </div>
+
       <div class="hero-content">
-        <p class="pill">Hydrogen & specialty gases • Logistics • Market‑making</p>
-        <h1>The bridge between molecule producers and customers</h1>
+        <p class="pill">Network • Infrastructure • Market‑Making</p>
+        <h1>Building the energy grid of tomorrow</h1>
         <p class="lede">
-          Our mission is to become the trusted bridge between producers and customers of the energy transition—delivering scale,
-          certainty, and value across dislocated markets.
+          We connect producers, transport, and customers in a living network—creating 
+          pathways for hydrogen and specialty gases across dislocated markets.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#contact">Talk to Us</a>
-          <a class="btn ghost" href="#approach">How We Work</a>
+          <a class="btn primary" href="#contact">Connect with Us</a>
+          <a class="btn ghost" href="#approach">See Our Network</a>
         </div>
       </div>
 
-      <div class="reactor-core">
-        <div class="ring outer"></div>
-        <div class="ring middle"></div>
-        <div class="ring inner"></div>
-        <div class="core-sun"></div>
-        <div class="energy-arc arc-1"></div>
-        <div class="energy-arc arc-2"></div>
-        <div class="energy-arc arc-3"></div>
-      </div>
-
-      <div class="hero-card">
-        <div class="stat">
-          <span class="label">De‑risk Production</span>
-          <span class="value">Commercial certainty</span>
+      <div class="network-stats">
+        <div class="stat-item">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Network Nodes</span>
         </div>
-        <div class="stat">
-          <span class="label">Aggregate Demand</span>
-          <span class="value">Build liquidity</span>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Market Activity</span>
         </div>
-        <div class="stat">
-          <span class="label">Optimize Logistics</span>
-          <span class="value">Lower costs</span>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Scalability</span>
         </div>
       </div>
     </section>
 
     <section id="approach" class="section">
       <div class="container">
-        <h2>Our Approach</h2>
-        <p class="lead">We de‑risk production, aggregate demand, and create structured pathways for molecules.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>De‑risk Production</h3>
-            <p>Commercial certainty via structured offtake, credit support, and long‑term agreements.</p>
+        <h2>Our Network Approach</h2>
+        <p class="lead">Creating value through intelligent connections</p>
+        <div class="network-grid">
+          <article class="network-card">
+            <div class="card-icon">⚙</div>
+            <h3>Production Nodes</h3>
+            <p>De‑risk production with structured offtake agreements and commercial certainty.</p>
+            <div class="card-stat">15+ producers</div>
           </article>
-          <article class="card">
-            <h3>Aggregate Demand</h3>
-            <p>Create liquidity and price transparency; build scalable customer funnels.</p>
+          <article class="network-card">
+            <div class="card-icon">🔗</div>
+            <h3>Transport Links</h3>
+            <p>Optimize logistics through trailers, storage, and pipeline infrastructure.</p>
+            <div class="card-stat">Multi-modal</div>
           </article>
-          <article class="card">
-            <h3>Optimize Logistics</h3>
-            <p>Trailers, storage, pipelines—optimize midstream to lower delivered costs and improve reliability.</p>
+          <article class="network-card">
+            <div class="card-icon">📍</div>
+            <h3>Demand Clusters</h3>
+            <p>Aggregate customer demand to create liquidity and price transparency.</p>
+            <div class="card-stat">Growing daily</div>
           </article>
-          <article class="card">
-            <h3>Market‑Maker</h3>
-            <p>Act as trusted intermediary to take market risk so producers can focus on operations.</p>
+          <article class="network-card">
+            <div class="card-icon">⚡</div>
+            <h3>Market Hub</h3>
+            <p>Act as trusted intermediary connecting all nodes in the energy network.</p>
+            <div class="card-stat">Central position</div>
           </article>
         </div>
       </div>
@@ -99,72 +116,65 @@
 
     <section id="problem" class="section dark">
       <div class="container">
-        <h2>Market Problem</h2>
-        <p class="lead">Stranded molecules, commercial barriers, high delivered costs, and no neutral market‑maker.</p>
-        <div class="solution-box">
-          <h3>PACC Solution</h3>
-          <p>PACC connects producers and customers, turning stranded molecules into scalable markets.</p>
-          <ul>
-            <li>Unlock value for producers through commercial certainty</li>
-            <li>De‑risk transactions as a trusted intermediary</li>
-            <li>Lower delivered costs by aggregating volumes and optimizing logistics</li>
-            <li>Create liquidity and price transparency in emerging molecules</li>
-          </ul>
+        <h2>The Network Gap</h2>
+        <p class="lead">Energy markets lack the infrastructure to scale efficiently</p>
+        <div class="gap-solution">
+          <div class="gap-visual">
+            <div class="disconnected-nodes">
+              <div class="isolated-node">Producer</div>
+              <div class="isolated-node">Transport</div>
+              <div class="isolated-node">Customer</div>
+            </div>
+            <div class="arrow-down">↓</div>
+            <div class="connected-network">
+              <div class="network-node">Producer</div>
+              <div class="network-connection"></div>
+              <div class="network-node hub">PACC</div>
+              <div class="network-connection"></div>
+              <div class="network-node">Customer</div>
+            </div>
+          </div>
+          <div class="solution-text">
+            <h3>PACC Network Solution</h3>
+            <ul>
+              <li>Connect fragmented producers and customers</li>
+              <li>Create transparent pricing mechanisms</li>
+              <li>Optimize transport and logistics paths</li>
+              <li>Enable scalable market growth</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="leadership" class="section">
       <div class="container">
-        <h2>Leadership Team</h2>
-        <p class="lead">Industry veterans building the future of energy.</p>
-        <div class="grid">
-          <article class="card">
+        <h2>Network Leadership</h2>
+        <p class="lead">Experienced operators building the future infrastructure</p>
+        <div class="team-grid">
+          <article class="team-card">
+            <img src="../shared/andrew.png" alt="Andrew Carman" />
             <h3>Andrew Carman</h3>
-            <p class="role" style="color: var(--cyan); margin-bottom: 16px;">CEO</p>
-            <p>A senior energy executive with extensive experience in hydrogen, industrial gases, and clean fuels. At Uniper, executed the company's first global hydrogen deal, developed and implemented the North American hydrogen strategy, and built strategic relationships with leading players across the industry. Previously at Nikola, developed, led, and executed the hydrogen supply strategy to fuel the first commercial FCEV Class 8 trucks in North America, working across the full hydrogen value chain from production through distribution and dispensing. Spent over a decade at Linde in progressively senior commercial roles, ultimately leading the Western U.S. onsite business with full P&L responsibility exceeding $100 million.</p>
+            <p class="role">CEO & Co-Founder</p>
+            <p class="description">Energy executive with deep hydrogen and industrial gas expertise from Uniper, Nikola, and Linde.</p>
           </article>
-          <article class="card">
-            <h3>Patrick Charette</h3>
-            <p class="role" style="color: var(--cyan); margin-bottom: 16px;">CCO</p>
-            <p>An energy executive and entrepreneur with extensive leadership experience in hydrogen and industrial gases. As Head of Commercial at BayoTech Hydrogen, led all commercial activities, set strategy, and pioneered the launch of a hydrogen molecule trading and logistics company that integrated production, distribution, and third-party sourcing. At Nikola Corporation, expanded hydrogen fueling and infrastructure strategy while securing significant government and industry partnerships. Earlier leadership roles with Linde and Praxair built expertise in specialty gases and large-scale pipeline networks. A foundation as an airline captain instilled the operational discipline and decision-making under pressure that continue to shape an executive approach to scaling clean energy businesses.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="news" class="section dark">
-      <div class="container">
-        <h2>News & Announcements</h2>
-        <p class="lead">Latest updates from PACC.</p>
-        <div class="grid">
-          <article class="card">
-            <p style="font-size: 12px; color: var(--cyan); margin-bottom: 8px;">Press Release — January 15, 2025 • San Francisco, CA</p>
-            <h3>PACC Unveils Revolutionary Real-Time Tracking Feature</h3>
-            <p>PACC today announced the launch of PACC Track, a groundbreaking real-time tracking system that provides unprecedented visibility into hydrogen trailer locations and status throughout the entire order processing lifecycle.</p>
-          </article>
-          <article class="card">
-            <p style="font-size: 12px; color: var(--cyan); margin-bottom: 8px;">Press Release — December 4, 2025 • San Francisco, CA</p>
-            <h3>PACC Launches Revolutionary Hydrogen Market-Making Platform</h3>
-            <p>PACC, a pioneering hydrogen and specialty gases market-maker, today announced the official launch of its innovative platform designed to accelerate the energy transition by connecting molecule producers with enterprise customers at scale.</p>
+          <article class="team-card">
+            <img src="../../data/exec-images/patrick.png" alt="Patrick Lyons" />
+            <h3>Patrick Lyons</h3>
+            <p class="role">COO & Co-Founder</p>
+            <p class="description">Logistics and operations expert focused on building scalable midstream infrastructure.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section cta-section">
       <div class="container">
-        <h2>Get in Touch</h2>
-        <p class="lead">Ready to accelerate the energy transition? Let's talk.</p>
-        <p style="text-align: center; margin-top: 24px;">Leadership — Executive Team — Contact Us</p>
+        <h2>Join the Network</h2>
+        <p class="lead">Let's connect and accelerate the energy transition together</p>
+        <a href="mailto:pat@pacc.services" class="btn primary large">Get Connected</a>
       </div>
     </section>
-
-    <footer class="section dark" style="padding: 40px 20px; text-align: center; border-top: 1px solid rgba(0, 217, 255, 0.2);">
-      <div class="container">
-        <p style="color: rgba(217, 233, 255, 0.7);">© 2025 PACC. All rights reserved.</p>
-      </div>
-    </footer>
 
     <script type="module" src="main.js"></script>
     <script src="../shared/demo-nav.js"></script>

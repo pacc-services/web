@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PACC Services — Carousel-first Mockup</title>
+    <title>PACC Services — Hydrogen Molecule Sculpture Hero</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../shared/demo-nav.css" />
   </head>
   <body>
-    <header class="nav">
-      <a class="brand" href="#hero">
+    <header class="site-header">
+      <a class="logo" href="#hero">
         <img src="../shared/pacc-logo.png" alt="PACC Services" />
-        <span>PACC Services</span>
+        <span>PACC</span><strong>Services</strong>
       </a>
       <nav>
         <a href="#approach">Approach</a>
@@ -25,120 +25,130 @@
       </nav>
     </header>
 
-    <main class="wrap">
-      <section id="hero" class="hero">
-        <div>
-          <p class="pill">Hydrogen & specialty gases • Logistics • Market‑making</p>
-          <h1>The bridge between molecule producers and customers</h1>
-          <p class="lede">Trustworthy, rounded particle visuals and a vivid carousel bring the PACC story forward.</p>
-          <div class="actions">
-            <a class="primary" href="#contact">Talk to Us</a>
-            <a class="ghost" href="#approach">How We Work</a>
-          </div>
-        </div>
-        <div class="orb">
-          <div class="inner">PAC</div>
-          <div class="inner small">C</div>
-        </div>
-      </section>
+    <section id="hero" class="hero">
+      <canvas id="molecule-canvas"></canvas>
+      <div class="grid-overlay"></div>
+      
+      <div class="molecule-container">
+        <div class="atom atom-1"></div>
+        <div class="atom atom-2"></div>
+        <div class="bond"></div>
+        <div class="electron-cloud"></div>
+      </div>
 
-      <section id="approach" class="panel">
+      <div class="hero-content">
+        <p class="pill">H₂ • Hydrogen & Energy Transition</p>
+        <h1>Powering the future with hydrogen molecules</h1>
+        <p class="lede">
+          From production to delivery, we connect the hydrogen economy—building bridges between 
+          supply and demand in the energy transition.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Talk to Us</a>
+          <a class="btn ghost" href="#approach">Our Approach</a>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-label">Production</span>
+          <span class="stat-value">De-risked</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Demand</span>
+          <span class="stat-value">Aggregated</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Logistics</span>
+          <span class="stat-value">Optimized</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="section">
+      <div class="container">
         <h2>Our Approach</h2>
-        <p>We de‑risk production, aggregate demand, and create structured pathways for molecules.</p>
+        <p class="lead">Transforming the hydrogen market through strategic intermediation</p>
         <div class="grid">
-          <div class="card">De‑risk Production — Commercial certainty via structured offtake, credit support, and long‑term agreements.</div>
-          <div class="card">Aggregate Demand — Create liquidity and price transparency; build scalable customer funnels.</div>
-          <div class="card">Optimize Logistics — Trailers, storage, pipelines—optimize midstream to lower delivered costs and improve reliability.</div>
-          <div class="card">Market‑Maker — Act as trusted intermediary to take market risk so producers can focus on operations.</div>
-        </div>
-      </section>
-
-      <section id="problem" class="panel split">
-        <div>
-          <h2>Market Problem</h2>
-          <ul>
-            <li><strong>Stranded Molecules:</strong> Producers lack offtake certainty—limiting investment and scale.</li>
-            <li><strong>Commercial Barriers:</strong> Credit requirements, risk exposure, and illiquidity stall deals.</li>
-            <li><strong>High Delivered Costs:</strong> Fragmented supply, complex logistics, unreliable delivery.</li>
-            <li><strong>No Market‑Maker:</strong> Emerging markets lack a trusted intermediary to connect supply and demand.</li>
-          </ul>
-        </div>
-        <div class="card glass">
-          <h3>PACC Solution</h3>
-          <p>PACC connects producers and customers, turning stranded molecules into scalable markets.</p>
-          <ul>
-            <li>Unlock value for producers through commercial certainty</li>
-            <li>De‑risk transactions as a trusted intermediary</li>
-            <li>Lower delivered costs by aggregating volumes and optimizing logistics</li>
-            <li>Create liquidity and price transparency in emerging molecules</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="leadership" class="panel">
-        <h2>Leadership Team</h2>
-        <div class="founders">
-          <article>
-            <img src="../shared/andrew.png" alt="Andrew Carman" />
-            <div>
-              <h3>Andrew Carman — CEO</h3>
-              <p>Energy executive across hydrogen, industrial gases, and clean fuels.</p>
-              <a class="linkedin" href="https://www.linkedin.com/in/andrew-carman">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-                LinkedIn
-              </a>
-            </div>
+          <article class="card">
+            <div class="icon">→</div>
+            <h3>De‑risk Production</h3>
+            <p>Commercial certainty via structured offtake, credit support, and long‑term agreements.</p>
           </article>
-          <article>
-            <img src="../../data/exec-images/patrick.png" alt="Patrick Charette" />
-            <div>
-              <h3>Patrick Charette — CCO</h3>
-              <p>Entrepreneurial hydrogen leader with experience at BayoTech, Nikola, Linde, and Praxair.</p>
-              <a class="linkedin" href="https://www.linkedin.com/in/patrick-charette">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-                LinkedIn
-              </a>
-            </div>
+          <article class="card">
+            <div class="icon">↔</div>
+            <h3>Aggregate Demand</h3>
+            <p>Create liquidity and price transparency; build scalable customer funnels.</p>
+          </article>
+          <article class="card">
+            <div class="icon">↗</div>
+            <h3>Optimize Logistics</h3>
+            <p>Trailers, storage, pipelines—optimize midstream to lower delivered costs.</p>
+          </article>
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>Market‑Making</h3>
+            <p>Act as trusted intermediary to take market risk so producers can focus on operations.</p>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="news" class="panel news">
-        <div class="carousel">
-          <button class="arrow prev" aria-label="Previous article">‹</button>
-          <div class="frame">
-            <div class="track">
-              <article>
-                <p class="meta">Press Release — January 15, 2025 • San Francisco, CA</p>
-                <h3>PACC Unveils Real-Time Tracking for Hydrogen Trailers During Order Processing</h3>
-                <p>Groundbreaking visibility into hydrogen trailer locations and status throughout order processing.</p>
-              </article>
-              <article>
-                <p class="meta">Press Release — December 4, 2025 • San Francisco, CA</p>
-                <h3>PACC Launches Hydrogen Market-Making Platform</h3>
-                <p>Connecting molecule producers with enterprise customers at scale to accelerate the energy transition.</p>
-              </article>
-              <article>
-                <p class="meta">Press Release — October 8, 2024 • Houston, TX</p>
-                <h3>PACC Expands to Texas</h3>
-                <p>Regional hub established to serve the rapidly growing hydrogen market across the Gulf Coast.</p>
-              </article>
-            </div>
+    <section id="problem" class="section dark">
+      <div class="container">
+        <h2>Market Problem</h2>
+        <p class="lead">The hydrogen economy faces critical barriers to scale</p>
+        <div class="problem-solution">
+          <div class="problem-card">
+            <h3>Challenges</h3>
+            <ul>
+              <li>Stranded production capacity</li>
+              <li>Fragmented customer base</li>
+              <li>High delivered costs</li>
+              <li>No neutral market-maker</li>
+            </ul>
           </div>
-          <button class="arrow next" aria-label="Next article">›</button>
+          <div class="solution-card">
+            <h3>PACC Solution</h3>
+            <ul>
+              <li>Unlock value through commercial certainty</li>
+              <li>De‑risk transactions as trusted intermediary</li>
+              <li>Lower costs via volume aggregation</li>
+              <li>Create liquidity and price transparency</li>
+            </ul>
+          </div>
         </div>
-        <div class="dots"></div>
-      </section>
+      </div>
+    </section>
 
-      <section id="contact" class="panel contact">
-        <h2>Get in Touch</h2>
-        <p>Let's discuss offtake, logistics, or partnership opportunities.</p>
-        <div class="cta-row">
-          <a href="#leadership">Leadership</a>
-          <a href="#contact" class="primary">Contact Us</a>
+    <section id="leadership" class="section">
+      <div class="container">
+        <h2>Leadership Team</h2>
+        <p class="lead">Industry veterans driving the hydrogen revolution</p>
+        <div class="founders-grid">
+          <article class="founder-card">
+            <img src="../shared/andrew.png" alt="Andrew Carman" />
+            <h3>Andrew Carman</h3>
+            <p class="title">CEO & Co-Founder</p>
+            <p class="bio">Senior energy executive spanning hydrogen, industrial gases, and clean fuels with leadership roles at Uniper, Nikola, and Linde.</p>
+          </article>
+          <article class="founder-card">
+            <img src="../../data/exec-images/patrick.png" alt="Patrick Lyons" />
+            <h3>Patrick Lyons</h3>
+            <p class="title">COO & Co-Founder</p>
+            <p class="bio">Energy logistics expert and former founder with deep experience in midstream operations and market development.</p>
+          </article>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+
+    <section id="contact" class="section cta-section">
+      <div class="container">
+        <h2>Ready to accelerate the energy transition?</h2>
+        <p class="lead">Let's build the hydrogen economy together</p>
+        <a href="mailto:pat@pacc.services" class="btn primary large">Get in Touch</a>
+      </div>
+    </section>
 
     <script type="module" src="main.js"></script>
     <script src="../shared/demo-nav.js"></script>

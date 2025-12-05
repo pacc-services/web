@@ -6,17 +6,12 @@
     { id: '01', title: 'Enhanced Hero', path: '/demo/mockup-01/index.html' },
     { id: '02', title: 'Split-Screen', path: '/demo/mockup-02/index.html' },
     { id: '03', title: 'Radical Scroll', path: '/demo/mockup-03/index.html' },
-    { id: '04', title: 'Orbital Circle', path: '/demo/mockup-04/index.html' },
-    { id: '05', title: 'Hydrogen H₂', path: '/demo/mockup-05/index.html' },
-    { id: '06', title: 'Carousel Forward', path: '/demo/mockup-06/index.html' },
-    { id: '07', title: 'Reactor Core', path: '/demo/mockup-07/index.html' },
-    { id: '08', title: 'Molecule Sculpture', path: '/demo/mockup-08/index.html' },
-    { id: '09', title: 'Energy Grid', path: '/demo/mockup-09/index.html' },
-    { id: '10', title: 'Hydrogen Bridge', path: '/demo/mockup-10/index.html' },
-    { id: '11', title: 'H₂ Molecule', path: '/demo/mockup-11/index.html' },
-    { id: '12', title: 'Supply Chain Island', path: '/demo/mockup-12/index.html' },
-    { id: '13', title: 'Energy Tunnel', path: '/demo/mockup-13/index.html' },
-    { id: '14', title: 'Crystal Chamber', path: '/demo/mockup-14/index.html' },
+    { id: '04', title: 'Hydrogen H₂', path: '/demo/mockup-04/index.html' },
+    { id: '05', title: 'Reactor Core', path: '/demo/mockup-05/index.html' },
+    { id: '06', title: 'Energy Grid', path: '/demo/mockup-06/index.html' },
+    { id: '07', title: 'Hydrogen Bridge', path: '/demo/mockup-07/index.html' },
+    { id: '08', title: 'H₂ Molecule', path: '/demo/mockup-08/index.html' },
+    { id: '09', title: 'H₂ Molecule', path: '/demo/mockup-09/index.html' },
   ];
 
   // Get current mockup ID from path

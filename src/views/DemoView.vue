@@ -96,92 +96,52 @@ const mockups = [
     badge: '03',
   },
   {
-    title: 'Mockup 04 — Orbital Circle',
-    subtitle: 'Circular canvas with centered story',
+    title: 'Mockup 04 — Hydrogen H₂',
+    subtitle: 'Three.js H₂ sculpture with particles',
     description:
-      'A circular hero core surrounded by ringed content blocks, refreshed logos, and leadership images with LinkedIn links.',
+      'Massive hydrogen molecule rendered in Three.js with softer particle fields, glass panels, and animated news carousel.',
     href: '/demo/mockup-04/index.html',
     badge: '04',
   },
   {
-    title: 'Mockup 05 — Hydrogen H₂',
-    subtitle: 'Three.js H₂ sculpture + round particles',
+    title: 'Mockup 05 — Reactor Core',
+    subtitle: 'Hydrogen reactor with energy pulses',
     description:
-      'Massive hydrogen molecule rendered in Three.js with softer particle fields, glass panels, and animated news carousel.',
+      'Full-viewport cylindrical chamber with rotating reactor core, glowing hydrogen sun, and animated energy arcs.',
     href: '/demo/mockup-05/index.html',
     badge: '05',
   },
   {
-    title: 'Mockup 06 — Carousel Forward',
-    subtitle: 'News-first layout with bold circle hero',
+    title: 'Mockup 06 — Energy Grid',
+    subtitle: 'Network visualization with nodes',
     description:
-      'Rounded hero treatments, updated logo styling, LinkedIn founder badges, and a punchy carousel for announcements.',
+      'Top-down view of glowing energy network with animated node clusters and light pulses traveling along connections.',
     href: '/demo/mockup-06/index.html',
     badge: '06',
   },
   {
-    title: 'Mockup 07 — Reactor Core',
-    subtitle: 'Hydrogen reactor with concentric rings and energy pulses',
+    title: 'Mockup 07 — Hydrogen Bridge',
+    subtitle: 'Crystalline suspension bridge',
     description:
-      'Full-viewport cylindrical chamber with rotating reactor core, glowing hydrogen sun, and animated energy arcs.',
+      'A crystalline suspension bridge metaphor connecting today\'s energy landscape to tomorrow\'s hydrogen future with 3D glass bridge, energy pulses, and interactive carousel.',
     href: '/demo/mockup-07/index.html',
     badge: '07',
   },
   {
-    title: 'Mockup 08 — Molecule Sculpture',
-    subtitle: 'Giant H₂ molecule with electron cloud particles',
+    title: 'Mockup 08 — H₂ Molecule',
+    subtitle: 'Giant refractive molecule',
     description:
-      'Massive stylized hydrogen molecule floating in void-like space with orbital electron particles and prismatic effects.',
+      'Giant refractive hydrogen molecule at the center of an orbiting founder constellation with GPU-like electron trails and scroll-based molecule fracture.',
     href: '/demo/mockup-08/index.html',
     badge: '08',
   },
   {
-    title: 'Mockup 09 — Energy Grid',
-    subtitle: 'Network visualization with pulsing nodes and connections',
+    title: 'Mockup 09 — H₂ Molecule',
+    subtitle: 'Advanced molecule visualization',
     description:
-      'Top-down view of glowing energy network with animated node clusters and light pulses traveling along connections.',
+      'Giant refractive hydrogen molecule visualization with advanced particle effects and interactive elements.',
     href: '/demo/mockup-09/index.html',
     badge: '09',
-  },
-  {
-    title: 'Mockup 10 — Hydrogen Bridge',
-    subtitle: 'Crystalline suspension bridge metaphor',
-    description:
-      'A crystalline suspension bridge metaphor connecting today\'s energy landscape to tomorrow\'s hydrogen future with 3D glass bridge, energy pulses, and interactive carousel.',
-    href: '/demo/mockup-10/index.html',
-    badge: '10',
-  },
-  {
-    title: 'Mockup 11 — H₂ Molecule',
-    subtitle: 'Giant refractive hydrogen molecule',
-    description:
-      'Giant refractive hydrogen molecule at the center of an orbiting founder constellation with GPU-like electron trails and scroll-based molecule fracture.',
-    href: '/demo/mockup-11/index.html',
-    badge: '11',
-  },
-  {
-    title: 'Mockup 12 — Supply Chain Island',
-    subtitle: 'Floating isometric mini-world',
-    description:
-      'Floating isometric mini-world showcasing the complete hydrogen supply chain ecosystem with animated pipelines and mini trucks on patrol routes.',
-    href: '/demo/mockup-12/index.html',
-    badge: '12',
-  },
-  {
-    title: 'Mockup 13 — Energy Tunnel',
-    subtitle: 'Immersive forward-motion tunnel',
-    description:
-      'Immersive forward-motion tunnel accelerating into the hydrogen future with metallic ring tunnel structure and high-speed particle streaks.',
-    href: '/demo/mockup-13/index.html',
-    badge: '13',
-  },
-  {
-    title: 'Mockup 14 — Crystal Chamber',
-    subtitle: 'Dramatic crystal chamber with holographic spotlight',
-    description:
-      'Dramatic crystal chamber with holographic leadership spotlight and dissolving lattice featuring refractive crystal shards and volumetric fog particles.',
-    href: '/demo/mockup-14/index.html',
-    badge: '14',
   },
 ]
 </script>
