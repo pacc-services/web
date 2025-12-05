@@ -2,19 +2,21 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.164/build/three.mod
 import { createRenderer, createCamera, handleResize, createParticleField, pulseMaterial } from '../shared/three-utils.js'
 
 const canvas = document.getElementById('hero-canvas')
+if (!canvas) return
+
 const scene = new THREE.Scene()
-scene.fog = new THREE.FogExp2(0x00162f, 0.005)
+scene.fog = new THREE.FogExp2(0x003355, 0.005)
 
 const camera = createCamera(canvas, 65, 0.1, 500)
 const renderer = createRenderer(canvas)
 
-const particles = createParticleField(1000, 180, 0x8ad78a)
+const particles = createParticleField(800, 180, 0x5cb85c)
 scene.add(particles)
 
 const geometry = new THREE.TorusKnotGeometry(16, 4, 200, 16)
 const material = new THREE.MeshStandardMaterial({
   color: 0x00497a,
-  emissive: 0x002238,
+  emissive: 0x003355,
   metalness: 0.6,
   roughness: 0.2,
   transparent: true,
@@ -27,12 +29,14 @@ scene.add(torus)
 const light = new THREE.PointLight(0x5cb85c, 2, 200)
 light.position.set(30, 20, 40)
 scene.add(light)
-scene.add(new THREE.AmbientLight(0x99caff, 0.6))
+scene.add(new THREE.AmbientLight(0x0066a6, 0.6))
 
 handleResize(renderer, camera, canvas)
 
 let mouseX = 0
 let mouseY = 0
+let animationId = null
+let isPageVisible = true
 
 document.addEventListener('pointermove', (event) => {
   const x = (event.clientX / window.innerWidth) * 2 - 1
@@ -41,8 +45,21 @@ document.addEventListener('pointermove', (event) => {
   mouseY = y
 })
 
+// Pause animation when tab is not visible
+document.addEventListener('visibilitychange', () => {
+  isPageVisible = !document.hidden
+  if (!isPageVisible && animationId) {
+    cancelAnimationFrame(animationId)
+    animationId = null
+  } else if (isPageVisible && !animationId) {
+    animate(performance.now())
+  }
+})
+
 function animate(time) {
-  requestAnimationFrame(animate)
+  if (!isPageVisible) return
+  
+  animationId = requestAnimationFrame(animate)
   const t = time * 0.001
   torus.rotation.x += 0.002
   torus.rotation.y += 0.003

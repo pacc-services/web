@@ -3,7 +3,7 @@ import { createRenderer, createCamera, handleResize, createParticleField, create
 
 const canvas = document.getElementById('radical-canvas')
 const scene = new THREE.Scene()
-scene.fog = new THREE.FogExp2(0x030a12, 0.006)
+scene.fog = new THREE.FogExp2(0x003355, 0.006)
 
 const camera = createCamera(canvas, 70, 0.1, 2000)
 camera.position.set(0, 0, 140)
@@ -26,7 +26,7 @@ const rings = new THREE.Group()
 for (let i = 0; i < 5; i++) {
   const ring = new THREE.Mesh(
     new THREE.TorusGeometry(24 + i * 8, 0.7 + i * 0.2, 16, 150),
-    new THREE.MeshStandardMaterial({ color: 0x5cb85c, emissive: 0x1c532d, metalness: 0.6, roughness: 0.25, transparent: true, opacity: 0.7 }),
+    new THREE.MeshStandardMaterial({ color: 0x5cb85c, emissive: 0x003355, metalness: 0.6, roughness: 0.25, transparent: true, opacity: 0.7 }),
   )
   ring.rotation.x = Math.PI / 2
   rings.add(ring)
@@ -37,7 +37,7 @@ scene.add(rings)
 const glow = new THREE.PointLight(0x5cb85c, 2, 260)
 glow.position.set(0, 50, 40)
 scene.add(glow)
-scene.add(new THREE.AmbientLight(0x7bb6ff, 0.5))
+scene.add(new THREE.AmbientLight(0x0066a6, 0.5))
 
 const sections = Array.from(document.querySelectorAll('.chapter'))
 const maxDepth = Math.max(...sections.map((s) => Number(s.dataset.depth)))

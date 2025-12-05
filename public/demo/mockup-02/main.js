@@ -27,13 +27,13 @@ initScene('split-hero', (scene) => {
   scene.add(particles)
   const torus = new THREE.Mesh(
     new THREE.TorusGeometry(24, 6, 16, 120),
-    new THREE.MeshStandardMaterial({ color: 0x0066a6, emissive: 0x001f32, metalness: 0.7, roughness: 0.35 }),
+    new THREE.MeshStandardMaterial({ color: 0x0066a6, emissive: 0x003355, metalness: 0.7, roughness: 0.35 }),
   )
   scene.add(torus)
   const light = new THREE.PointLight(0xffffff, 1.4, 400)
   light.position.set(40, 30, 60)
   scene.add(light)
-  scene.add(new THREE.AmbientLight(0x7bb6ff, 0.4))
+  scene.add(new THREE.AmbientLight(0x0066a6, 0.4))
   scene.userData = { particles, torus }
 })
 
@@ -44,7 +44,7 @@ initScene('split-approach', (scene) => {
   const prism = createLowPolyPrism(20, 42, 0x5cb85c)
   prism.rotation.x = Math.PI / 5
   scene.add(prism)
-  const light = new THREE.SpotLight(0x7fe27f, 2, 220, Math.PI / 6, 0.5, 1)
+  const light = new THREE.SpotLight(0x5cb85c, 2, 220, Math.PI / 6, 0.5, 1)
   light.position.set(50, 60, 70)
   scene.add(light)
   scene.add(new THREE.AmbientLight(0xffffff, 0.3))
@@ -52,7 +52,7 @@ initScene('split-approach', (scene) => {
 })
 
 initScene('split-problem', (scene) => {
-  const particles = createParticleField(900, 180, 0x8ad78a)
+  const particles = createParticleField(800, 180, 0x5cb85c)
   scene.add(particles)
   const wire = new THREE.Mesh(
     new THREE.IcosahedronGeometry(30, 0),
@@ -93,7 +93,7 @@ initScene('split-news', (scene) => {
   for (let i = 0; i < 4; i++) {
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(20 + i * 6, 0.9, 8, 80),
-      new THREE.MeshStandardMaterial({ color: 0x00497a, emissive: 0x00172a, metalness: 0.6, roughness: 0.2 }),
+      new THREE.MeshStandardMaterial({ color: 0x00497a, emissive: 0x003355, metalness: 0.6, roughness: 0.2 }),
     )
     ring.rotation.x = (i * Math.PI) / 8
     ring.rotation.y = (i * Math.PI) / 10
@@ -121,14 +121,29 @@ initScene('split-contact', (scene) => {
   }
   scene.add(nodes)
   scene.add(new THREE.AmbientLight(0xffffff, 0.6))
-  const light = new THREE.PointLight(0x7fe27f, 1.5, 180)
+  const light = new THREE.PointLight(0x5cb85c, 1.5, 180)
   light.position.set(40, 40, 60)
   scene.add(light)
   scene.userData = { grid, nodes }
 })
 
+let animationId = null
+let isPageVisible = true
+
+document.addEventListener('visibilitychange', () => {
+  isPageVisible = !document.hidden
+  if (!isPageVisible && animationId) {
+    cancelAnimationFrame(animationId)
+    animationId = null
+  } else if (isPageVisible && !animationId) {
+    render(performance.now())
+  }
+})
+
 function render(time) {
-  requestAnimationFrame(render)
+  if (!isPageVisible) return
+  
+  animationId = requestAnimationFrame(render)
   const t = time * 0.001
   scenes.forEach(({ scene, camera, renderer }) => {
     if (scene.userData.torus) {

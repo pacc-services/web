@@ -12,20 +12,20 @@
   </head>
   <body>
     <header class="site-header">
-      <a href="#hero" class="logo">
-        <img src="../shared/pacc-logo.png" alt="PACC Services" style="height: 40px; margin-right: 8px;" />
-        <span>PACC<span style="color: var(--brand-green);">Services</span></span>
+      <a href="#" class="logo">
+        <img src="../shared/pacc-logo.png" alt="PACC" style="height: 40px; margin-right: 8px;" />
       </a>
       <nav>
         <a href="#approach">Approach</a>
-        <a href="#problem">Problem</a>
+        <a href="#problem">Market</a>
+        <a href="#solution">Solution</a>
         <a href="#leadership">Leadership</a>
         <a href="#news">News</a>
-        <a href="#contact" class="cta">Talk to Us</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
       <canvas id="hero-canvas"></canvas>
       <div class="hero-content">
         <p class="pill">Hydrogen & specialty gases • Logistics • Market‑making</p>
@@ -40,22 +40,16 @@
         </div>
       </div>
       <div class="hero-card">
-        <div class="stat">
-          <span>De‑risk Production</span>
-          <p>Commercial certainty via structured offtake, credit support, and long‑term agreements.</p>
-        </div>
-        <div class="stat">
-          <span>Aggregate Demand</span>
-          <p>Create liquidity and price transparency; build scalable customer funnels.</p>
-        </div>
-        <div class="stat">
-          <span>Optimize Logistics</span>
-          <p>Trailers, storage, pipelines—optimize midstream to lower delivered costs and improve reliability.</p>
-        </div>
-        <div class="stat">
-          <span>Market‑Maker</span>
-          <p>Act as trusted intermediary to take market risk so producers can focus on operations.</p>
-        </div>
+        <h2>Our Impact</h2>
+        <p>
+          PACC accelerates the commercialization of molecules by unlocking new markets, reducing risks
+          to producers, and delivering a reliable supply to customers.
+        </p>
+        <ul>
+          <li>Producer‑first mindset and aligned incentives</li>
+          <li>Structured offtake, credit support, and logistics optimization</li>
+          <li>Trust and reliability through disciplined, scalable execution</li>
+        </ul>
       </div>
     </section>
 
@@ -75,7 +69,7 @@
     <section id="problem" class="section alt">
       <div class="two-col">
         <div>
-          <p class="eyebrow">Market Problem</p>
+          <h2>Market Problem</h2>
           <ul class="list">
             <li><strong>Stranded Molecules:</strong> Producers lack offtake certainty—limiting investment and scale.</li>
             <li><strong>Commercial Barriers:</strong> Credit requirements, risk exposure, and illiquidity stall deals.</li>
@@ -83,7 +77,7 @@
             <li><strong>No Market‑Maker:</strong> Emerging markets lack a trusted intermediary to connect supply and demand.</li>
           </ul>
         </div>
-        <div class="solution card">
+        <div id="solution" class="solution card">
           <h3>PACC Solution</h3>
           <p>PACC connects producers and customers, turning stranded molecules into scalable markets.</p>
           <ul class="list">
@@ -104,11 +98,12 @@
       <div class="grid two">
         <article class="card bio">
           <div class="bio-head">
-            <img src="../shared/andrew.png" alt="Andrew Carman" class="avatar" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover;" />
+            <img src="../shared/andrew.png" alt="Andrew Carman" class="avatar" />
             <div>
               <h3>Andrew Carman</h3>
               <p class="role">CEO</p>
             </div>
+            <a href="https://www.linkedin.com/in/andrew-carman-mba-a086a5b" target="_blank" rel="noopener" class="linkedin-link">LinkedIn</a>
           </div>
           <p>
             A senior energy executive with extensive experience in hydrogen, industrial gases, and clean fuels. At Uniper,
@@ -122,11 +117,12 @@
         </article>
         <article class="card bio">
           <div class="bio-head">
-            <img src="../../data/exec-images/patrick.png" alt="Patrick Charette" class="avatar" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover;" />
+            <img src="../shared/patrick.png" alt="Patrick Charette" class="avatar" />
             <div>
               <h3>Patrick Charette</h3>
               <p class="role">CCO</p>
             </div>
+            <a href="https://www.linkedin.com/in/patrick-charette" target="_blank" rel="noopener" class="linkedin-link">LinkedIn</a>
           </div>
           <p>
             An energy executive and entrepreneur with extensive leadership experience in hydrogen and industrial gases. As Head
@@ -144,37 +140,56 @@
     <section id="news" class="section alt">
       <div class="section-header center">
         <p class="eyebrow">News & Announcements</p>
-        <h2>Latest updates from PACC.</h2>
+        <h2>Stay updated with the latest developments from PACC</h2>
       </div>
-      <div class="grid three news">
-        <article class="card">
+      <div class="grid news-grid">
+        <article class="card news-card">
           <p class="category">Press Release — January 15, 2025 • San Francisco, CA</p>
           <h3>PACC Unveils Revolutionary Real-Time Tracking Feature for Hydrogen Trailers During Order Processing</h3>
           <p class="excerpt">PACC today announced the launch of PACC Track, a groundbreaking real-time tracking system that provides unprecedented visibility into hydrogen trailer locations and status throughout the entire order processing lifecycle.</p>
         </article>
-        <article class="card">
-          <p class="category">Press Release — December 4, 2025 • San Francisco, CA</p>
+        <article class="card news-card">
+          <p class="category">Press Release — December 4, 2024 • San Francisco, CA</p>
           <h3>PACC Launches Revolutionary Hydrogen Market-Making Platform to Bridge Energy Transition Gap</h3>
           <p class="excerpt">PACC, a pioneering hydrogen and specialty gases market-maker, today announced the official launch of its innovative platform designed to accelerate the energy transition by connecting molecule producers with enterprise customers at scale.</p>
         </article>
-        <article class="card">
+        <article class="card news-card">
+          <p class="category">Partnership — November 12, 2024 • San Francisco, CA</p>
+          <h3>PACC Partners with GridStor to Expand Hydrogen Storage Solutions</h3>
+          <p class="excerpt">PACC today announced a strategic partnership with GridStor, a leading energy storage developer, to expand hydrogen storage solutions and enhance supply chain reliability for customers across North America.</p>
+        </article>
+        <article class="card news-card">
           <p class="category">Press Release — October 8, 2024 • Houston, TX</p>
           <h3>PACC Expands Operations to Texas, Establishing Regional Hub for Hydrogen Market-Making</h3>
           <p class="excerpt">PACC today announced the expansion of its operations to Texas, establishing a regional hub in Houston to serve the rapidly growing hydrogen market in the Gulf Coast region, home to some of the nation's largest hydrogen production facilities.</p>
+        </article>
+        <article class="card news-card">
+          <p class="category">Milestone — September 20, 2024 • San Francisco, CA</p>
+          <h3>PACC Processes Millionth Kilogram of Hydrogen, Demonstrating Market-Making Scale</h3>
+          <p class="excerpt">PACC today announced a significant milestone: processing its millionth kilogram of hydrogen, demonstrating the company's ability to scale market-making operations and serve enterprise customers at volume.</p>
+        </article>
+        <article class="card news-card">
+          <p class="category">Funding — August 15, 2024 • San Francisco, CA</p>
+          <h3>PACC Secures Series A Funding to Accelerate Hydrogen Market Infrastructure</h3>
+          <p class="excerpt">PACC today announced the close of its Series A funding round, securing significant capital to accelerate the development of hydrogen market infrastructure and expand operations across North America.</p>
+        </article>
+        <article class="card news-card">
+          <p class="category">Recognition — July 10, 2024 • San Francisco, CA</p>
+          <h3>PACC Named Top Innovator in Energy Transition by Industry Leaders</h3>
+          <p class="excerpt">PACC has been recognized as a top innovator in the energy transition by leading industry organizations, highlighting the company's role in advancing hydrogen market infrastructure.</p>
         </article>
       </div>
     </section>
 
     <section id="contact" class="section contact">
       <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Get in Touch</h2>
-        <p>Let's discuss offtake, logistics, or partnership opportunities.</p>
+        <p class="eyebrow">Get in Touch</p>
+        <h2>Let's discuss offtake, logistics, or partnership opportunities.</h2>
         <div class="contact-card">Leadership — Executive Team — Contact Us</div>
       </div>
     </section>
 
-    <footer class="footer">© PACC Services — The bridge between molecule producers and customers.</footer>
+    <footer class="footer">© 2025 PACC. All rights reserved.</footer>
 
     <script type="module" src="main.js"></script>
     <script src="../shared/demo-nav.js"></script>
