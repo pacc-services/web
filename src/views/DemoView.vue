@@ -8,12 +8,12 @@
           Explore the PACC services design mockups
         </h1>
         <p class="text-lg text-slate-200/90 max-w-3xl leading-relaxed">
-          A dedicated demo hub linking to three immersive static mockups of the pacc.services site. Each mockup keeps the
+          A dedicated demo hub linking to immersive static mockups of the pacc.services site. Each mockup keeps the
           original content and palette while experimenting with distinct layouts and Three.js-driven visuals.
         </p>
       </section>
 
-      <section class="max-w-6xl mx-auto px-6 lg:px-10 mt-10 grid gap-6 lg:grid-cols-3">
+      <section class="max-w-6xl mx-auto px-6 lg:px-10 mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <article
           v-for="mockup in mockups"
           :key="mockup.href"
@@ -96,6 +96,94 @@ const mockups = [
       'Immersive, chapter-based experience with camera moves tied to scroll, neon grid motifs, and the full PACC copy.',
     href: '/demo/mockup-c-radical/',
     badge: 'C',
+  },
+  {
+    title: 'Mockup D — Orbital Circle',
+    subtitle: 'Circular canvas with centered story',
+    description:
+      'A circular hero core surrounded by ringed content blocks, refreshed logos, and leadership images with LinkedIn links.',
+    href: '/demo/mockup-d-orbital/',
+    badge: 'D',
+  },
+  {
+    title: 'Mockup E — Hydrogen H₂',
+    subtitle: 'Three.js H₂ sculpture + round particles',
+    description:
+      'Massive hydrogen molecule rendered in Three.js with softer particle fields, glass panels, and animated news carousel.',
+    href: '/demo/mockup-e-h2/',
+    badge: 'E',
+  },
+  {
+    title: 'Mockup F — Carousel Forward',
+    subtitle: 'News-first layout with bold circle hero',
+    description:
+      'Rounded hero treatments, updated logo styling, LinkedIn founder badges, and a punchy carousel for announcements.',
+    href: '/demo/mockup-f-carousel/',
+    badge: 'F',
+  },
+  {
+    title: 'Mockup G — Reactor Core',
+    subtitle: 'Hydrogen reactor with concentric rings and energy pulses',
+    description:
+      'Full-viewport cylindrical chamber with rotating reactor core, glowing hydrogen sun, and animated energy arcs.',
+    href: '/demo/mockup-g-reactor/',
+    badge: 'G',
+  },
+  {
+    title: 'Mockup H — Molecule Sculpture',
+    subtitle: 'Giant H₂ molecule with electron cloud particles',
+    description:
+      'Massive stylized hydrogen molecule floating in void-like space with orbital electron particles and prismatic effects.',
+    href: '/demo/mockup-h-molecule/',
+    badge: 'H',
+  },
+  {
+    title: 'Mockup I — Energy Grid',
+    subtitle: 'Network visualization with pulsing nodes and connections',
+    description:
+      'Top-down view of glowing energy network with animated node clusters and light pulses traveling along connections.',
+    href: '/demo/mockup-i-grid/',
+    badge: 'I',
+  },
+  {
+    title: 'Mockup 1 — Hydrogen Bridge',
+    subtitle: 'Crystalline suspension bridge metaphor',
+    description:
+      'A crystalline suspension bridge metaphor connecting today\'s energy landscape to tomorrow\'s hydrogen future with 3D glass bridge, energy pulses, and interactive carousel.',
+    href: '/mockups/mockup-1-bridge.html',
+    badge: '1',
+  },
+  {
+    title: 'Mockup 2 — H₂ Molecule',
+    subtitle: 'Giant refractive hydrogen molecule',
+    description:
+      'Giant refractive hydrogen molecule at the center of an orbiting founder constellation with GPU-like electron trails and scroll-based molecule fracture.',
+    href: '/mockups/mockup-2-molecule.html',
+    badge: '2',
+  },
+  {
+    title: 'Mockup 3 — Supply Chain Island',
+    subtitle: 'Floating isometric mini-world',
+    description:
+      'Floating isometric mini-world showcasing the complete hydrogen supply chain ecosystem with animated pipelines and mini trucks on patrol routes.',
+    href: '/mockups/mockup-3-island.html',
+    badge: '3',
+  },
+  {
+    title: 'Mockup 4 — Energy Tunnel',
+    subtitle: 'Immersive forward-motion tunnel',
+    description:
+      'Immersive forward-motion tunnel accelerating into the hydrogen future with metallic ring tunnel structure and high-speed particle streaks.',
+    href: '/mockups/mockup-4-tunnel.html',
+    badge: '4',
+  },
+  {
+    title: 'Mockup 5 — Crystal Chamber',
+    subtitle: 'Dramatic crystal chamber with holographic spotlight',
+    description:
+      'Dramatic crystal chamber with holographic leadership spotlight and dissolving lattice featuring refractive crystal shards and volumetric fog particles.',
+    href: '/mockups/mockup-5-crystal.html',
+    badge: '5',
   },
 ]
 </script>

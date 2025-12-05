@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PACC Services — Hydrogen Reactor Core Hero</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#hero">
+        <img src="../shared/pacc-logo.png" alt="PACC Services" />
+        <span>PACC</span><strong>Services</strong>
+      </a>
+      <nav>
+        <a href="#approach">Approach</a>
+        <a href="#problem">Problem</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#news">News</a>
+        <a href="#contact" class="cta">Talk to Us</a>
+      </nav>
+    </header>
+
+    <section id="hero" class="hero">
+      <canvas id="reactor-canvas"></canvas>
+      <div class="chamber-fog"></div>
+      <div class="hud-frame top-left"></div>
+      <div class="hud-frame top-right"></div>
+      <div class="hud-frame bottom-left"></div>
+      <div class="hud-frame bottom-right"></div>
+      
+      <div class="hero-content">
+        <p class="pill">Hydrogen & specialty gases • Logistics • Market‑making</p>
+        <h1>The bridge between molecule producers and customers</h1>
+        <p class="lede">
+          Our mission is to become the trusted bridge between producers and customers of the energy transition—delivering scale,
+          certainty, and value across dislocated markets.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Talk to Us</a>
+          <a class="btn ghost" href="#approach">How We Work</a>
+        </div>
+      </div>
+
+      <div class="reactor-core">
+        <div class="ring outer"></div>
+        <div class="ring middle"></div>
+        <div class="ring inner"></div>
+        <div class="core-sun"></div>
+        <div class="energy-arc arc-1"></div>
+        <div class="energy-arc arc-2"></div>
+        <div class="energy-arc arc-3"></div>
+      </div>
+
+      <div class="hero-card">
+        <div class="stat">
+          <span class="label">De‑risk Production</span>
+          <span class="value">Commercial certainty</span>
+        </div>
+        <div class="stat">
+          <span class="label">Aggregate Demand</span>
+          <span class="value">Build liquidity</span>
+        </div>
+        <div class="stat">
+          <span class="label">Optimize Logistics</span>
+          <span class="value">Lower costs</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="section">
+      <div class="container">
+        <h2>Our Approach</h2>
+        <p class="lead">We de‑risk production, aggregate demand, and create structured pathways for molecules.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>De‑risk Production</h3>
+            <p>Commercial certainty via structured offtake, credit support, and long‑term agreements.</p>
+          </article>
+          <article class="card">
+            <h3>Aggregate Demand</h3>
+            <p>Create liquidity and price transparency; build scalable customer funnels.</p>
+          </article>
+          <article class="card">
+            <h3>Optimize Logistics</h3>
+            <p>Trailers, storage, pipelines—optimize midstream to lower delivered costs and improve reliability.</p>
+          </article>
+          <article class="card">
+            <h3>Market‑Maker</h3>
+            <p>Act as trusted intermediary to take market risk so producers can focus on operations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section dark">
+      <div class="container">
+        <h2>Market Problem</h2>
+        <p class="lead">Stranded molecules, commercial barriers, high delivered costs, and no neutral market‑maker.</p>
+        <div class="solution-box">
+          <h3>PACC Solution</h3>
+          <p>PACC connects producers and customers, turning stranded molecules into scalable markets.</p>
+          <ul>
+            <li>Unlock value for producers through commercial certainty</li>
+            <li>De‑risk transactions as a trusted intermediary</li>
+            <li>Lower delivered costs by aggregating volumes and optimizing logistics</li>
+            <li>Create liquidity and price transparency in emerging molecules</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <p class="lead">Ready to accelerate the energy transition? Let's talk.</p>
+        <a href="mailto:pat@pacc.services" class="btn primary large">Contact Us</a>
+      </div>
+    </section>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

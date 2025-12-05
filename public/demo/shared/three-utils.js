@@ -32,6 +32,30 @@ export function handleResize(renderer, camera, container) {
   return () => window.removeEventListener('resize', resize)
 }
 
+function createSoftParticleTexture() {
+  const size = 128
+  const canvas = document.createElement('canvas')
+  canvas.width = size
+  canvas.height = size
+  const ctx = canvas.getContext('2d')
+  const gradient = ctx.createRadialGradient(
+    size / 2,
+    size / 2,
+    size / 16,
+    size / 2,
+    size / 2,
+    size / 2,
+  )
+  gradient.addColorStop(0, 'rgba(255,255,255,0.95)')
+  gradient.addColorStop(0.5, 'rgba(255,255,255,0.25)')
+  gradient.addColorStop(1, 'rgba(255,255,255,0)')
+  ctx.fillStyle = gradient
+  ctx.fillRect(0, 0, size, size)
+  const texture = new THREE.CanvasTexture(canvas)
+  texture.needsUpdate = true
+  return texture
+}
+
 export function createParticleField(count = 500, spread = 120, color = 0x5cb85c) {
   const geometry = new THREE.BufferGeometry()
   const positions = new Float32Array(count * 3)
@@ -43,10 +67,12 @@ export function createParticleField(count = 500, spread = 120, color = 0x5cb85c)
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
   const material = new THREE.PointsMaterial({
     color,
-    size: 1.6,
+    size: 2.4,
     sizeAttenuation: true,
     transparent: true,
-    opacity: 0.9,
+    opacity: 0.92,
+    map: createSoftParticleTexture(),
+    depthWrite: false,
   })
   return new THREE.Points(geometry, material)
 }

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PACC - Three.js Mockups</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0a1929 0%, #1a2f4a 100%);
+      color: #fff;
+      padding: 3rem 2rem;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      background: linear-gradient(135deg, #00b894, #00d9ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: #fff;
+      display: block;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #00d9ff;
+      box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #00d9ff;
+    }
+    .card p {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .features {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .features li {
+      padding: 0.5rem 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+    .features li:before {
+      content: "✓ ";
+      color: #00b894;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #00b894, #00d9ff);
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PACC Three.js Mockups</h1>
+    <p class="subtitle">Interactive 3D visualizations showcasing the hydrogen ecosystem</p>
+    
+    <div class="grid">
+      <a href="mockup-1-bridge.html" class="card">
+        <h2>01 — Hydrogen Bridge</h2>
+        <p>A crystalline suspension bridge metaphor connecting today's energy landscape to tomorrow's hydrogen future.</p>
+        <ul class="features">
+          <li>3D glass bridge with energy pulses</li>
+          <li>Hydrogen bubble particles</li>
+          <li>Interactive carousel at bridge base</li>
+          <li>Mouse parallax effects</li>
+          <li>Scroll-responsive animations</li>
+        </ul>
+        <div class="cta">View Mockup →</div>
+      </a>
+
+      <a href="mockup-2-molecule.html" class="card">
+        <h2>02 — H₂ Molecule</h2>
+        <p>Giant refractive hydrogen molecule at the center of an orbiting founder constellation.</p>
+        <ul class="features">
+          <li>Refractive H₂ atom spheres</li>
+          <li>GPU-like electron trails</li>
+          <li>3D founder portrait carousel</li>
+          <li>Scroll-based molecule fracture</li>
+          <li>Dynamic lighting effects</li>
+        </ul>
+        <div class="cta">View Mockup →</div>
+      </a>
+
+      <a href="mockup-3-island.html" class="card">
+        <h2>03 — Supply Chain Island</h2>
+        <p>Floating isometric mini-world showcasing the complete hydrogen supply chain ecosystem.</p>
+        <ul class="features">
+          <li>Isometric floating island</li>
+          <li>Hydrogen plant infrastructure</li>
+          <li>Animated pipelines with energy pulses</li>
+          <li>Mini trucks on patrol routes</li>
+          <li>Circular 3D carousel beneath</li>
+        </ul>
+        <div class="cta">View Mockup →</div>
+      </a>
+
+      <a href="mockup-4-tunnel.html" class="card">
+        <h2>04 — Energy Tunnel</h2>
+        <p>Immersive forward-motion tunnel accelerating into the hydrogen future.</p>
+        <ul class="features">
+          <li>Metallic ring tunnel structure</li>
+          <li>High-speed particle streaks</li>
+          <li>Curved wall panel carousel</li>
+          <li>FOV-based acceleration feel</li>
+          <li>Hydrogen glyph displays</li>
+        </ul>
+        <div class="cta">View Mockup →</div>
+      </a>
+
+      <a href="mockup-5-crystal.html" class="card">
+        <h2>05 — Crystal Chamber</h2>
+        <p>Dramatic crystal chamber with holographic leadership spotlight and dissolving lattice.</p>
+        <ul class="features">
+          <li>Refractive crystal shards</li>
+          <li>Central hydrogen lattice</li>
+          <li>Holographic founder portrait</li>
+          <li>Scroll-based crystal dissolution</li>
+          <li>Volumetric fog particles</li>
+        </ul>
+        <div class="cta">View Mockup →</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PACC - Hydrogen Ecosystem</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0a1929;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 25, 41, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      height: 40px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #00d9ff;
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #canvas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .hero-overlay h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+    }
+    .hero-overlay p {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .leadership-band {
+      padding: 3rem 2rem;
+      background: #0d1f33;
+      text-align: center;
+    }
+    .leadership-band h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .founders-row {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .founder {
+      text-align: center;
+    }
+    .founder img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #00d9ff;
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+    }
+    .founder h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+    .founder p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="/logo_full_cropped.png" alt="PACC" class="logo">
+    <ul class="nav-links">
+      <li><a href="#what-we-do">What We Do</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#founders">Founders</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div id="canvas-container"></div>
+    <div class="hero-overlay">
+      <h1>H₂ Ecosystem</h1>
+      <p>At the center of the hydrogen future</p>
+    </div>
+  </section>
+
+  <section class="leadership-band" id="founders">
+    <h2>Leadership Team</h2>
+    <div class="founders-row">
+      <div class="founder">
+        <img src="https://github.com/user-attachments/assets/95f91b23-c3d0-4384-b3bd-4a2c0b8f07a0" alt="Patrick">
+        <h3>Patrick</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="founder">
+        <img src="https://github.com/user-attachments/assets/95f91b23-c3d0-4384-b3bd-4a2c0b8f07a0" alt="Leadership">
+        <h3>Leadership</h3>
+        <p>Co-Founder</p>
+      </div>
+      <div class="founder">
+        <img src="https://github.com/user-attachments/assets/95f91b23-c3d0-4384-b3bd-4a2c0b8f07a0" alt="Team">
+        <h3>Executive Team</h3>
+        <p>Operations</p>
+      </div>
+      <div class="founder">
+        <img src="https://github.com/user-attachments/assets/95f91b23-c3d0-4384-b3bd-4a2c0b8f07a0" alt="Advisory Team">
+        <h3>Advisory</h3>
+        <p>Strategic Advisor</p>
+      </div>
+    </div>
+  </section>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x0a1929, 5, 20);
+    
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
+
+    camera.position.set(0, 0, 10);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+    scene.add(ambientLight);
+
+    const keyLight = new THREE.DirectionalLight(0x00d9ff, 1.0);
+    keyLight.position.set(5, 5, 5);
+    scene.add(keyLight);
+
+    const fillLight = new THREE.DirectionalLight(0x00b894, 0.5);
+    fillLight.position.set(-5, 0, 3);
+    scene.add(fillLight);
+
+    const rimLight = new THREE.PointLight(0x00d9ff, 1, 20);
+    rimLight.position.set(0, 0, -5);
+    scene.add(rimLight);
+
+    // H2 Molecule - two atoms with bond
+    const moleculeGroup = new THREE.Group();
+
+    // Atom material - refractive glass
+    const atomMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0x00d9ff,
+      transparent: true,
+      opacity: 0.7,
+      metalness: 0.1,
+      roughness: 0.05,
+      transmission: 0.9,
+      thickness: 2,
+      envMapIntensity: 1,
+      clearcoat: 1,
+      clearcoatRoughness: 0.1
+    });
+
+    const atomGeometry = new THREE.SphereGeometry(1.5, 64, 64);
+    
+    const atom1 = new THREE.Mesh(atomGeometry, atomMaterial.clone());
+    atom1.position.x = -1.5;
+    moleculeGroup.add(atom1);
+
+    const atom2 = new THREE.Mesh(atomGeometry, atomMaterial.clone());
+    atom2.position.x = 1.5;
+    moleculeGroup.add(atom2);
+
+    // Bond
+    const bondGeometry = new THREE.CylinderGeometry(0.2, 0.2, 3, 32);
+    const bondMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.5,
+      metalness: 0.8,
+      roughness: 0.2,
+      emissive: 0x00d9ff,
+      emissiveIntensity: 0.5
+    });
+    const bond = new THREE.Mesh(bondGeometry, bondMaterial);
+    bond.rotation.z = Math.PI / 2;
+    moleculeGroup.add(bond);
+
+    scene.add(moleculeGroup);
+
+    // Electron orbits
+    const electronOrbitCount = 5;
+    const electrons = [];
+    const electronTrails = [];
+
+    for (let i = 0; i < electronOrbitCount; i++) {
+      const electronGeometry = new THREE.SphereGeometry(0.15, 16, 16);
+      const electronMaterial = new THREE.MeshBasicMaterial({
+        color: 0x00d9ff,
+        transparent: true,
+        opacity: 1
+      });
+      const electron = new THREE.Mesh(electronGeometry, electronMaterial);
+      
+      electron.userData = {
+        angle: (i / electronOrbitCount) * Math.PI * 2,
+        speed: 0.01 + Math.random() * 0.01,
+        radiusX: 4 + Math.random() * 2,
+        radiusY: 3 + Math.random() * 1.5,
+        radiusZ: 2 + Math.random() * 1
+      };
+      
+      electrons.push(electron);
+      scene.add(electron);
+
+      // Trail effect
+      const trailPositions = [];
+      for (let j = 0; j < 20; j++) {
+        trailPositions.push(0, 0, 0);
+      }
+      const trailGeometry = new THREE.BufferGeometry();
+      trailGeometry.setAttribute('position', new THREE.Float32BufferAttribute(trailPositions, 3));
+      
+      const trailMaterial = new THREE.LineBasicMaterial({
+        color: 0x00d9ff,
+        transparent: true,
+        opacity: 0.3,
+        blending: THREE.AdditiveBlending
+      });
+      
+      const trail = new THREE.Line(trailGeometry, trailMaterial);
+      electronTrails.push(trail);
+      scene.add(trail);
+    }
+
+    // Founder portraits in 3D carousel
+    const founderCount = 4;
+    const founderPortraits = [];
+    const founderRadius = 8;
+
+    const textureLoader = new THREE.TextureLoader();
+    const founderTexture = textureLoader.load('https://github.com/user-attachments/assets/95f91b23-c3d0-4384-b3bd-4a2c0b8f07a0');
+
+    for (let i = 0; i < founderCount; i++) {
+      const portraitGeometry = new THREE.CircleGeometry(0.8, 32);
+      const portraitMaterial = new THREE.MeshBasicMaterial({
+        map: founderTexture,
+        transparent: true,
+        opacity: 0.9,
+        side: THREE.DoubleSide
+      });
+      const portrait = new THREE.Mesh(portraitGeometry, portraitMaterial);
+      
+      const angle = (i / founderCount) * Math.PI * 2;
+      portrait.position.x = Math.cos(angle) * founderRadius;
+      portrait.position.z = Math.sin(angle) * founderRadius;
+      portrait.position.y = 0;
+      
+      portrait.userData = {
+        angle: angle,
+        originalScale: 1,
+        focused: i === 0
+      };
+      
+      portrait.lookAt(0, 0, 0);
+      
+      founderPortraits.push(portrait);
+      scene.add(portrait);
+
+      // Glow ring around focused portrait
+      if (i === 0) {
+        const ringGeometry = new THREE.RingGeometry(0.85, 1.0, 32);
+        const ringMaterial = new THREE.MeshBasicMaterial({
+          color: 0x00d9ff,
+          transparent: true,
+          opacity: 0.6,
+          side: THREE.DoubleSide
+        });
+        const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+        portrait.add(ring);
+      }
+    }
+
+    // Particle fog
+    const fogParticleCount = 500;
+    const fogGeometry = new THREE.BufferGeometry();
+    const fogPositions = new Float32Array(fogParticleCount * 3);
+
+    for (let i = 0; i < fogParticleCount; i++) {
+      fogPositions[i * 3] = (Math.random() - 0.5) * 30;
+      fogPositions[i * 3 + 1] = (Math.random() - 0.5) * 30;
+      fogPositions[i * 3 + 2] = (Math.random() - 0.5) * 30;
+    }
+
+    fogGeometry.setAttribute('position', new THREE.BufferAttribute(fogPositions, 3));
+
+    const fogMaterial = new THREE.PointsMaterial({
+      color: 0x00d9ff,
+      size: 0.1,
+      transparent: true,
+      opacity: 0.3,
+      blending: THREE.AdditiveBlending
+    });
+
+    const fogParticles = new THREE.Points(fogGeometry, fogMaterial);
+    scene.add(fogParticles);
+
+    // Mouse interaction
+    let mouseX = 0;
+    let mouseY = 0;
+
+    document.addEventListener('mousemove', (event) => {
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    // Scroll interaction
+    let scrollProgress = 0;
+    window.addEventListener('scroll', () => {
+      scrollProgress = Math.min(window.scrollY / window.innerHeight, 1);
+    });
+
+    // Animation loop
+    let time = 0;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      time += 0.01;
+
+      // Mouse parallax
+      camera.position.x += (mouseX * 2 - camera.position.x) * 0.05;
+      camera.position.y += (mouseY * 2 - camera.position.y) * 0.05;
+      camera.lookAt(0, 0, 0);
+
+      // Rotate molecule
+      moleculeGroup.rotation.y += 0.005;
+      moleculeGroup.rotation.x = Math.sin(time * 0.5) * 0.1;
+
+      // Pulse atoms
+      const scale = 1 + Math.sin(time * 2) * 0.05;
+      atom1.scale.setScalar(scale);
+      atom2.scale.setScalar(scale);
+
+      // Animate electrons on elliptical orbits
+      electrons.forEach((electron, i) => {
+        electron.userData.angle += electron.userData.speed;
+        
+        const x = Math.cos(electron.userData.angle) * electron.userData.radiusX;
+        const y = Math.sin(electron.userData.angle * 1.3) * electron.userData.radiusY;
+        const z = Math.sin(electron.userData.angle * 0.7) * electron.userData.radiusZ;
+        
+        electron.position.set(x, y, z);
+
+        // Update trail
+        const trailPositions = electronTrails[i].geometry.attributes.position.array;
+        for (let j = trailPositions.length - 3; j >= 3; j -= 3) {
+          trailPositions[j] = trailPositions[j - 3];
+          trailPositions[j + 1] = trailPositions[j - 2];
+          trailPositions[j + 2] = trailPositions[j - 1];
+        }
+        trailPositions[0] = x;
+        trailPositions[1] = y;
+        trailPositions[2] = z;
+        electronTrails[i].geometry.attributes.position.needsUpdate = true;
+      });
+
+      // Rotate founder carousel
+      founderPortraits.forEach((portrait, i) => {
+        portrait.userData.angle += 0.002;
+        portrait.position.x = Math.cos(portrait.userData.angle) * founderRadius;
+        portrait.position.z = Math.sin(portrait.userData.angle) * founderRadius;
+        portrait.lookAt(0, 0, 0);
+
+        // Focused founder closer and brighter
+        const focused = Math.abs(portrait.userData.angle % (Math.PI * 2)) < 0.5;
+        const targetScale = focused ? 1.3 : 1.0;
+        const targetY = focused ? 0.5 : 0;
+        portrait.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+        portrait.position.y += (targetY - portrait.position.y) * 0.1;
+        portrait.material.opacity = focused ? 1 : 0.7;
+      });
+
+      // Scroll effect - fracture molecule
+      const fracture = scrollProgress * 2;
+      atom1.position.x = -1.5 - fracture;
+      atom2.position.x = 1.5 + fracture;
+      bond.scale.x = 1 + fracture * 0.5;
+      bond.material.opacity = Math.max(0, 0.5 - scrollProgress);
+
+      // Increase electron orbit radius
+      electrons.forEach(electron => {
+        electron.userData.radiusX = 4 + Math.random() * 2 + scrollProgress * 3;
+        electron.userData.radiusY = 3 + Math.random() * 1.5 + scrollProgress * 2;
+      });
+
+      // Rotate fog
+      fogParticles.rotation.y += 0.0005;
+
+      renderer.render(scene, camera);
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    animate();
+  </script>
+</body>
+</html>
