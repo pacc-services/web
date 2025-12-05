@@ -8,10 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../shared/demo-nav.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="logo">PACC<span>Services</span></div>
+      <a href="#hero" class="logo">
+        <img src="../shared/pacc-logo.png" alt="PACC Services" style="height: 40px; margin-right: 8px;" />
+        <span>PACC<span style="color: var(--brand-green);">Services</span></span>
+      </a>
       <nav>
         <a href="#approach">Approach</a>
         <a href="#problem">Problem</a>
@@ -100,7 +104,7 @@
       <div class="grid two">
         <article class="card bio">
           <div class="bio-head">
-            <div class="avatar">AC</div>
+            <img src="../shared/andrew.png" alt="Andrew Carman" class="avatar" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover;" />
             <div>
               <h3>Andrew Carman</h3>
               <p class="role">CEO</p>
@@ -118,7 +122,7 @@
         </article>
         <article class="card bio">
           <div class="bio-head">
-            <div class="avatar">PC</div>
+            <img src="../../data/exec-images/patrick.png" alt="Patrick Charette" class="avatar" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover;" />
             <div>
               <h3>Patrick Charette</h3>
               <p class="role">CCO</p>
@@ -173,5 +177,6 @@
     <footer class="footer">© PACC Services — The bridge between molecule producers and customers.</footer>
 
     <script type="module" src="main.js"></script>
+    <script src="../shared/demo-nav.js"></script>
   </body>
 </html>

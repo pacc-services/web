@@ -1,0 +1,172 @@
+/* Demo Navigation Bar Styles */
+#demo-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 25, 41, 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  padding: 12px 20px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.demo-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.demo-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 8px;
+  color: #00d9ff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.demo-nav-btn:hover:not(:disabled) {
+  background: rgba(0, 217, 255, 0.2);
+  border-color: #00d9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+}
+
+.demo-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.demo-nav-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.demo-nav-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: center;
+}
+
+.demo-nav-select {
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  min-width: 280px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300d9ff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+.demo-nav-select:hover {
+  border-color: rgba(0, 217, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.demo-nav-select:focus {
+  outline: none;
+  border-color: #00d9ff;
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2);
+}
+
+.demo-nav-select option {
+  background: #0a1929;
+  color: #fff;
+  padding: 8px;
+}
+
+.demo-nav-counter {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Add padding to body to prevent content from being hidden behind nav */
+body {
+  padding-bottom: 70px !important;
+}
+
+/* Ensure footer doesn't get hidden */
+footer.footer {
+  margin-bottom: 70px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #demo-nav-bar {
+    padding: 10px 12px;
+  }
+
+  .demo-nav-container {
+    gap: 12px;
+  }
+
+  .demo-nav-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .demo-nav-btn span {
+    display: none;
+  }
+
+  .demo-nav-select {
+    min-width: 180px;
+    font-size: 12px;
+    padding: 8px 32px 8px 12px;
+  }
+
+  .demo-nav-counter {
+    font-size: 11px;
+    min-width: 40px;
+  }
+
+  body {
+    padding-bottom: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-nav-center {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .demo-nav-select {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .demo-nav-counter {
+    width: 100%;
+    text-align: center;
+  }
+}
+
