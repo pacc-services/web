@@ -10,7 +10,7 @@ camera.position.set(0, 0, 140)
 const renderer = createRenderer(canvas)
 handleResize(renderer, camera, canvas)
 
-const particles = createParticleField(1600, 260, 0x5cb85c)
+const particles = createParticleField(1200, 260, 0x5cb85c)
 scene.add(particles)
 
 const grid = createNeonGrid(220, 90, 0x0066a6)
@@ -55,8 +55,23 @@ function updateDepth() {
 window.addEventListener('scroll', updateDepth)
 updateDepth()
 
+let animationId = null
+let isPageVisible = true
+
+document.addEventListener('visibilitychange', () => {
+  isPageVisible = !document.hidden
+  if (!isPageVisible && animationId) {
+    cancelAnimationFrame(animationId)
+    animationId = null
+  } else if (isPageVisible && !animationId) {
+    animate(performance.now())
+  }
+})
+
 function animate(time) {
-  requestAnimationFrame(animate)
+  if (!isPageVisible) return
+  
+  animationId = requestAnimationFrame(animate)
   const t = time * 0.001
 
   particles.rotation.y -= 0.0005

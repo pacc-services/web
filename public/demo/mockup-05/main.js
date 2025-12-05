@@ -9,29 +9,29 @@ import {
 
 const canvas = document.getElementById('h2-canvas')
 const scene = new THREE.Scene()
-scene.fog = new THREE.FogExp2(0x00162f, 0.0035)
+scene.fog = new THREE.FogExp2(0x003355, 0.0035)
 
 const camera = createCamera(canvas, 55, 0.1, 800)
 camera.position.set(0, 10, 90)
 const renderer = createRenderer(canvas)
 
-const particleField = createParticleField(1400, 220, 0x8ad78a)
+const particleField = createParticleField(1000, 220, 0x5cb85c)
 scene.add(particleField)
 
-const grid = createNeonGrid(140, 28, 0x006bbd)
+const grid = createNeonGrid(140, 28, 0x0066a6)
 grid.position.z = -40
 scene.add(grid)
 
 const hydrogenGroup = new THREE.Group()
 
 const sphereMaterial = new THREE.MeshPhysicalMaterial({
-  color: 0x8ad78a,
+  color: 0x5cb85c,
   transmission: 0.5,
   roughness: 0.05,
   metalness: 0.2,
   clearcoat: 0.6,
   clearcoatRoughness: 0.15,
-  emissive: 0x0d2b45,
+  emissive: 0x003355,
   emissiveIntensity: 0.8,
 })
 
@@ -43,10 +43,10 @@ hydrogen2.position.x = 26
 const bondGeometry = new THREE.CylinderGeometry(4, 4, 52, 32)
 bondGeometry.translate(0, 0, 0)
 const bondMaterial = new THREE.MeshStandardMaterial({
-  color: 0x6fc7ff,
+  color: 0x0066a6,
   metalness: 0.7,
   roughness: 0.25,
-  emissive: 0x0f3a5a,
+  emissive: 0x003355,
   emissiveIntensity: 0.9,
 })
 const bond = new THREE.Mesh(bondGeometry, bondMaterial)
@@ -65,10 +65,10 @@ label2.position.set(26, -28, 0)
 hydrogenGroup.add(hydrogen1, hydrogen2, bond, label1, label2)
 scene.add(hydrogenGroup)
 
-const keyLight = new THREE.PointLight(0x8ad78a, 12, 180)
+const keyLight = new THREE.PointLight(0x5cb85c, 12, 180)
 keyLight.position.set(50, 40, 80)
 scene.add(keyLight)
-scene.add(new THREE.AmbientLight(0x8ad78a, 0.2))
+scene.add(new THREE.AmbientLight(0x5cb85c, 0.2))
 
 handleResize(renderer, camera, canvas)
 
@@ -122,8 +122,23 @@ track.addEventListener('pointerdown', () => {
   clearInterval(auto)
 })
 
+let animationId = null
+let isPageVisible = true
+
+document.addEventListener('visibilitychange', () => {
+  isPageVisible = !document.hidden
+  if (!isPageVisible && animationId) {
+    cancelAnimationFrame(animationId)
+    animationId = null
+  } else if (isPageVisible && !animationId) {
+    animate(performance.now())
+  }
+})
+
 function animate(time) {
-  requestAnimationFrame(animate)
+  if (!isPageVisible) return
+  
+  animationId = requestAnimationFrame(animate)
   const t = time * 0.001
   hydrogenGroup.rotation.y = 0.4 * Math.sin(t * 0.6) + mouseX * 0.6
   hydrogenGroup.rotation.x = 0.25 * Math.sin(t * 0.7) - mouseY * 0.4
