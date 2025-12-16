@@ -28,12 +28,16 @@
                 </p>
 
                 <!-- Heading -->
-                <component :is="'h' + (block.level || 3)" v-else-if="block.type === 'heading'" :class="[
-                  block.level === 2
-                    ? 'text-3xl font-bold text-slate-900 mt-8 mb-4'
-                    : 'text-xl font-bold text-slate-900 mt-6 mb-3',
-                  block.style === 'italic' ? 'italic font-normal' : '',
-                ]">
+                <component
+                  :is="'h' + (block.level || 3)"
+                  v-else-if="block.type === 'heading'"
+                  :class="[
+                    block.level === 2
+                      ? 'text-3xl font-bold text-slate-900 mt-8 mb-4'
+                      : 'text-xl font-bold text-slate-900 mt-6 mb-3',
+                    block.style === 'italic' ? 'italic font-normal' : '',
+                  ]"
+                >
                   {{ block.text }}
                 </component>
 
@@ -54,8 +58,15 @@
 
                 <!-- Image -->
                 <figure v-else-if="block.type === 'image'" class="my-12">
-                  <img :src="block.src" :alt="block.alt || ''" class="w-full h-auto rounded-lg shadow-lg" />
-                  <figcaption v-if="block.caption" class="text-center text-sm text-slate-600 mt-3 italic">
+                  <img
+                    :src="block.src"
+                    :alt="block.alt || ''"
+                    class="w-full h-auto rounded-lg shadow-lg"
+                  />
+                  <figcaption
+                    v-if="block.caption"
+                    class="text-center text-sm text-slate-600 mt-3 italic"
+                  >
                     {{ block.caption }}
                   </figcaption>
                 </figure>
@@ -65,12 +76,21 @@
 
           <!-- Back to News Link -->
           <div class="mt-12 text-center">
-            <router-link to="/news"
-              class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
+            <router-link
+              to="/news"
+              class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
                   d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"
+                />
               </svg>
               Back to News
             </router-link>
@@ -84,12 +104,21 @@
         <p class="text-lg text-slate-600 mb-8">
           The article you're looking for doesn't exist or has been removed.
         </p>
-        <router-link to="/news"
-          class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
+        <router-link
+          to="/news"
+          class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
               d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-              clip-rule="evenodd" />
+              clip-rule="evenodd"
+            />
           </svg>
           Back to News
         </router-link>

@@ -76,8 +76,8 @@
             v-for="item in navItems"
             :key="item.href"
             @click.prevent="
-              handleNavClick(item.href);
-              isMobileMenuOpen = false;
+              handleNavClick(item.href)
+              isMobileMenuOpen = false
             "
             class="py-2 hover:text-brand transition-colors cursor-pointer"
           >
