@@ -56,20 +56,37 @@
               />
             </div>
 
+            <!-- Main Article Image (if no logos) -->
+            <div
+              v-else-if="getArticleMainImage(article)"
+              class="relative overflow-hidden"
+              style="max-height: 400px"
+            >
+              <img
+                :src="getArticleMainImage(article)"
+                :alt="getArticleMetadata(article).title"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"
+              ></div>
+            </div>
+
             <div class="p-8">
               <div class="text-xs font-semibold text-brand uppercase tracking-wider mb-2">
-                {{ article.category }}
+                {{ getArticleMetadata(article).category }}
               </div>
               <h2
                 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-brand transition-colors"
               >
-                {{ article.title }}
+                {{ getArticleMetadata(article).title }}
               </h2>
               <div class="text-sm text-slate-500 mb-4">
-                <span class="font-medium">{{ article.location }}</span> — {{ article.date }}
+                <span class="font-medium">{{ getArticleMetadata(article).location }}</span> —
+                {{ getArticleMetadata(article).date }}
               </div>
               <p class="text-slate-700 leading-relaxed mb-4">
-                {{ article.excerpt }}
+                {{ getArticleExcerpt(article) }}
               </p>
               <router-link
                 :to="`/news/${article.slug}`"
@@ -126,16 +143,15 @@ import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getAllArticles } from '@/data/articles'
 import { useMetaTags } from '@/composables/useMetaTags'
-import type { Article, LogoImage } from '@/types/article'
+import {
+  getArticleLogos,
+  getArticleMainImage,
+  getArticleExcerpt,
+  getArticleMetadata,
+} from '@/utils/articleAdapter'
 
 const articles = getAllArticles()
 const { setArticleMetaTags, resetMetaTags } = useMetaTags()
-
-// Extract logos from article content
-const getArticleLogos = (article: Article): LogoImage[] => {
-  const logosContent = article.content.find((block) => block.type === 'logos')
-  return logosContent?.images || []
-}
 
 onMounted(() => {
   // Update meta tags for news page

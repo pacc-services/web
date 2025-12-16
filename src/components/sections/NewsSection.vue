@@ -85,20 +85,21 @@
                 <!-- Article Content -->
                 <div class="p-6 lg:p-8">
                   <div class="text-xs font-semibold text-brand uppercase tracking-wider mb-2">
-                    {{ article.category }}
+                    {{ getArticleMetadata(article).category }}
                   </div>
                   <router-link :to="`/news/${article.slug}`">
                     <h3
                       class="text-xl lg:text-2xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-brand transition-colors cursor-pointer"
                     >
-                      {{ article.title }}
+                      {{ getArticleMetadata(article).title }}
                     </h3>
                   </router-link>
                   <div class="text-sm text-slate-500 mb-4">
-                    <span class="font-medium">{{ article.location }}</span> — {{ article.date }}
+                    <span class="font-medium">{{ getArticleMetadata(article).location }}</span> —
+                    {{ getArticleMetadata(article).date }}
                   </div>
                   <p class="text-slate-700 leading-relaxed mb-4 text-sm">
-                    {{ article.excerpt }}
+                    {{ getArticleExcerpt(article) }}
                   </p>
                   <router-link
                     :to="`/news/${article.slug}`"
@@ -261,19 +262,13 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { getAllArticles } from '@/data/articles'
-import type { Article, LogoImage } from '@/types/article'
+import { getArticleLogos, getArticleExcerpt, getArticleMetadata } from '@/utils/articleAdapter'
 
 const allArticles = getAllArticles()
 // Get the 5 most recent articles
 const recentArticles = computed(() => allArticles.slice(0, 5))
 // Carousel items: 5 articles + 1 "All News" card = 6 items total
 const carouselItems = computed(() => [...recentArticles.value, { type: 'all-news' }])
-
-// Extract logos from article content
-const getArticleLogos = (article: Article): LogoImage[] => {
-  const logosContent = article.content.find((block) => block.type === 'logos')
-  return logosContent?.images || []
-}
 
 const [emblaRef, emblaApi] = emblaCarouselVue({
   loop: false,
