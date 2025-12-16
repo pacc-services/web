@@ -8,6 +8,7 @@ export const k2HydrogenFacility: Article = {
   title:
     'K2 Pure Solutions Breaks Ground on Commercial Low-Carbon Hydrogen Facility in Pittsburg, California',
   date: 'December 17, 2025',
+  datePublished: '2025-12-17T08:00:00-08:00',
   location: 'Pittsburg, CA',
   category: 'Press Release',
   image: aerialView,

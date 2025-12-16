@@ -65,6 +65,7 @@ export const useMetaTags = () => {
     description: string,
     imageUrl?: string,
     articleSlug?: string,
+    datePublished?: string,
   ) => {
     const baseUrl = getBaseUrl()
     const fullUrl = articleSlug ? `${baseUrl}/news/${articleSlug}` : baseUrl
@@ -72,6 +73,9 @@ export const useMetaTags = () => {
 
     // Update document title
     document.title = `${title} | PACC`
+
+    // Update meta name="title" tag
+    updateMetaTag('meta[name="title"]', 'content', `${title} | PACC`)
 
     // Update canonical URL
     updateCanonicalUrl(fullUrl)
@@ -92,6 +96,46 @@ export const useMetaTags = () => {
 
     // Update meta description
     updateMetaTag('meta[name="description"]', 'content', description)
+
+    // Add structured data for articles
+    if (articleSlug && datePublished) {
+      addStructuredData({
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        headline: title,
+        description: description,
+        image: ogImage,
+        datePublished: datePublished,
+        author: {
+          '@type': 'Organization',
+          name: 'PACC',
+          url: baseUrl,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'PACC',
+          logo: {
+            '@type': 'ImageObject',
+            url: `${baseUrl}/logo_full_cropped.png`,
+          },
+        },
+        url: fullUrl,
+      })
+    }
+  }
+
+  const addStructuredData = (data: Record<string, unknown>) => {
+    // Remove existing structured data
+    const existingScript = document.querySelector('script[type="application/ld+json"]')
+    if (existingScript) {
+      existingScript.remove()
+    }
+
+    // Add new structured data
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(data)
+    document.head.appendChild(script)
   }
 
   const resetMetaTags = () => {

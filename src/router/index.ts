@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import NewsView from '@/views/NewsView.vue'
 import ArticleView from '@/views/ArticleView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/news/:slug',
     name: 'article',
     component: ArticleView,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: NotFoundView,
   },
 ]
 

@@ -2,6 +2,7 @@ export interface Article {
   slug: string
   title: string
   date: string
+  datePublished?: string // ISO 8601 date format for structured data
   location: string
   category: string
   excerpt: string

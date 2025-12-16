@@ -151,7 +151,13 @@ const updateMetaTags = () => {
       imageUrl = `${baseUrl}/og-image.png`
     }
 
-    setArticleMetaTags(article.value.title, article.value.excerpt, imageUrl, article.value.slug)
+    setArticleMetaTags(
+      article.value.title,
+      article.value.excerpt,
+      imageUrl,
+      article.value.slug,
+      article.value.datePublished,
+    )
   }
 }
 
