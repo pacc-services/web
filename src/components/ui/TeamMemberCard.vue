@@ -5,7 +5,7 @@
         :src="member.image"
         :alt="member.name"
         class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover mb-4 border-2 border-slate-200"
-        :class="member.name === 'Patrick Charette' ? 'object-center' : 'object-top'"
+        :class="member.name === 'Andrew Carman' ? 'object-[center_20%_]' : 'object-center'"
       />
       <h3 class="text-lg font-bold">{{ member.name }}</h3>
       <div class="text-sm text-slate-600 mb-3">{{ member.role }}</div>
