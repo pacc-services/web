@@ -109,7 +109,6 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  // Reset to default meta tags when leaving the page
   resetMetaTags()
 })
 </script>
