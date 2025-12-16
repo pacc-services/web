@@ -12,7 +12,7 @@ export default defineConfig({
         const vercelUrl = process.env.VERCEL_URL
           ? `https://${process.env.VERCEL_URL}`
           : 'https://pacc.services'
-        
+
         // Replace placeholders in HTML
         return html.replace(/%VITE_VERCEL_URL%/g, vercelUrl)
       },
