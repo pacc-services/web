@@ -77,10 +77,7 @@
           <a
             v-for="item in navItems"
             :key="item.href"
-            @click.prevent="
-              handleNavClick(item.href)
-              isMobileMenuOpen = false
-            "
+            @click.prevent="handleMobileNavClick(item.href)"
             class="py-2 hover:text-brand transition-colors cursor-pointer"
           >
             {{ item.label }}
@@ -177,6 +174,13 @@ const handleNavClick = (href: string) => {
   } else {
     router.push(href)
   }
+}
+
+const handleMobileNavClick = (href: string) => {
+  // Close mobile menu first
+  isMobileMenuOpen.value = false
+  // Then handle the navigation
+  handleNavClick(href)
 }
 
 const scrollToSection = (href: string) => {

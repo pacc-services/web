@@ -44,14 +44,11 @@
                 <!-- List -->
                 <ul v-else-if="block.type === 'list'" class="list-disc pl-6 space-y-3 my-6">
                   <li v-for="(item, itemIndex) in block.items" :key="itemIndex">
-                    <template v-if="typeof item === 'object' && item.title">
+                    <template v-if="item.title">
                       <strong>{{ item.title }}</strong> {{ item.text }}
                     </template>
-                    <template v-else-if="typeof item === 'string' && item.includes(':')">
-                      <strong>{{ item.split(':')[0] }}:</strong>{{ item.split(':')[1] }}
-                    </template>
                     <template v-else>
-                      {{ typeof item === 'string' ? item : item.text }}
+                      {{ item.text }}
                     </template>
                   </li>
                 </ul>
