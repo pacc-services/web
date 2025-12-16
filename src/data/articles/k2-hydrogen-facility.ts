@@ -1,5 +1,7 @@
 import type { Article } from '@/types/article'
-import paccLogo from '@/assets/images/logo_full_cropped.png'
+import k2Logo from '@/assets/images/news/k2-pittsburg-hydrogen/k2-logo.png'
+import paccLogo from '@/assets/images/news/k2-pittsburg-hydrogen/pacc-logo.png'
+import aerialView from '@/assets/images/news/k2-pittsburg-hydrogen/aerial-view-k2-production.png'
 
 export const k2HydrogenFacility: Article = {
   slug: 'k2-hydrogen-facility-pittsburg',
@@ -8,29 +10,58 @@ export const k2HydrogenFacility: Article = {
   date: 'December 17, 2025',
   location: 'Pittsburg, CA',
   category: 'Press Release',
-  image: paccLogo,
+  image: aerialView,
   excerpt:
     'Expansion Adds High-Pressure Hydrogen Production Engineered to Meet California Clean-Fuel Standards, with PACC Serving as Exclusive Marketing & Distribution Partner',
   content: [
     {
-      type: 'paragraph',
-      text: 'Facility Expansion: K2 Pure is expanding its state-of-the-art chlor-alkali plant, capturing and commercializing low-carbon hydrogen generated from existing site operations',
+      type: 'logos',
+      images: [
+        { src: paccLogo, alt: 'PACC Logo' },
+        { src: k2Logo, alt: 'K2 Pure Solutions Logo' },
+      ],
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: 'K2 Pure Solutions Breaks Ground on Commercial Low-Carbon Hydrogen Facility in Pittsburg, California',
+    },
+    {
+      type: 'heading',
+      level: 3,
+      text: 'Expansion Adds High-Pressure Hydrogen Production Engineered to Meet California Clean-Fuel Standards, with PACC Serving as Exclusive Marketing & Distribution Partner',
+      style: 'italic',
+    },
+    {
+      type: 'list',
+      items: [
+        {
+          title: 'Facility Expansion:',
+          text: 'K2 Pure is expanding its state-of-the-art chlor-alkali plant, capturing and commercializing low-carbon hydrogen generated from existing site operations',
+        },
+        {
+          title: 'California-Spec Hydrogen Production:',
+          text: "The new high-pressure gaseous hydrogen system is engineered to meet the state's stringent clean-fuel market standards",
+        },
+        {
+          title: 'Strategic Partnership:',
+          text: 'Through an exclusive agreement with PACC, K2 will deliver certified low-carbon hydrogen to downstream industrial and transportation customers',
+        },
+      ],
     },
     {
       type: 'paragraph',
-      text: 'California-Spec Hydrogen Production: The new high-pressure gaseous hydrogen system is engineered to meet the state\'s stringent clean-fuel market standards',
+      text: "PITTSBURG, CA — 12.17.25 Clean Manufacturing and Low-Carbon Hydrogen innovator K2 Pure Solutions (\"K2\") announced today that it has broken ground on its new low-carbon hydrogen project in Pittsburg, California, marking a major milestone in California's energy transition. Scheduled for commissioning in early summer 2026, the project will expand K2's existing chlor-alkali operations into California's first commercial source of low-carbon, high pressure hydrogen produced from a proven industrial site serving municipal and industrial customers.",
+    },
+    {
+      type: 'image',
+      src: aerialView,
+      alt: 'Aerial view of K2 Pittsburg construction site',
+      caption: 'Aerial view of K2 Pittsburg construction site',
     },
     {
       type: 'paragraph',
-      text: 'Strategic Partnership: Through an exclusive agreement with PACC, K2 will deliver certified low-carbon hydrogen to downstream industrial and transportation customers',
-    },
-    {
-      type: 'paragraph',
-      text: 'PITTSBURG, CA — 12.17.25 Clean Manufacturing and Low-Carbon Hydrogen innovator K2 Pure Solutions ("K2") announced today that it has broken ground on its new low-carbon hydrogen project in Pittsburg, California, marking a major milestone in California\'s energy transition. Scheduled for commissioning in early summer 2026, the project will expand K2\'s existing chlor-alkali operations into California\'s first commercial source of low-carbon, high pressure hydrogen produced from a proven industrial site serving municipal and industrial customers.',
-    },
-    {
-      type: 'paragraph',
-      text: 'Under an exclusive agreement, PACC Services (PACC) will serve as K2\'s commercial partner for hydrogen marketing, customer engagement, and offtake development — while also coordinating logistics, and distribution of the product across transportation, industrial, and power markets. The collaboration positions K2 and PACC at the forefront of California\'s growing clean-molecules market, linking reliable industrial supply with the region\'s decarbonization goals.',
+      text: "Under an exclusive agreement, PACC Services (PACC) will serve as K2's commercial partner for hydrogen marketing, customer engagement, and offtake development — while also coordinating logistics, and distribution of the product across transportation, industrial, and power markets. The collaboration positions K2 and PACC at the forefront of California's growing clean-molecules market, linking reliable industrial supply with the region's decarbonization goals.",
     },
     {
       type: 'paragraph',
@@ -38,11 +69,11 @@ export const k2HydrogenFacility: Article = {
     },
     {
       type: 'paragraph',
-      text: 'David Cynamon, Chairman of K2 Pure Solutions adds, "This expansion represents K2\'s commitment to building the infrastructure California needs to achieve its clean energy goals. We\'re not just talking about the hydrogen economy, we\'re building it, right here in Pittsburg. This facility will demonstrate that scaling hydrogen production is both achievable and essential for the energy future. We\'re proud to invest in a community that shares our vision for sustainable industrial growth."',
+      text: "David Cynamon, Chairman of K2 Pure Solutions adds, \"This expansion represents K2's commitment to building the infrastructure California needs to achieve its clean energy goals. We're not just talking about the hydrogen economy, we're building it, right here in Pittsburg. This facility will demonstrate that scaling hydrogen production is both achievable and essential for the energy future. We're proud to invest in a community that shares our vision for sustainable industrial growth.\"",
     },
     {
       type: 'paragraph',
-      text: 'K2\'s chlor-alkali plant manufactures the bleach used in water-purification systems statewide, and in the process, naturally generates hydrogen. Rather than allowing this hydrogen byproduct to go unused, K2 is investing in advanced systems to capture, purify, compress, and distribute it as low-carbon fuel. With Hargrove Engineers & Constructors leading EPC execution, the project is turning a byproduct into a new clean-energy commodity for California.',
+      text: "K2's chlor-alkali plant manufactures the bleach used in water-purification systems statewide, and in the process, naturally generates hydrogen. Rather than allowing this hydrogen byproduct to go unused, K2 is investing in advanced systems to capture, purify, compress, and distribute it as low-carbon fuel. With Hargrove Engineers & Constructors leading EPC execution, the project is turning a byproduct into a new clean-energy commodity for California.",
     },
     {
       type: 'paragraph',
@@ -62,7 +93,7 @@ export const k2HydrogenFacility: Article = {
     },
     {
       type: 'paragraph',
-      text: '"We\'re thrilled to continue our partnership with K2 and welcome this expansion to Pittsburg," said Pittsburg\'s Director of Community and Economic Development, Jordan Davis. "This project honors our city\'s proud industrial heritage while positioning us at the forefront of California\'s clean energy future. The quality jobs this facility brings are tremendous for our local economy, and we\'re excited to see Pittsburg play a vital role in building the state\'s sustainable energy infrastructure."',
+      text: "\"We're thrilled to continue our partnership with K2 and welcome this expansion to Pittsburg,\" said Pittsburg's Director of Community and Economic Development, Jordan Davis. \"This project honors our city's proud industrial heritage while positioning us at the forefront of California's clean energy future. The quality jobs this facility brings are tremendous for our local economy, and we're excited to see Pittsburg play a vital role in building the state's sustainable energy infrastructure.\"",
     },
     {
       type: 'paragraph',
@@ -109,4 +140,3 @@ export const k2HydrogenFacility: Article = {
     },
   ],
 }
-

@@ -23,92 +23,74 @@
           <article class="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
             <div class="prose prose-lg max-w-none space-y-6 text-slate-700">
               <template v-for="(block, index) in article.content" :key="index">
-                <p v-if="block.type === 'paragraph'" class="leading-relaxed">
+                <!-- Logos -->
+                <div v-if="block.type === 'logos' && block.images"
+                  class="flex justify-center items-center gap-3 sm:gap-4 mb-12 pb-8 border-b border-slate-200">
+                  <!-- PACC Logo (Left) -->
+                  <img v-if="block.images[0]" :src="block.images[0].src" :alt="block.images[0].alt"
+                    class="h-16 sm:h-20 object-contain flex-shrink-0" />
+                  <!-- Partnership indicator -->
+                  <div class="flex items-center gap-1 text-brand/40 flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    </svg>
+                  </div>
+                  <!-- K2 Logo (Right) -->
+                  <img v-if="block.images[1]" :src="block.images[1].src" :alt="block.images[1].alt"
+                    class="h-16 sm:h-20 object-contain flex-shrink-0" />
+                </div>
+
+                <!-- Paragraph -->
+                <p v-else-if="block.type === 'paragraph'" class="leading-relaxed">
                   {{ block.text }}
                 </p>
-                <h3
-                  v-else-if="block.type === 'heading'"
-                  class="text-2xl font-bold text-slate-900 mt-8 mb-4"
-                >
+
+                <!-- Heading -->
+                <component :is="'h' + (block.level || 3)" v-else-if="block.type === 'heading'" :class="[
+                  block.level === 2
+                    ? 'text-3xl font-bold text-slate-900 mt-8 mb-4'
+                    : 'text-xl font-bold text-slate-900 mt-6 mb-3',
+                  block.style === 'italic' ? 'italic font-normal' : '',
+                ]">
                   {{ block.text }}
-                </h3>
-                <ul v-else-if="block.type === 'list'" class="list-disc pl-6 space-y-2">
+                </component>
+
+                <!-- List -->
+                <ul v-else-if="block.type === 'list'" class="list-disc pl-6 space-y-3 my-6">
                   <li v-for="(item, itemIndex) in block.items" :key="itemIndex">
-                    <template v-if="item.includes(':')">
+                    <template v-if="typeof item === 'object' && item.title">
+                      <strong>{{ item.title }}</strong> {{ item.text }}
+                    </template>
+                    <template v-else-if="typeof item === 'string' && item.includes(':')">
                       <strong>{{ item.split(':')[0] }}:</strong>{{ item.split(':')[1] }}
                     </template>
                     <template v-else>
-                      {{ item }}
+                      {{ typeof item === 'string' ? item : item.text }}
                     </template>
                   </li>
                 </ul>
-                <div v-else-if="block.type === 'image'" class="my-12 flex justify-center">
-                  <img
-                    :src="block.src"
-                    :alt="block.alt || ''"
-                    class="max-w-full h-auto"
-                    style="max-width: 150px; width: 100%;"
-                  />
-                </div>
+
+                <!-- Image -->
+                <figure v-else-if="block.type === 'image'" class="my-12">
+                  <img :src="block.src" :alt="block.alt || ''" class="w-full h-auto rounded-lg shadow-lg" />
+                  <figcaption v-if="block.caption" class="text-center text-sm text-slate-600 mt-3 italic">
+                    {{ block.caption }}
+                  </figcaption>
+                </figure>
               </template>
-
-              <!-- About Section -->
-              <div class="mt-12 pt-8 border-t border-slate-200">
-                <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">
-                  About PACC
-                </h4>
-                <p class="text-sm text-slate-600">
-                  PACC is a market-maker for hydrogen and specialty gases, building the trusted
-                  infrastructure that connects molecule producers with enterprise customers. By
-                  de-risking supply, aggregating demand, and optimizing logistics, PACC accelerates
-                  the energy transition and creates value across the clean energy value chain. Based
-                  in San Francisco, the company serves customers and producers throughout North
-                  America.
-                </p>
-              </div>
-
-              <!-- Contact Section -->
-              <div class="mt-6 pt-6 border-t border-slate-200">
-                <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">
-                  Media Contact
-                </h4>
-                <p class="text-sm text-slate-600">
-                  Pat Mazza<br />
-                  Founder & CEO, PACC<br />
-                  Email:
-                  <a
-                    href="mailto:pat@pacc.services"
-                    class="text-brand hover:text-brand-green transition-colors"
-                    >pat@pacc.services</a
-                  ><br />
-                  Web:
-                  <a
-                    href="https://pacc.services"
-                    class="text-brand hover:text-brand-green transition-colors"
-                    >pacc.services</a
-                  >
-                </p>
-              </div>
             </div>
           </article>
 
           <!-- Back to News Link -->
           <div class="mt-12 text-center">
-            <router-link
-              to="/news"
-              class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
+            <router-link to="/news"
+              class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
                   d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                  clip-rule="evenodd"
-                />
+                  clip-rule="evenodd" />
               </svg>
               Back to News
             </router-link>
@@ -122,21 +104,12 @@
         <p class="text-lg text-slate-600 mb-8">
           The article you're looking for doesn't exist or has been removed.
         </p>
-        <router-link
-          to="/news"
-          class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
+        <router-link to="/news"
+          class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
               d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-              clip-rule="evenodd"
-            />
+              clip-rule="evenodd" />
           </svg>
           Back to News
         </router-link>

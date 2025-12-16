@@ -1,14 +1,17 @@
 <template>
-  <article class="card p-6">
-    <div class="flex flex-col items-center text-left">
+  <article class="card p-6 flex flex-col">
+    <div class="flex flex-col items-center text-left flex-grow">
       <img
         :src="member.image"
         :alt="member.name"
-        class="w-24 h-24 rounded-full object-top object-cover mb-4 border-2 border-slate-200"
+        class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover mb-4 border-2 border-slate-200"
+        :class="member.name === 'Patrick Charette' ? 'object-center' : 'object-top'"
       />
       <h3 class="text-lg font-bold">{{ member.name }}</h3>
       <div class="text-sm text-slate-600 mb-3">{{ member.role }}</div>
-      <p class="text-sm text-slate-700 leading-relaxed mb-4">{{ member.bio }}</p>
+      <p class="text-sm text-slate-700 leading-relaxed mb-4 flex-grow">{{ member.bio }}</p>
+    </div>
+    <div class="flex justify-center">
       <a
         :href="member.linkedin"
         target="_blank"
