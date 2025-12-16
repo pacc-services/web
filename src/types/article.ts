@@ -7,6 +7,7 @@ export interface Article {
   category: string
   excerpt: string
   image?: string // Optional image URL for the article
+  ogImage?: string // Custom OG image path (e.g., '/og-images/article-slug.png')
   content: ArticleContent[]
 }
 

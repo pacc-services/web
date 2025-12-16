@@ -12,6 +12,7 @@ export const k2HydrogenFacility: Article = {
   location: 'Pittsburg, CA',
   category: 'Press Release',
   image: aerialView,
+  ogImage: '/og-images/k2-hydrogen-facility-pittsburg.png',
   excerpt:
     'Expansion Adds High-Pressure Hydrogen Production Engineered to Meet California Clean-Fuel Standards, with PACC Serving as Exclusive Marketing & Distribution Partner',
   content: [
