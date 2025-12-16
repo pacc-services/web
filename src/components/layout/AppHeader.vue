@@ -13,12 +13,12 @@
           :srcset="logo.srcset"
           :sizes="logo.sizes"
           alt="PACC"
-          class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-500 delay-75 group-hover:scale-105"
-          :style="
-            logoLoaded && !isScrolled && !isMobileMenuOpen
-              ? 'filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 75px rgba(255, 255, 255, 0.4)); opacity: 1'
-              : 'filter: none; opacity: 1'
-          "
+          class="h-16 sm:h-20 lg:h-24 w-auto group-hover:scale-105"
+          :class="{
+            'opacity-0': !logoLoaded,
+            'opacity-100 transition-all duration-500 delay-75': logoLoaded,
+            'logo-glow': logoLoaded && !isScrolled && !isMobileMenuOpen,
+          }"
           @load="logoLoaded = true"
         />
       </a>
@@ -209,5 +209,20 @@ const scrollToSection = (href: string) => {
 .slide-leave-to {
   transform: translateY(-100%);
   opacity: 0;
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 25px rgba(255, 255, 255, 0.9))
+    drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 75px rgba(255, 255, 255, 0.4));
+}
+
+/* Prevent filter from causing layout shifts */
+img {
+  will-change: filter;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 </style>
