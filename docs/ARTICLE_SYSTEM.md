@@ -228,7 +228,7 @@ import logo2 from '@/assets/images/news/my-article/logo2.png'
 
 export const myArticle: Article = {
   slug: 'my-article-slug',
-  
+
   meta: {
     title: 'Article Title',
     date: 'December 17, 2025',
@@ -237,7 +237,7 @@ export const myArticle: Article = {
     category: 'Press Release',
     tags: ['tag1', 'tag2'],
   },
-  
+
   header: {
     logos: [
       { src: logo1, alt: 'Organization 1', name: 'Org 1' },
@@ -250,7 +250,7 @@ export const myArticle: Article = {
     },
     excerpt: 'Short summary for cards and previews.',
   },
-  
+
   content: [
     {
       type: 'heading',
@@ -263,7 +263,7 @@ export const myArticle: Article = {
     },
     // ... more content blocks
   ],
-  
+
   seo: {
     ogImage: '/og-images/my-article-slug.png',
     metaDescription: 'SEO-optimized description',
@@ -301,7 +301,7 @@ const articles: ArticleConfig[] = [
   {
     slug: 'my-article-slug',
     title: 'Article Title',
-    imagePath: 'news/my-article/hero.png',
+    imagePath: 'news/my-article/hero.png',  // Relative to src/assets/images/
     category: 'Press Release',
   },
   // ... other articles
@@ -312,6 +312,15 @@ Run generation:
 ```bash
 npm run generate:og:articles
 ```
+
+**Important:** The OG image will be automatically generated during build (`npm run build`), but you should generate and commit it to the repository so it's available immediately on deploy.
+
+**Build-Time Generation:**
+- OG images are generated automatically via the `prebuild` script
+- This happens before every `npm run build`
+- Ensures all article OG images are up-to-date
+- Images are saved to `public/og-images/{article-slug}.png`
+- Public folder is copied to dist during build
 
 ### Step 4: Add Article Assets
 
@@ -332,7 +341,7 @@ The system supports both legacy and new article formats through adapter utilitie
 ### Using Adapter Functions
 
 ```typescript
-import { 
+import {
   getArticleLogos,
   getArticleMainImage,
   getArticleExcerpt,

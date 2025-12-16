@@ -135,6 +135,7 @@ import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getArticleBySlug } from '@/data/articles'
 import { useMetaTags } from '@/composables/useMetaTags'
+import { getArticleMetadata, getArticleExcerpt, getArticleSEO } from '@/utils/articleAdapter'
 
 const route = useRoute()
 const article = computed(() => getArticleBySlug(route.params.slug as string))
@@ -143,19 +144,14 @@ const { setArticleMetaTags, resetMetaTags, getBaseUrl } = useMetaTags()
 const updateMetaTags = () => {
   if (article.value) {
     const baseUrl = getBaseUrl()
-    
-    // Use custom OG image if available, otherwise fall back to default
-    let imageUrl = article.value.ogImage
-      ? `${baseUrl}${article.value.ogImage}`
-      : `${baseUrl}/og-image.png`
+    const meta = getArticleMetadata(article.value)
+    const excerpt = getArticleExcerpt(article.value)
+    const seo = getArticleSEO(article.value)
 
-    setArticleMetaTags(
-      article.value.title,
-      article.value.excerpt,
-      imageUrl,
-      article.value.slug,
-      article.value.datePublished,
-    )
+    // Use custom OG image if available, otherwise fall back to default
+    const imageUrl = seo.ogImage ? `${baseUrl}${seo.ogImage}` : `${baseUrl}/og-image.png`
+
+    setArticleMetaTags(meta.title, excerpt, imageUrl, article.value.slug, meta.datePublished)
   }
 }
 
