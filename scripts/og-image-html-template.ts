@@ -162,8 +162,8 @@ export function generateArticleOGImageHTML(config: ArticleOGImageConfig): string
           gap: 20px;
         }
         .logo {
-          max-width: 280px;
-          max-height: 80px;
+          max-width: 380px;
+          max-height: 110px;
           width: auto;
           height: auto;
           ${LOGO_GLOW_FILTER}
@@ -171,9 +171,9 @@ export function generateArticleOGImageHTML(config: ArticleOGImageConfig): string
         .category-badge {
           background: ${BRAND_GREEN};
           color: ${WHITE};
-          padding: 8px 20px;
-          border-radius: 20px;
-          font-size: 18px;
+          padding: 6px 16px;
+          border-radius: 16px;
+          font-size: 15px;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
