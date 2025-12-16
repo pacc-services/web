@@ -10,13 +10,18 @@ Generates the main Open Graph image (1200x630px) with the PACC logo using Playwr
 
 **Usage:**
 ```bash
+npm run generate:og
+```
+
+Or directly:
+```bash
 node scripts/generate-og-image.mjs
 ```
 
 **Features:**
 - Uses the official PACC logo from `src/assets/images/logo_full.png`
 - Creates a 1200x630px image (optimal for social media)
-- Renders at 2x resolution for high quality
+- Renders at 2× resolution for high quality
 - Outputs to `public/og-image.png`
 - Brand colors: PACC Blue (#00497a) and PACC Green (#5cb85c)
 
@@ -25,17 +30,19 @@ node scripts/generate-og-image.mjs
 
 ### og-image-template.html
 
-An interactive HTML tool for manually creating OG images in the browser.
+An interactive HTML tool for manually creating or previewing OG images in the browser.
 
 **Usage:**
 1. Open `scripts/og-image-template.html` in a web browser
-2. Click "Load PACC Logo" to upload the logo
-3. Click "Download Image" to save the generated OG image
+2. Click "Load PACC Logo" to upload the logo (or it generates text-only version)
+3. Preview the image in the browser
+4. Click "Download Image" to save as `og-image.png`
 
 **Features:**
 - Visual preview of the OG image
-- Can load any logo file
-- Downloads as `og-image.png`
+- Can load any logo file for testing
+- No external dependencies required
+- Useful for quick previewing before running the automated script
 
 ## Future Enhancements
 

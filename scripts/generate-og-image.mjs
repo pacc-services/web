@@ -2,10 +2,10 @@
 
 /**
  * Generate OG Image with PACC Logo using Playwright
- * 
+ *
  * This script creates a 1200x630 px Open Graph image with the PACC logo
  * and brand messaging for optimal social media sharing.
- * 
+ *
  * Requirements: @playwright/test (already in devDependencies)
  * Usage: node scripts/generate-og-image.mjs
  */
@@ -102,10 +102,10 @@ async function generateOGImage() {
   `;
 
   await page.setContent(html);
-  
+
   // Wait for images to load
   await page.waitForLoadState('networkidle');
-  
+
   // Take screenshot
   const screenshot = await page.screenshot({
     type: 'png',

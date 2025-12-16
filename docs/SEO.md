@@ -105,10 +105,16 @@ Located in `/index.html`:
     "addressRegion": "CA",
     "addressCountry": "US"
   },
-  "founder": {
-    "@type": "Person",
-    "name": "Patrick Larkin"
-  },
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Andrew Carman"
+    },
+    {
+      "@type": "Person",
+      "name": "Patrick Charette"
+    }
+  ],
   "foundingDate": "2024",
   "industry": "Energy",
   "keywords": "hydrogen, energy transition, ...",
