@@ -1,8 +1,16 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/((?!.*\\.(png|jpg|jpeg|gif|ico|svg|css|js|json|txt|xml|webp)).*)",
-      "destination": "/index.html"
+      "src": "/og-image.png",
+      "dest": "/og-image.png"
+    },
+    {
+      "src": "/(.*\\.(png|jpg|jpeg|gif|ico|svg|css|js|json|txt|xml|webp))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
