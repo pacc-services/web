@@ -9,7 +9,9 @@
     <div class="flex items-center justify-between px-6 lg:px-12 h-24 sm:h-28">
       <a @click.prevent="handleLogoClick" class="flex items-center group cursor-pointer">
         <img
-          :src="paccLogo"
+          :src="logo.src"
+          :srcset="logo.srcset"
+          :sizes="logo.sizes"
           alt="PACC"
           class="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-500 delay-75 group-hover:scale-105"
           :style="
@@ -93,9 +95,11 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import type { NavItem } from '@/types'
-import paccLogo from '@/assets/images/logo_full.png'
+import { useResponsiveLogo } from '@/composables/useResponsiveLogo'
 
 const router = useRouter()
+const { getFullLogo } = useResponsiveLogo()
+const logo = getFullLogo()
 
 const isMobileMenuOpen = ref(false)
 const isScrolled = ref(false)

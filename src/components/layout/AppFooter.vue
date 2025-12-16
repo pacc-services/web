@@ -5,7 +5,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
         <!-- Logo & About -->
         <div class="lg:col-span-2">
-          <img :src="paccLogo" alt="PACC" class="h-16 w-auto mb-4" />
+          <img
+            :src="logo.src"
+            :srcset="logo.srcset"
+            :sizes="logo.sizes"
+            alt="PACC"
+            class="h-16 w-auto mb-4"
+          />
           <p class="text-sm text-slate-600 max-w-md leading-relaxed">
             Building the commercial bridge between production and end-use markets for hydrogen and
             other molecules across North America.
@@ -97,7 +103,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { NavItem } from '@/types'
-import paccLogo from '@/assets/images/logo_full_cropped.png'
+import { useResponsiveLogo } from '@/composables/useResponsiveLogo'
+
+const { getCroppedLogo } = useResponsiveLogo()
+const logo = getCroppedLogo()
 
 const currentYear = computed(() => new Date().getFullYear())
 

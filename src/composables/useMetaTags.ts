@@ -34,9 +34,8 @@ export const useMetaTags = () => {
   const initializeMetaTags = () => {
     const baseUrl = getBaseUrl()
 
-    // Get the OG image path - we'll need to construct the full asset URL
-    // For now, we'll use the logo from public folder which should be accessible
-    const ogImageUrl = `${baseUrl}/logo_full_cropped.png`
+    // Use the optimized OG image (1200x630) from public folder
+    const ogImageUrl = `${baseUrl}/og-image.png`
 
     // Update OG meta tags
     updateMetaTag('meta[property="og:url"]', 'content', baseUrl)
@@ -56,7 +55,7 @@ export const useMetaTags = () => {
   ) => {
     const baseUrl = getBaseUrl()
     const fullUrl = articleSlug ? `${baseUrl}/news/${articleSlug}` : baseUrl
-    const ogImage = imageUrl || `${baseUrl}/logo_full_cropped.png`
+    const ogImage = imageUrl || `${baseUrl}/og-image.png`
 
     // Update document title
     document.title = `${title} | PACC`
@@ -89,11 +88,11 @@ export const useMetaTags = () => {
       'content',
       'Building the trusted bridge between producers and customers of the energy transition. We de‑risk supply, aggregate demand, and create structured pathways for hydrogen and molecules. Join us in accelerating the energy future.',
     )
-    updateMetaTag('meta[property="og:image"]', 'content', `${baseUrl}/logo_full_cropped.png`)
+    updateMetaTag('meta[property="og:image"]', 'content', `${baseUrl}/og-image.png`)
     updateMetaTag(
       'meta[property="og:image:secure_url"]',
       'content',
-      `${baseUrl}/logo_full_cropped.png`,
+      `${baseUrl}/og-image.png`,
     )
     updateMetaTag('meta[property="og:url"]', 'content', baseUrl)
     updateMetaTag('meta[property="og:type"]', 'content', 'website')
@@ -104,7 +103,7 @@ export const useMetaTags = () => {
       'content',
       'Building the trusted bridge for hydrogen & energy. De‑risking supply, aggregating demand, creating the future of energy transition.',
     )
-    updateMetaTag('meta[name="twitter:image"]', 'content', `${baseUrl}/logo_full_cropped.png`)
+    updateMetaTag('meta[name="twitter:image"]', 'content', `${baseUrl}/og-image.png`)
 
     updateMetaTag(
       'meta[name="description"]',

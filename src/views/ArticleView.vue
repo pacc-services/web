@@ -145,10 +145,10 @@ const updateMetaTags = () => {
     // Convert relative image path to absolute URL if needed
     let imageUrl = article.value.image
     if (imageUrl && !imageUrl.startsWith('http')) {
-      // Image is a relative import, we'll use the logo as fallback for OG
+      // Image is a relative import, we'll use the OG image as fallback
       // since imported images may not have predictable URLs
       const baseUrl = getBaseUrl()
-      imageUrl = `${baseUrl}/logo_full_cropped.png`
+      imageUrl = `${baseUrl}/og-image.png`
     }
 
     setArticleMetaTags(article.value.title, article.value.excerpt, imageUrl, article.value.slug)
