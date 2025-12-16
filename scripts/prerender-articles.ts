@@ -41,7 +41,7 @@ const articles: ArticleMetadata[] = [
   // Add more articles here as needed
 ]
 
-function prerenderArticle(article: ArticleMetadata): void {
+function prerenderArticle(article: ArticleMetadata, baseUrl: string): void {
   console.log(`📝 Pre-rendering: ${article.slug}`)
 
   // Read the base index.html
@@ -52,8 +52,6 @@ function prerenderArticle(article: ArticleMetadata): void {
   }
 
   let html = readFileSync(indexPath, 'utf-8')
-
-  const baseUrl = '%VITE_VERCEL_URL%' // Will be replaced by Vite during build
 
   // Replace meta tags with article-specific ones
   html = html
@@ -171,9 +169,19 @@ function prerenderArticle(article: ArticleMetadata): void {
 function prerenderAllArticles(): void {
   console.log('🚀 Pre-rendering article pages with OG meta tags...\n')
 
+  // Read the base URL from dist/index.html (Vite has already replaced %VITE_VERCEL_URL%)
+  const indexPath = join(__dirname, '../dist/index.html')
+  const indexHtml = readFileSync(indexPath, 'utf-8')
+  
+  // Extract the base URL from the canonical link or og:url meta tag
+  const baseUrlMatch = indexHtml.match(/content="(https:\/\/[^"]+)"/)
+  const baseUrl = baseUrlMatch ? new URL(baseUrlMatch[1]).origin : 'https://pacc.services'
+  
+  console.log(`📍 Base URL: ${baseUrl}\n`)
+
   for (const article of articles) {
     try {
-      prerenderArticle(article)
+      prerenderArticle(article, baseUrl)
     } catch (error) {
       console.error(`❌ Failed to pre-render ${article.slug}:`, error)
     }
