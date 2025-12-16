@@ -130,7 +130,6 @@ const navItems: NavItem[] = [
   //{ label: 'Revenue', href: '#revenue' },
   { label: 'News', href: '#news' },
   { label: 'Contact', href: '#contact' },
-  { label: 'Demo', href: '/demo' },
 ]
 
 const toggleMobileMenu = () => {
