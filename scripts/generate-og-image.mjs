@@ -71,6 +71,12 @@ async function generateOGImage() {
           max-height: 250px;
           width: auto;
           height: auto;
+          /* Apply glow effect like the navbar */
+          filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+                  drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+                  drop-shadow(0 0 25px rgba(255, 255, 255, 0.9))
+                  drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))
+                  drop-shadow(0 0 75px rgba(255, 255, 255, 0.4));
         }
         .tagline {
           text-align: center;
