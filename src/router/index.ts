@@ -25,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to, _from, savedPosition) {
     // If there's a saved position (back/forward navigation), use it
     if (savedPosition) {
       return savedPosition
@@ -44,7 +44,7 @@ const router = createRouter({
 })
 
 // Navigation guard to clean up hashes when navigating away from home page
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   // If we're navigating to a non-home route and there's a hash, remove it
   if (to.path !== '/' && to.hash) {
     next({ path: to.path, query: to.query, hash: '' })
