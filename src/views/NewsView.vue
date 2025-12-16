@@ -15,11 +15,16 @@
       <!-- News Articles List -->
       <section class="max-w-4xl mx-auto px-6 py-16">
         <div class="space-y-6">
-          <article v-for="article in articles" :key="article.slug"
-            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+          <article
+            v-for="article in articles"
+            :key="article.slug"
+            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
+          >
             <!-- Article Image -->
-            <div v-if="article.image"
-              class="bg-gradient-to-br from-brand/5 to-brand-green/5 p-12 flex items-center justify-center">
+            <div
+              v-if="article.image"
+              class="bg-gradient-to-br from-brand/5 to-brand-green/5 p-12 flex items-center justify-center"
+            >
               <img :src="article.image" :alt="article.title" class="h-32 w-auto object-contain" />
             </div>
 
@@ -36,13 +41,22 @@
               <p class="text-slate-700 leading-relaxed mb-4">
                 {{ article.excerpt }}
               </p>
-              <router-link :to="`/news/${article.slug}`"
-                class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium">
+              <router-link
+                :to="`/news/${article.slug}`"
+                class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
+              >
                 Read full article
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
                     d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd" />
+                    clip-rule="evenodd"
+                  />
                 </svg>
               </router-link>
             </div>
@@ -51,12 +65,21 @@
 
         <!-- Back to Home Link -->
         <div class="mt-12 text-center">
-          <router-link to="/"
-            class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd"
+          <router-link
+            to="/"
+            class="inline-flex items-center gap-2 text-brand hover:text-brand-green transition-colors font-medium"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
                 d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                clip-rule="evenodd" />
+                clip-rule="evenodd"
+              />
             </svg>
             Back to Home
           </router-link>
@@ -72,6 +95,7 @@ import { onMounted, onUnmounted } from 'vue'
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getAllArticles } from '@/data/articles'
+import { useMetaTags } from '@/composables/useMetaTags'
 
 const articles = getAllArticles()
 const { setArticleMetaTags, resetMetaTags } = useMetaTags()
@@ -80,7 +104,7 @@ onMounted(() => {
   // Update meta tags for news page
   setArticleMetaTags(
     'PACC News & Updates',
-    'Latest developments and announcements from PACC. Stay informed about our partnerships, projects, and progress in the hydrogen and energy transition markets.'
+    'Latest developments and announcements from PACC. Stay informed about our partnerships, projects, and progress in the hydrogen and energy transition markets.',
   )
 })
 
