@@ -1,21 +1,6 @@
 <template>
   <div class="min-h-screen">
     <router-view />
-    <!-- Tap-spawned bubbles - commented out -->
-    <!-- <div
-      v-for="bubble in tapBubbles"
-      :key="bubble.id"
-      class="tap-bubble"
-      :style="{
-        left: bubble.x + 'px',
-        top: bubble.y + 'px',
-        width: bubble.size + 'px',
-        height: bubble.size + 'px',
-      }"
-      @animationend="removeBubble(bubble.id)"
-    > 
-      <span class="h2-text">H₂</span>
-    </div> -->
   </div>
 </template>
 
