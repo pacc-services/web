@@ -2,51 +2,103 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <!-- Favicon - multi-resolution .ico for best compatibility -->
+    
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- Primary Meta Tags -->
+    <title>PACC – Market‑Maker | Hydrogen & Energy Transition</title>
+    <meta name="title" content="PACC – Market‑Maker | Hydrogen & Energy Transition">
+    <meta name="description" content="PACC is the trusted bridge between producers and customers of the energy transition—de‑risking supply, aggregating demand, and creating structured pathways for molecules including hydrogen and specialty gases.">
+    <meta name="keywords" content="hydrogen, energy transition, molecules, market maker, hydrogen trading, specialty gases, sustainable energy, green hydrogen, clean energy, PACC">
+    <meta name="author" content="PACC">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="%VITE_VERCEL_URL%">
+    
+    <!-- Favicon - multi-resolution for best compatibility -->
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <!-- Apple Touch Icon for iOS home screen -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
     <meta name="theme-color" content="#00497a">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PACC – Market‑Maker | Hydrogen & Energy Transition</title>
-    <meta name="description" content="PACC is the trusted bridge between producers and customers of the energy transition—de‑risking supply, aggregating demand, and creating structured pathways for molecules including hydrogen and specialty gases.">
-    <meta name="keywords" content="hydrogen, energy transition, molecules, market maker, hydrogen trading, specialty gases, sustainable energy, PACC">
-    <meta name="author" content="PACC">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="PACC – Market‑Maker">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="%VITE_VERCEL_URL%">
+    <meta property="og:site_name" content="PACC">
+    <meta property="og:title" content="PACC – Market‑Maker | Hydrogen & Energy Transition">
     <meta property="og:description" content="Building the trusted bridge between producers and customers of the energy transition. We de‑risk supply, aggregate demand, and create structured pathways for hydrogen and molecules. Join us in accelerating the energy future.">
     <meta property="og:image" content="%VITE_VERCEL_URL%/og-image.png">
+    <meta property="og:image:secure_url" content="%VITE_VERCEL_URL%/og-image.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="PACC - Market Maker">
-    <meta property="og:url" content="%VITE_VERCEL_URL%">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="PACC">
+    <meta property="og:image:alt" content="PACC - Market Maker for Hydrogen & Energy Transition">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@PACC">
-    <meta name="twitter:creator" content="@PACC">
-    <meta name="twitter:title" content="PACC – Market‑Maker">
+    <meta name="twitter:url" content="%VITE_VERCEL_URL%">
+    <meta name="twitter:title" content="PACC – Market‑Maker | Hydrogen & Energy Transition">
     <meta name="twitter:description" content="Building the trusted bridge for hydrogen & energy. De‑risking supply, aggregating demand, creating the future of energy transition.">
     <meta name="twitter:image" content="%VITE_VERCEL_URL%/og-image.png">
-    <meta name="twitter:image:alt" content="PACC - Market Maker">
+    <meta name="twitter:image:alt" content="PACC - Market Maker for Hydrogen & Energy Transition">
+    <meta name="twitter:site" content="@PACC">
+    <meta name="twitter:creator" content="@PACC">
 
-    <!-- Additional Meta Tags -->
-    <meta property="article:publisher" content="%VITE_VERCEL_URL%">
-    <meta property="business:contact_data:street_address" content="">
+    <!-- Business Information for structured data -->
     <meta property="business:contact_data:locality" content="San Francisco">
     <meta property="business:contact_data:region" content="CA">
     <meta property="business:contact_data:country_name" content="United States">
     <meta property="business:contact_data:email" content="pat@pacc.services">
-
-    <!-- LinkedIn Meta Tags -->
-    <meta property="og:image:secure_url" content="%VITE_VERCEL_URL%/og-image.png">
-    <meta name="linkedin:owner" content="PACC">
+    
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PACC",
+      "alternateName": "PACC Market-Maker",
+      "url": "%VITE_VERCEL_URL%",
+      "logo": "%VITE_VERCEL_URL%/logo_full_cropped.png",
+      "description": "PACC is the trusted bridge between producers and customers of the energy transition—de‑risking supply, aggregating demand, and creating structured pathways for molecules including hydrogen and specialty gases.",
+      "email": "pat@pacc.services",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "pat@pacc.services",
+        "contactType": "Business Inquiries"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Patrick Larkin"
+      },
+      "foundingDate": "2024",
+      "industry": "Energy",
+      "keywords": "hydrogen, energy transition, molecules, market maker, hydrogen trading, specialty gases, sustainable energy, green hydrogen, clean energy",
+      "slogan": "Market-Maker for Hydrogen & Energy Transition"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PACC",
+      "url": "%VITE_VERCEL_URL%",
+      "description": "Building the trusted bridge between producers and customers of the energy transition",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PACC"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="app"></div>

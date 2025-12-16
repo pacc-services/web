@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate PACC OG Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        #og-canvas {
+            border: 2px solid #ddd;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        button {
+            background: #00497a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        
+        button:hover {
+            background: #003a61;
+        }
+        
+        .info {
+            text-align: center;
+            color: #666;
+            margin: 20px 0;
+        }
+        
+        #file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #00497a;">PACC OG Image Generator</h1>
+        <div class="info">
+            <p>Optimal OG Image Size: 1200 × 630 pixels</p>
+        </div>
+        
+        <div class="controls">
+            <input type="file" id="file-input" accept="image/*">
+            <button onclick="document.getElementById('file-input').click()">Load PACC Logo</button>
+            <button onclick="generateImage()">Generate Without Logo</button>
+            <button onclick="downloadImage()">Download Image</button>
+        </div>
+        
+        <canvas id="og-canvas" width="1200" height="630"></canvas>
+        
+        <div class="info">
+            <p>Right-click the image above and "Save Image As..." or use the Download button.</p>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('og-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Brand colors
+        const BRAND_BLUE = '#00497a';
+        const BRAND_GREEN = '#5cb85c';
+        const WHITE = '#ffffff';
+        
+        let logoImage = null;
+        
+        // File input handler
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.onload = function() {
+                        logoImage = img;
+                        generateImage();
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        function generateImage() {
+            // Clear canvas
+            ctx.fillStyle = BRAND_BLUE;
+            ctx.fillRect(0, 0, 1200, 630);
+            
+            let logoBottom = 100;
+            
+            if (logoImage) {
+                // Calculate logo dimensions (maintain aspect ratio)
+                const logoMaxWidth = 500;
+                const logoMaxHeight = 250;
+                const logoAspect = logoImage.width / logoImage.height;
+                
+                let logoWidth, logoHeight;
+                if (logoImage.width > logoImage.height) {
+                    logoWidth = Math.min(logoMaxWidth, logoImage.width);
+                    logoHeight = logoWidth / logoAspect;
+                } else {
+                    logoHeight = Math.min(logoMaxHeight, logoImage.height);
+                    logoWidth = logoHeight * logoAspect;
+                }
+                
+                // Draw logo centered at top portion
+                const logoX = (1200 - logoWidth) / 2;
+                const logoY = 80;
+                ctx.drawImage(logoImage, logoX, logoY, logoWidth, logoHeight);
+                logoBottom = logoY + logoHeight;
+            } else {
+                // Fallback: Draw PACC text
+                ctx.fillStyle = WHITE;
+                ctx.font = 'bold 120px system-ui, -apple-system, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('PACC', 600, 180);
+                logoBottom = 260;
+            }
+            
+            // Add tagline text below logo
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Main tagline - "Market-Maker"
+            ctx.fillStyle = BRAND_GREEN;
+            ctx.font = 'bold 72px system-ui, -apple-system, sans-serif';
+            ctx.fillText('Market-Maker', 600, logoBottom + 100);
+            
+            // Subtitle - "Hydrogen & Energy Transition"
+            ctx.fillStyle = WHITE;
+            ctx.font = '40px system-ui, -apple-system, sans-serif';
+            ctx.fillText('Hydrogen & Energy Transition', 600, logoBottom + 190);
+        }
+        
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'og-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+        
+        // Generate initial image
+        generateImage();
+    </script>
+</body>
+</html>
+
