@@ -9,8 +9,7 @@ The PACC article system provides a comprehensive, type-safe structure for managi
 1. [Article Structure](#article-structure)
 2. [Content Blocks](#content-blocks)
 3. [Creating New Articles](#creating-new-articles)
-4. [Backward Compatibility](#backward-compatibility)
-5. [Future CMS Integration](#future-cms-integration)
+4. [Future CMS Integration](#future-cms-integration)
 
 ---
 
@@ -277,18 +276,20 @@ export const myArticle: Article = {
 Update `src/data/articles/index.ts`:
 
 ```typescript
+import type { Article } from '@/types/article'
 import { myArticle } from './my-article'
 
-export function getAllArticles() {
-  return [
-    myArticle,
-    // ... other articles
-  ]
+export const articles: Article[] = [
+  myArticle,
+  // ... other articles
+]
+
+export const getArticleBySlug = (slug: string): Article | undefined => {
+  return articles.find((article) => article.slug === slug)
 }
 
-export function getArticleBySlug(slug: string) {
-  const articles = getAllArticles()
-  return articles.find((article) => article.slug === slug)
+export const getAllArticles = (): Article[] => {
+  return articles.sort((a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime())
 }
 ```
 
@@ -330,42 +331,6 @@ src/assets/images/news/my-article/
   ├── hero.png        (main image)
   ├── logo1.png       (org 1 logo)
   └── logo2.png       (org 2 logo)
-```
-
----
-
-## Backward Compatibility
-
-The system supports both legacy and new article formats through adapter utilities.
-
-### Using Adapter Functions
-
-```typescript
-import {
-  getArticleLogos,
-  getArticleMainImage,
-  getArticleExcerpt,
-  getArticleMetadata,
-  getArticleSEO
-} from '@/utils/articleAdapter'
-
-// Works with both legacy and new formats
-const logos = getArticleLogos(article)
-const mainImage = getArticleMainImage(article)
-const excerpt = getArticleExcerpt(article)
-const meta = getArticleMetadata(article)
-const seo = getArticleSEO(article)
-```
-
-### Migrating Legacy Articles
-
-To convert a legacy article to the new format:
-
-```typescript
-import { adaptLegacyArticle } from '@/utils/articleAdapter'
-import { legacyArticle } from './old-article'
-
-const newArticle = adaptLegacyArticle(legacyArticle)
 ```
 
 ---
@@ -478,8 +443,6 @@ src/
 │       ├── index.ts            # Article registry
 │       ├── my-article.ts       # Individual article
 │       └── ...
-├── utils/
-│   └── articleAdapter.ts       # Compatibility utilities
 ├── views/
 │   ├── ArticleView.vue         # Full article view
 │   └── NewsView.vue            # Article listing
@@ -492,5 +455,5 @@ src/
 
 ## Examples
 
-See `src/data/articles/k2-hydrogen-facility-v2.ts` for a complete example using all content block types.
+See `src/data/articles/k2-hydrogen-facility.ts` for a complete example using all content block types.
 

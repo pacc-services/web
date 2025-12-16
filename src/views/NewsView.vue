@@ -22,13 +22,13 @@
           >
             <!-- Article Logos Header -->
             <div
-              v-if="getArticleLogos(article).length > 0"
+              v-if="article.header.logos && article.header.logos.length > 0"
               class="bg-gradient-to-br from-brand/5 to-brand-green/5 p-8 flex items-center justify-center gap-4"
             >
               <!-- PACC Logo (Left) -->
               <img
-                :src="getArticleLogos(article)[0]?.src"
-                :alt="getArticleLogos(article)[0]?.alt"
+                :src="article.header.logos[0]?.src"
+                :alt="article.header.logos[0]?.alt"
                 class="h-16 sm:h-20 object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
               />
               <!-- Partnership indicator -->
@@ -50,21 +50,21 @@
               </div>
               <!-- Partner Logo (Right) -->
               <img
-                :src="getArticleLogos(article)[1]?.src"
-                :alt="getArticleLogos(article)[1]?.alt"
+                :src="article.header.logos[1]?.src"
+                :alt="article.header.logos[1]?.alt"
                 class="h-16 sm:h-20 object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
               />
             </div>
 
             <!-- Main Article Image (if no logos) -->
             <div
-              v-else-if="getArticleMainImage(article)"
+              v-else-if="article.header.mainImage"
               class="relative overflow-hidden"
               style="max-height: 400px"
             >
               <img
-                :src="getArticleMainImage(article)"
-                :alt="getArticleMetadata(article).title"
+                :src="article.header.mainImage.src"
+                :alt="article.meta.title"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div
@@ -74,19 +74,19 @@
 
             <div class="p-8">
               <div class="text-xs font-semibold text-brand uppercase tracking-wider mb-2">
-                {{ getArticleMetadata(article).category }}
+                {{ article.meta.category }}
               </div>
               <h2
                 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-brand transition-colors"
               >
-                {{ getArticleMetadata(article).title }}
+                {{ article.meta.title }}
               </h2>
               <div class="text-sm text-slate-500 mb-4">
-                <span class="font-medium">{{ getArticleMetadata(article).location }}</span> —
-                {{ getArticleMetadata(article).date }}
+                <span class="font-medium">{{ article.meta.location }}</span> —
+                {{ article.meta.date }}
               </div>
               <p class="text-slate-700 leading-relaxed mb-4">
-                {{ getArticleExcerpt(article) }}
+                {{ article.header.excerpt }}
               </p>
               <router-link
                 :to="`/news/${article.slug}`"
@@ -143,12 +143,6 @@ import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getAllArticles } from '@/data/articles'
 import { useMetaTags } from '@/composables/useMetaTags'
-import {
-  getArticleLogos,
-  getArticleMainImage,
-  getArticleExcerpt,
-  getArticleMetadata,
-} from '@/utils/articleAdapter'
 
 const articles = getAllArticles()
 const { setArticleMetaTags, resetMetaTags } = useMetaTags()

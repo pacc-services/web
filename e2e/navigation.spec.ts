@@ -12,7 +12,9 @@ test.describe('Navigation', () => {
     await expect(page).toHaveURL('/')
     await page.waitForTimeout(500)
     // Check that News section is visible - use heading role to be more specific
-    await expect(page.getByRole('heading', { name: 'News & Announcements', exact: true })).toBeVisible()
+    await expect(
+      page.getByRole('heading', { name: 'News & Announcements', exact: true }),
+    ).toBeVisible()
 
     // Click "View All News" to go to news page
     await page.getByRole('link', { name: 'View All News & Announcements', exact: true }).click()

@@ -22,7 +22,9 @@ test.describe('Home Page', () => {
     // Wait for scroll animation
     await page.waitForTimeout(500)
     // Check that News section is visible - use heading role to be more specific
-    await expect(page.getByRole('heading', { name: 'News & Announcements', exact: true })).toBeVisible()
+    await expect(
+      page.getByRole('heading', { name: 'News & Announcements', exact: true }),
+    ).toBeVisible()
   })
 
   test('should have working sections', async ({ page }) => {

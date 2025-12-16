@@ -10,36 +10,36 @@
  * Usage: node scripts/generate-og-image.mjs
  */
 
-import { chromium } from '@playwright/test';
-import { readFileSync, writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { chromium } from '@playwright/test'
+import { readFileSync, writeFileSync } from 'fs'
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // OG Image dimensions
-const WIDTH = 1200;
-const HEIGHT = 630;
+const WIDTH = 1200
+const HEIGHT = 630
 
 // Brand colors
-const BRAND_BLUE = '#00497a';
-const BRAND_GREEN = '#5cb85c';
-const WHITE = '#ffffff';
+const BRAND_BLUE = '#00497a'
+const BRAND_GREEN = '#5cb85c'
+const WHITE = '#ffffff'
 
 async function generateOGImage() {
-  console.log('🎨 Generating OG image with Playwright...');
+  console.log('🎨 Generating OG image with Playwright...')
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch()
   const context = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
     deviceScaleFactor: 2, // 2x for better quality
-  });
-  const page = await context.newPage();
+  })
+  const page = await context.newPage()
 
   // Read the logo file
-  const logoPath = join(__dirname, '../src/assets/images/logo_full.png');
-  const logoBase64 = readFileSync(logoPath).toString('base64');
+  const logoPath = join(__dirname, '../src/assets/images/logo_full.png')
+  const logoBase64 = readFileSync(logoPath).toString('base64')
 
   // Create HTML content
   const html = `
@@ -105,12 +105,12 @@ async function generateOGImage() {
       </div>
     </body>
     </html>
-  `;
+  `
 
-  await page.setContent(html);
+  await page.setContent(html)
 
   // Wait for images to load
-  await page.waitForLoadState('networkidle');
+  await page.waitForLoadState('networkidle')
 
   // Take screenshot
   const screenshot = await page.screenshot({
@@ -121,23 +121,22 @@ async function generateOGImage() {
       width: WIDTH,
       height: HEIGHT,
     },
-  });
+  })
 
   // Save to public folder
-  const outputPath = join(__dirname, '../public/og-image.png');
-  writeFileSync(outputPath, screenshot);
+  const outputPath = join(__dirname, '../public/og-image.png')
+  writeFileSync(outputPath, screenshot)
 
-  await browser.close();
+  await browser.close()
 
-  console.log('✅ OG image generated successfully!');
-  console.log(`📍 Saved to: ${outputPath}`);
-  console.log(`📐 Dimensions: ${WIDTH}x${HEIGHT}px (rendered at 2x for quality)`);
-  console.log(`💾 File size: ${(screenshot.length / 1024).toFixed(1)} KB`);
+  console.log('✅ OG image generated successfully!')
+  console.log(`📍 Saved to: ${outputPath}`)
+  console.log(`📐 Dimensions: ${WIDTH}x${HEIGHT}px (rendered at 2x for quality)`)
+  console.log(`💾 File size: ${(screenshot.length / 1024).toFixed(1)} KB`)
 }
 
 // Run the generator
-generateOGImage().catch(error => {
-  console.error('❌ Failed to generate OG image:', error);
-  process.exit(1);
-});
-
+generateOGImage().catch((error) => {
+  console.error('❌ Failed to generate OG image:', error)
+  process.exit(1)
+})

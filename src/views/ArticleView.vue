@@ -7,13 +7,13 @@
         <section class="relative bg-gradient-to-br from-brand to-brand-green pt-32 pb-16 px-6">
           <div class="max-w-4xl mx-auto">
             <div class="text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
-              {{ article.category }}
+              {{ article.meta.category }}
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-              {{ article.title }}
+              {{ article.meta.title }}
             </h1>
             <div class="text-sm text-white/90">
-              <span class="font-medium">{{ article.location }}</span> — {{ article.date }}
+              <span class="font-medium">{{ article.meta.location }}</span> — {{ article.meta.date }}
             </div>
           </div>
         </section>
@@ -135,7 +135,6 @@ import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getArticleBySlug } from '@/data/articles'
 import { useMetaTags } from '@/composables/useMetaTags'
-import { getArticleMetadata, getArticleExcerpt, getArticleSEO } from '@/utils/articleAdapter'
 
 const route = useRoute()
 const article = computed(() => getArticleBySlug(route.params.slug as string))
@@ -144,14 +143,19 @@ const { setArticleMetaTags, resetMetaTags, getBaseUrl } = useMetaTags()
 const updateMetaTags = () => {
   if (article.value) {
     const baseUrl = getBaseUrl()
-    const meta = getArticleMetadata(article.value)
-    const excerpt = getArticleExcerpt(article.value)
-    const seo = getArticleSEO(article.value)
 
     // Use custom OG image if available, otherwise fall back to default
-    const imageUrl = seo.ogImage ? `${baseUrl}${seo.ogImage}` : `${baseUrl}/og-image.png`
+    const imageUrl = article.value.seo.ogImage
+      ? `${baseUrl}${article.value.seo.ogImage}`
+      : `${baseUrl}/og-image.png`
 
-    setArticleMetaTags(meta.title, excerpt, imageUrl, article.value.slug, meta.datePublished)
+    setArticleMetaTags(
+      article.value.meta.title,
+      article.value.header.excerpt,
+      imageUrl,
+      article.value.slug,
+      article.value.meta.datePublished,
+    )
   }
 }
 

@@ -48,13 +48,13 @@
               >
                 <!-- Article Logos Header -->
                 <div
-                  v-if="getArticleLogos(article).length > 0"
+                  v-if="article.header.logos && article.header.logos.length > 0"
                   class="bg-gradient-to-br from-brand/5 to-brand-green/5 p-6 flex items-center justify-center gap-2 sm:gap-3"
                 >
                   <!-- PACC Logo (Left) -->
                   <img
-                    :src="getArticleLogos(article)[0]?.src"
-                    :alt="getArticleLogos(article)[0]?.alt"
+                    :src="article.header.logos[0]?.src"
+                    :alt="article.header.logos[0]?.alt"
                     class="h-12 sm:h-16 object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
                   />
                   <!-- Partnership indicator -->
@@ -76,8 +76,8 @@
                   </div>
                   <!-- K2 Logo (Right) -->
                   <img
-                    :src="getArticleLogos(article)[1]?.src"
-                    :alt="getArticleLogos(article)[1]?.alt"
+                    :src="article.header.logos[1]?.src"
+                    :alt="article.header.logos[1]?.alt"
                     class="h-12 sm:h-16 object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
                   />
                 </div>
@@ -85,21 +85,21 @@
                 <!-- Article Content -->
                 <div class="p-6 lg:p-8">
                   <div class="text-xs font-semibold text-brand uppercase tracking-wider mb-2">
-                    {{ getArticleMetadata(article).category }}
+                    {{ article.meta.category }}
                   </div>
                   <router-link :to="`/news/${article.slug}`">
                     <h3
                       class="text-xl lg:text-2xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-brand transition-colors cursor-pointer"
                     >
-                      {{ getArticleMetadata(article).title }}
+                      {{ article.meta.title }}
                     </h3>
                   </router-link>
                   <div class="text-sm text-slate-500 mb-4">
-                    <span class="font-medium">{{ getArticleMetadata(article).location }}</span> —
-                    {{ getArticleMetadata(article).date }}
+                    <span class="font-medium">{{ article.meta.location }}</span> —
+                    {{ article.meta.date }}
                   </div>
                   <p class="text-slate-700 leading-relaxed mb-4 text-sm">
-                    {{ getArticleExcerpt(article) }}
+                    {{ article.header.excerpt }}
                   </p>
                   <router-link
                     :to="`/news/${article.slug}`"
@@ -262,7 +262,6 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { getAllArticles } from '@/data/articles'
-import { getArticleLogos, getArticleExcerpt, getArticleMetadata } from '@/utils/articleAdapter'
 
 const allArticles = getAllArticles()
 // Get the 5 most recent articles

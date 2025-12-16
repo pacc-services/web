@@ -167,38 +167,3 @@ export interface CalloutBlock {
   text: string
 }
 
-// ============================================================================
-// LEGACY SUPPORT (for backward compatibility)
-// ============================================================================
-
-/**
- * @deprecated Use Article interface instead
- * Kept for backward compatibility during migration
- */
-export interface LegacyArticle {
-  slug: string
-  title: string
-  date: string
-  datePublished?: string
-  location: string
-  category: string
-  excerpt: string
-  image?: string
-  ogImage?: string
-  content: LegacyArticleContent[]
-}
-
-/**
- * @deprecated Use ArticleContent types instead
- */
-export interface LegacyArticleContent {
-  type: 'paragraph' | 'heading' | 'list' | 'image' | 'logos'
-  level?: number
-  text?: string
-  style?: string
-  items?: string[] | ListItem[]
-  src?: string
-  alt?: string
-  caption?: string
-  images?: LogoImage[]
-}

@@ -1,7 +1,9 @@
 <template>
   <div>
     <AppHeader />
-    <main class="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center px-4">
+    <main
+      class="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center px-4"
+    >
       <div class="max-w-2xl mx-auto text-center py-20">
         <!-- 404 Icon -->
         <div class="mb-8">
@@ -73,7 +75,10 @@
         <div class="mt-12 pt-8 border-t border-slate-200">
           <p class="text-sm text-slate-600 mb-4">You might be interested in:</p>
           <div class="flex flex-wrap gap-4 justify-center text-sm">
-            <router-link to="/#approach" class="text-brand hover:text-brand-green transition-colors">
+            <router-link
+              to="/#approach"
+              class="text-brand hover:text-brand-green transition-colors"
+            >
               Our Approach
             </router-link>
             <span class="text-slate-300">•</span>
@@ -108,4 +113,3 @@ onMounted(() => {
   setArticleMetaTags('Page Not Found', "The page you're looking for doesn't exist.")
 })
 </script>
-

@@ -146,22 +146,26 @@ export const useMetaTags = () => {
     // Update canonical URL
     updateCanonicalUrl(baseUrl)
 
-    updateMetaTag('meta[property="og:title"]', 'content', 'PACC – Market‑Maker | Hydrogen & Energy Transition')
+    updateMetaTag(
+      'meta[property="og:title"]',
+      'content',
+      'PACC – Market‑Maker | Hydrogen & Energy Transition',
+    )
     updateMetaTag(
       'meta[property="og:description"]',
       'content',
       'Building the trusted bridge between producers and customers of the energy transition. We de‑risk supply, aggregate demand, and create structured pathways for hydrogen and molecules. Join us in accelerating the energy future.',
     )
     updateMetaTag('meta[property="og:image"]', 'content', `${baseUrl}/og-image.png`)
-    updateMetaTag(
-      'meta[property="og:image:secure_url"]',
-      'content',
-      `${baseUrl}/og-image.png`,
-    )
+    updateMetaTag('meta[property="og:image:secure_url"]', 'content', `${baseUrl}/og-image.png`)
     updateMetaTag('meta[property="og:url"]', 'content', baseUrl)
     updateMetaTag('meta[property="og:type"]', 'content', 'website')
 
-    updateMetaTag('meta[name="twitter:title"]', 'content', 'PACC – Market‑Maker | Hydrogen & Energy Transition')
+    updateMetaTag(
+      'meta[name="twitter:title"]',
+      'content',
+      'PACC – Market‑Maker | Hydrogen & Energy Transition',
+    )
     updateMetaTag(
       'meta[name="twitter:description"]',
       'content',

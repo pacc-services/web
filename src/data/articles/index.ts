@@ -8,5 +8,5 @@ export const getArticleBySlug = (slug: string): Article | undefined => {
 }
 
 export const getAllArticles = (): Article[] => {
-  return articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  return articles.sort((a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime())
 }
