@@ -14,25 +14,17 @@ import { chromium } from '@playwright/test'
 import { readFileSync, writeFileSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { generateMainOGImageHTML, OG_WIDTH, OG_HEIGHT } from './og-image-html-template.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
-
-// OG Image dimensions
-const WIDTH = 1200
-const HEIGHT = 630
-
-// Brand colors
-const BRAND_BLUE = '#00497a'
-const BRAND_GREEN = '#5cb85c'
-const WHITE = '#ffffff'
 
 async function generateOGImage(): Promise<void> {
   console.log('🎨 Generating OG image with Playwright...')
 
   const browser = await chromium.launch()
   const context = await browser.newContext({
-    viewport: { width: WIDTH, height: HEIGHT },
+    viewport: { width: OG_WIDTH, height: OG_HEIGHT },
     deviceScaleFactor: 2, // 2x for better quality
   })
   const page = await context.newPage()
@@ -41,72 +33,8 @@ async function generateOGImage(): Promise<void> {
   const logoPath = join(__dirname, '../src/assets/images/logo_full.png')
   const logoBase64 = readFileSync(logoPath).toString('base64')
 
-  // Create HTML content
-  const html = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        body {
-          width: ${WIDTH}px;
-          height: ${HEIGHT}px;
-          background: ${BRAND_BLUE};
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-          overflow: hidden;
-        }
-        .logo-container {
-          margin-bottom: 20px;
-          margin-top: 20px;
-        }
-        .logo {
-          max-width: 600px;
-          max-height: 300px;
-          width: auto;
-          height: auto;
-          /* Apply glow effect like the navbar */
-          filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1))
-                  drop-shadow(0 0 2px rgba(255, 255, 255, 1))
-                  drop-shadow(0 0 25px rgba(255, 255, 255, 0.9))
-                  drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))
-                  drop-shadow(0 0 75px rgba(255, 255, 255, 0.4));
-        }
-        .tagline {
-          text-align: center;
-          margin-top: 20px;
-        }
-        .market-maker {
-          color: ${BRAND_GREEN};
-          font-size: 72px;
-          font-weight: bold;
-          margin-bottom: 20px;
-        }
-        .subtitle {
-          color: ${WHITE};
-          font-size: 40px;
-          font-weight: 400;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="logo-container">
-        <img src="data:image/png;base64,${logoBase64}" alt="PACC Logo" class="logo" />
-      </div>
-      <div class="tagline">
-        <div class="market-maker">Market-Maker</div>
-        <div class="subtitle">Hydrogen & Energy Transition</div>
-      </div>
-    </body>
-    </html>
-  `
+  // Generate HTML using shared template
+  const html = generateMainOGImageHTML({ logoBase64 })
 
   await page.setContent(html)
 
@@ -119,8 +47,8 @@ async function generateOGImage(): Promise<void> {
     clip: {
       x: 0,
       y: 0,
-      width: WIDTH,
-      height: HEIGHT,
+      width: OG_WIDTH,
+      height: OG_HEIGHT,
     },
   })
 
@@ -132,7 +60,7 @@ async function generateOGImage(): Promise<void> {
 
   console.log('✅ OG image generated successfully!')
   console.log(`📍 Saved to: ${outputPath}`)
-  console.log(`📐 Dimensions: ${WIDTH}x${HEIGHT}px (rendered at 2x for quality)`)
+  console.log(`📐 Dimensions: ${OG_WIDTH}x${OG_HEIGHT}px (rendered at 2x for quality)`)
   console.log(`💾 File size: ${(screenshot.length / 1024).toFixed(1)} KB`)
 }
 
