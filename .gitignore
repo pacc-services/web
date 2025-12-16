@@ -15,6 +15,11 @@ out/
 .nuxt/
 .vuepress/dist/
 tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# TypeScript generated files
+vite.config.js
+vite.config.d.ts
 
 # Test outputs
 test-results/
