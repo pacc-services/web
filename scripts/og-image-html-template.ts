@@ -158,12 +158,13 @@ export function generateArticleOGImageHTML(config: ArticleOGImageConfig): string
         }
         .header {
           display: flex;
-          align-items: center;
-          gap: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
         }
         .logo {
-          max-width: 380px;
-          max-height: 110px;
+          max-width: 480px;
+          max-height: 140px;
           width: auto;
           height: auto;
           ${LOGO_GLOW_FILTER}
@@ -171,9 +172,9 @@ export function generateArticleOGImageHTML(config: ArticleOGImageConfig): string
         .category-badge {
           background: ${BRAND_GREEN};
           color: ${WHITE};
-          padding: 6px 16px;
-          border-radius: 16px;
-          font-size: 15px;
+          padding: 5px 14px;
+          border-radius: 14px;
+          font-size: 14px;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -186,7 +187,7 @@ export function generateArticleOGImageHTML(config: ArticleOGImageConfig): string
         }
         .title {
           color: ${WHITE};
-          font-size: 52px;
+          font-size: 48px;
           font-weight: 800;
           line-height: 1.2;
           text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
