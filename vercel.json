@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/og-image.png",
@@ -8,42 +14,42 @@
       ]
     },
     {
-      "source": "/:path*.png",
+      "source": "/(.*).png",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
         { "key": "Content-Type", "value": "image/png" }
       ]
     },
     {
-      "source": "/:path*.jpg",
+      "source": "/(.*).jpg",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
         { "key": "Content-Type", "value": "image/jpeg" }
       ]
     },
     {
-      "source": "/:path*.jpeg",
+      "source": "/(.*).jpeg",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
         { "key": "Content-Type", "value": "image/jpeg" }
       ]
     },
     {
-      "source": "/:path*.gif",
+      "source": "/(.*).gif",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
         { "key": "Content-Type", "value": "image/gif" }
       ]
     },
     {
-      "source": "/:path*.ico",
+      "source": "/(.*).ico",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
         { "key": "Content-Type", "value": "image/x-icon" }
       ]
     },
     {
-      "source": "/:path*.svg",
+      "source": "/(.*).svg",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
         { "key": "Content-Type", "value": "image/svg+xml" }
