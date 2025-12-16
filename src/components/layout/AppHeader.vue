@@ -7,7 +7,7 @@
     }"
   >
     <div class="flex items-center justify-between px-6 lg:px-12 h-24 sm:h-28">
-      <a href="#" class="flex items-center group">
+      <a @click.prevent="handleLogoClick" class="flex items-center group cursor-pointer">
         <img
           :src="paccLogo"
           alt="PACC"
@@ -134,6 +134,27 @@ const navItems: NavItem[] = [
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
+
+const handleLogoClick = () => {
+  // If we're not on the home page, navigate there
+  if (router.currentRoute.value.path !== '/') {
+    router.push('/').then(() => {
+      // Wait for the route to change and then scroll to top
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
+      }, 100)
+    })
+  } else {
+    // If we're already on the home page, just scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
 }
 
 const handleNavClick = (href: string) => {

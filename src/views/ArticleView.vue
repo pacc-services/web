@@ -23,27 +23,7 @@
           <article class="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
             <div class="prose prose-lg max-w-none space-y-6 text-slate-700">
               <template v-for="(block, index) in article.content" :key="index">
-                <!-- Logos -->
-                <div v-if="block.type === 'logos' && block.images"
-                  class="flex justify-center items-center gap-3 sm:gap-4 mb-12 pb-8 border-b border-slate-200">
-                  <!-- PACC Logo (Left) -->
-                  <img v-if="block.images[0]" :src="block.images[0].src" :alt="block.images[0].alt"
-                    class="h-16 sm:h-20 object-contain flex-shrink-0" />
-                  <!-- Partnership indicator -->
-                  <div class="flex items-center gap-1 text-brand/40 flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none"
-                      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                    </svg>
-                  </div>
-                  <!-- K2 Logo (Right) -->
-                  <img v-if="block.images[1]" :src="block.images[1].src" :alt="block.images[1].alt"
-                    class="h-16 sm:h-20 object-contain flex-shrink-0" />
-                </div>
-
-                <!-- Paragraph -->
-                <p v-else-if="block.type === 'paragraph'" class="leading-relaxed">
+                <p v-if="block.type === 'paragraph'" class="leading-relaxed">
                   {{ block.text }}
                 </p>
 
@@ -125,63 +105,34 @@ import { useRoute } from 'vue-router'
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getArticleBySlug } from '@/data/articles'
+import { useMetaTags } from '@/composables/useMetaTags'
 
 const route = useRoute()
 const article = computed(() => getArticleBySlug(route.params.slug as string))
-
-// Store original meta tags
-let originalTitle = ''
-let originalOgTitle = ''
-let originalTwitterTitle = ''
+const { setArticleMetaTags, resetMetaTags, getBaseUrl } = useMetaTags()
 
 const updateMetaTags = () => {
   if (article.value) {
-    // Update page title and meta tags
-    document.title = `${article.value.title} | PACC News`
-
-    const ogTitleMeta = document.querySelector('meta[property="og:title"]')
-    const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
-
-    if (ogTitleMeta) {
-      ogTitleMeta.setAttribute('content', article.value.title)
+    // Convert relative image path to absolute URL if needed
+    let imageUrl = article.value.image
+    if (imageUrl && !imageUrl.startsWith('http')) {
+      // Image is a relative import, we'll use the logo as fallback for OG
+      // since imported images may not have predictable URLs
+      const baseUrl = getBaseUrl()
+      imageUrl = `${baseUrl}/logo_full_cropped.png`
     }
 
-    if (twitterTitleMeta) {
-      twitterTitleMeta.setAttribute('content', article.value.title)
-    }
+    setArticleMetaTags(article.value.title, article.value.excerpt, imageUrl, article.value.slug)
   }
 }
 
 onMounted(() => {
-  // Store original values
-  originalTitle = document.title
-  const ogTitleMeta = document.querySelector('meta[property="og:title"]')
-  const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
-
-  if (ogTitleMeta) {
-    originalOgTitle = ogTitleMeta.getAttribute('content') || ''
-  }
-  if (twitterTitleMeta) {
-    originalTwitterTitle = twitterTitleMeta.getAttribute('content') || ''
-  }
-
   updateMetaTags()
 })
 
 onUnmounted(() => {
-  // Restore original meta tags when leaving the page
-  document.title = originalTitle
-
-  const ogTitleMeta = document.querySelector('meta[property="og:title"]')
-  const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
-
-  if (ogTitleMeta && originalOgTitle) {
-    ogTitleMeta.setAttribute('content', originalOgTitle)
-  }
-
-  if (twitterTitleMeta && originalTwitterTitle) {
-    twitterTitleMeta.setAttribute('content', originalTwitterTitle)
-  }
+  // Reset to default meta tags when leaving the page
+  resetMetaTags()
 })
 
 // Watch for article changes (if slug changes)
