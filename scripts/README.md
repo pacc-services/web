@@ -4,7 +4,7 @@ This directory contains utility scripts for maintaining the PACC website.
 
 ## OG Image Generation
 
-### generate-og-image.mjs
+### generate-og-image.ts
 
 Generates the main Open Graph image (1200x630px) with the PACC logo using Playwright.
 
@@ -15,7 +15,7 @@ npm run generate:og
 
 Or directly:
 ```bash
-node scripts/generate-og-image.mjs
+tsx scripts/generate-og-image.ts
 ```
 
 **Features:**
@@ -48,9 +48,9 @@ An interactive HTML tool for manually creating or previewing OG images in the br
 
 ### Article-Specific OG Images
 
-To generate article-specific OG images, you can extend `generate-og-image.mjs`:
+To generate article-specific OG images, you can extend `generate-og-image.ts`:
 
-```javascript
+```typescript
 // Example: Generate OG image for a specific article
 const articleTitle = "K2 Hydrogen Facility";
 const articleDate = "December 17, 2025";
@@ -63,7 +63,7 @@ When updating brand colors or logos:
 
 1. Update the brand colors in the scripts
 2. Replace logo files in `src/assets/images/`
-3. Run `node scripts/generate-og-image.mjs` to regenerate OG images
+3. Run `tsx scripts/generate-og-image.ts` to regenerate OG images
 4. Commit the new OG image to the repository
 
 ## Notes
