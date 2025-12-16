@@ -21,8 +21,8 @@ test.describe('Home Page', () => {
     await expect(page).toHaveURL('/')
     // Wait for scroll animation
     await page.waitForTimeout(500)
-    // Check that News section is visible
-    await expect(page.locator('text=News & Announcements')).toBeVisible()
+    // Check that News section is visible - use heading role to be more specific
+    await expect(page.getByRole('heading', { name: 'News & Announcements', exact: true })).toBeVisible()
   })
 
   test('should have working sections', async ({ page }) => {

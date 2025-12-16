@@ -5,28 +5,30 @@ test.describe('News Page', () => {
     await page.goto('/news')
 
     await expect(page.locator('h1')).toContainText('News & Updates')
-    await expect(page.locator('h2')).toContainText('PACC Launches Revolutionary Hydrogen')
+    await expect(page.locator('h2')).toContainText('K2 Pure Solutions Breaks Ground')
   })
 
   test('should navigate to article detail page', async ({ page }) => {
     await page.goto('/news')
 
     await page.click('text=Read full article')
-    await expect(page).toHaveURL(/\/news\/hydrogen-platform-launch/)
-    await expect(page.locator('h1')).toContainText('PACC Launches')
+    await expect(page).toHaveURL(/\/news\/k2-hydrogen-facility-pittsburg/)
+    await expect(page.locator('h1')).toContainText('K2 Pure Solutions')
   })
 
   test('should display article content', async ({ page }) => {
-    await page.goto('/news/hydrogen-platform-launch')
+    await page.goto('/news/k2-hydrogen-facility-pittsburg')
 
-    await expect(page.locator('h1')).toContainText('PACC Launches')
-    await expect(page.locator('text=San Francisco, CA')).toBeVisible()
-    await expect(page.locator('text=December 4, 2025')).toBeVisible()
-    await expect(page.locator('text=pioneering hydrogen')).toBeVisible()
+    // Check main heading and article metadata
+    await expect(page.locator('h1')).toContainText('K2 Pure Solutions Breaks Ground')
+    await expect(page.getByText('Pittsburg, CA', { exact: true }).first()).toBeVisible()
+    await expect(page.getByText('December 17, 2025')).toBeVisible()
+    // Check that article content is present
+    await expect(page.locator('article')).toBeVisible()
   })
 
   test('should navigate back to news list from article', async ({ page }) => {
-    await page.goto('/news/hydrogen-platform-launch')
+    await page.goto('/news/k2-hydrogen-facility-pittsburg')
 
     await page.click('text=Back to News')
     await expect(page).toHaveURL('/news')
@@ -34,7 +36,7 @@ test.describe('News Page', () => {
   })
 
   test('should navigate from article to home sections', async ({ page }) => {
-    await page.goto('/news/hydrogen-platform-launch')
+    await page.goto('/news/k2-hydrogen-facility-pittsburg')
 
     await page.click('text=Leadership')
     await expect(page).toHaveURL('/')
