@@ -18,21 +18,51 @@
           <article
             v-for="article in articles"
             :key="article.slug"
-            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
+            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group"
           >
-            <!-- Article Image -->
+            <!-- Article Logos Header -->
             <div
-              v-if="article.image"
-              class="bg-gradient-to-br from-brand/5 to-brand-green/5 p-12 flex items-center justify-center"
+              v-if="getArticleLogos(article).length > 0"
+              class="bg-gradient-to-br from-brand/5 to-brand-green/5 p-8 flex items-center justify-center gap-4"
             >
-              <img :src="article.image" :alt="article.title" class="h-32 w-auto object-contain" />
+              <!-- PACC Logo (Left) -->
+              <img
+                :src="getArticleLogos(article)[0]?.src"
+                :alt="getArticleLogos(article)[0]?.alt"
+                class="h-16 sm:h-20 object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+              />
+              <!-- Partnership indicator -->
+              <div class="flex items-center gap-1 text-brand/40 flex-shrink-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                  />
+                </svg>
+              </div>
+              <!-- Partner Logo (Right) -->
+              <img
+                :src="getArticleLogos(article)[1]?.src"
+                :alt="getArticleLogos(article)[1]?.alt"
+                class="h-16 sm:h-20 object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+              />
             </div>
 
             <div class="p-8">
               <div class="text-xs font-semibold text-brand uppercase tracking-wider mb-2">
                 {{ article.category }}
               </div>
-              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 leading-tight">
+              <h2
+                class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-brand transition-colors"
+              >
                 {{ article.title }}
               </h2>
               <div class="text-sm text-slate-500 mb-4">
@@ -48,7 +78,7 @@
                 Read full article
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  class="h-5 w-5 transition-transform group-hover:translate-x-1"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -96,9 +126,16 @@ import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { getAllArticles } from '@/data/articles'
 import { useMetaTags } from '@/composables/useMetaTags'
+import type { Article, LogoImage } from '@/types/article'
 
 const articles = getAllArticles()
 const { setArticleMetaTags, resetMetaTags } = useMetaTags()
+
+// Extract logos from article content
+const getArticleLogos = (article: Article): LogoImage[] => {
+  const logosContent = article.content.find((block) => block.type === 'logos')
+  return logosContent?.images || []
+}
 
 onMounted(() => {
   // Update meta tags for news page
@@ -112,9 +149,3 @@ onUnmounted(() => {
   resetMetaTags()
 })
 </script>
-
-<style scoped>
-article:hover h2 {
-  color: #00497a;
-}
-</style>

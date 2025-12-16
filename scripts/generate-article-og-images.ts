@@ -23,7 +23,6 @@ const WIDTH = 1200
 const HEIGHT = 630
 
 // Brand colors
-const BRAND_BLUE = '#00497a'
 const BRAND_GREEN = '#5cb85c'
 const WHITE = '#ffffff'
 
@@ -251,4 +250,3 @@ generateAllArticleOGImages().catch((error: Error) => {
   console.error('❌ Failed to generate article OG images:', error)
   process.exit(1)
 })
-
