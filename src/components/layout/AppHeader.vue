@@ -78,8 +78,8 @@
             v-for="item in navItems"
             :key="item.href"
             @click.prevent="
-              handleNavClick(item.href);
-              isMobileMenuOpen = false;
+              handleNavClick(item.href)
+              isMobileMenuOpen = false
             "
             class="py-2 hover:text-brand transition-colors cursor-pointer"
           >
@@ -212,10 +212,8 @@ const scrollToSection = (href: string) => {
 }
 
 .logo-glow {
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1))
-    drop-shadow(0 0 2px rgba(255, 255, 255, 1))
-    drop-shadow(0 0 25px rgba(255, 255, 255, 0.9))
-    drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))
     drop-shadow(0 0 75px rgba(255, 255, 255, 0.4));
 }
 
