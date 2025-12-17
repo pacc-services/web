@@ -73,14 +73,10 @@
                   v-else-if="block.type === 'quote'"
                   class="border-l-4 border-brand pl-6 py-4 my-8 bg-slate-50 rounded-r-lg"
                 >
-                  <p class="text-lg italic text-slate-700 mb-3">
-                    "{{ block.text }}"
-                  </p>
+                  <p class="text-lg italic text-slate-700 mb-3">"{{ block.text }}"</p>
                   <footer class="text-sm text-slate-600">
                     <strong class="font-semibold text-slate-900">{{ block.author }}</strong>
-                    <template v-if="block.authorTitle">
-                      , {{ block.authorTitle }}
-                    </template>
+                    <template v-if="block.authorTitle"> , {{ block.authorTitle }} </template>
                     <template v-if="block.organization">
                       <br />
                       <span class="text-slate-500">{{ block.organization }}</span>
@@ -133,10 +129,7 @@
                 </div>
 
                 <!-- Divider -->
-                <hr
-                  v-else-if="block.type === 'divider'"
-                  class="my-8 border-t-2 border-slate-200"
-                />
+                <hr v-else-if="block.type === 'divider'" class="my-8 border-t-2 border-slate-200" />
               </template>
             </div>
           </article>
