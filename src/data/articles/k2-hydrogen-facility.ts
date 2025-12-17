@@ -133,52 +133,7 @@ export const k2HydrogenFacility: Article = {
     {
       type: 'paragraph',
       text: 'Once operational, the project will establish a new benchmark for industrial decarbonization in California, turning proven manufacturing into a next-generation energy resource.',
-    },
-    {
-      type: 'divider',
-    },
-    {
-      type: 'heading',
-      level: 3,
-      text: 'For more information contact:',
-    },
-    {
-      type: 'paragraph',
-      text: 'K2 Pure Solutions | Darren Gold | darren@therosegrp.com',
-    },
-    {
-      type: 'divider',
-    },
-    {
-      type: 'heading',
-      level: 3,
-      text: 'About K2 Pure Solutions',
-    },
-    {
-      type: 'paragraph',
-      text: 'K2 Pure Solutions produces exceptionally pure bleach, caustic soda, and other chlor-alkali products in the most inherently safe, environmentally responsible, and economically viable manner. K2 is a recipient of the Chlorine Institute Platinum Level Process Safety Performance Award.',
-    },
-    {
-      type: 'paragraph',
-      text: 'Website: www.k2pure.com',
-    },
-    {
-      type: 'heading',
-      level: 3,
-      text: 'About PACC Services (PACC)',
-    },
-    {
-      type: 'paragraph',
-      text: 'PACC builds the commercial bridge between production and end-use markets for hydrogen and other molecules. As a market-maker, PACC develops strategic partnerships and commercial structures that connect reliable supply with growing demand across North America.',
-    },
-    {
-      type: 'paragraph',
-      text: 'Website: www.pacc.services',
-    },
-    {
-      type: 'paragraph',
-      text: 'Email: contact@pacc.services',
-    },
+    }
   ],
 
   // SEO

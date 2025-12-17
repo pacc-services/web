@@ -67,6 +67,76 @@
                     {{ block.caption }}
                   </figcaption>
                 </figure>
+
+                <!-- Quote -->
+                <blockquote
+                  v-else-if="block.type === 'quote'"
+                  class="border-l-4 border-brand pl-6 py-4 my-8 bg-slate-50 rounded-r-lg"
+                >
+                  <p class="text-lg italic text-slate-700 mb-3">
+                    "{{ block.text }}"
+                  </p>
+                  <footer class="text-sm text-slate-600">
+                    <strong class="font-semibold text-slate-900">{{ block.author }}</strong>
+                    <template v-if="block.authorTitle">
+                      , {{ block.authorTitle }}
+                    </template>
+                    <template v-if="block.organization">
+                      <br />
+                      <span class="text-slate-500">{{ block.organization }}</span>
+                    </template>
+                  </footer>
+                </blockquote>
+
+                <!-- Callout -->
+                <div
+                  v-else-if="block.type === 'callout'"
+                  :class="[
+                    'rounded-lg p-6 my-8',
+                    block.variant === 'success'
+                      ? 'bg-green-50 border-l-4 border-green-500'
+                      : block.variant === 'warning'
+                        ? 'bg-yellow-50 border-l-4 border-yellow-500'
+                        : block.variant === 'info'
+                          ? 'bg-blue-50 border-l-4 border-blue-500'
+                          : 'bg-slate-50 border-l-4 border-slate-500',
+                  ]"
+                >
+                  <h4
+                    v-if="block.title"
+                    :class="[
+                      'font-bold mb-2',
+                      block.variant === 'success'
+                        ? 'text-green-900'
+                        : block.variant === 'warning'
+                          ? 'text-yellow-900'
+                          : block.variant === 'info'
+                            ? 'text-blue-900'
+                            : 'text-slate-900',
+                    ]"
+                  >
+                    {{ block.title }}
+                  </h4>
+                  <p
+                    :class="[
+                      block.variant === 'success'
+                        ? 'text-green-800'
+                        : block.variant === 'warning'
+                          ? 'text-yellow-800'
+                          : block.variant === 'info'
+                            ? 'text-blue-800'
+                            : 'text-slate-700',
+                    ]"
+                  >
+                    {{ block.text }}
+                  </p>
+                </div>
+
+                <!-- Divider -->
+                <hr
+                  v-else-if="block.type === 'divider'"
+                  class="my-8 border-t-2 border-slate-200"
+                />
               </template>
             </div>
           </article>

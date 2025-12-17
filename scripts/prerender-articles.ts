@@ -172,11 +172,11 @@ function prerenderAllArticles(): void {
   // Read the base URL from dist/index.html (Vite has already replaced %VITE_VERCEL_URL%)
   const indexPath = join(__dirname, '../dist/index.html')
   const indexHtml = readFileSync(indexPath, 'utf-8')
-  
+
   // Extract the base URL from the canonical link or og:url meta tag
   const baseUrlMatch = indexHtml.match(/content="(https:\/\/[^"]+)"/)
   const baseUrl = baseUrlMatch ? new URL(baseUrlMatch[1]).origin : 'https://pacc.services'
-  
+
   console.log(`📍 Base URL: ${baseUrl}\n`)
 
   for (const article of articles) {
