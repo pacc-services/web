@@ -228,4 +228,3 @@ export function generateArticleOGImageHTML(config: ArticleOGImageConfig): string
     </html>
   `
 }
-

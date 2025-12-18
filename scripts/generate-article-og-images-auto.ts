@@ -159,7 +159,9 @@ async function generateArticleOGImage(article: ArticleOGConfig): Promise<void> {
   await browser.close()
 
   console.log(`✅ Generated: ${outputPath}`)
-  console.log(`   📐 ${OG_WIDTH}x${OG_HEIGHT}px (2x) | 💾 ${(screenshot.length / 1024).toFixed(1)} KB`)
+  console.log(
+    `   📐 ${OG_WIDTH}x${OG_HEIGHT}px (2x) | 💾 ${(screenshot.length / 1024).toFixed(1)} KB`,
+  )
 }
 
 async function generateAllArticleOGImages(): Promise<void> {

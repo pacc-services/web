@@ -22,7 +22,7 @@ const __dirname = dirname(__filename)
 interface ArticleConfig {
   slug: string
   title: string
-  imagePath: string // Path relative to src/assets/images
+  imagePath?: string // Path relative to src/assets/images
   category: string
 }
 
@@ -34,6 +34,12 @@ const articles: ArticleConfig[] = [
       'K2 Pure Solutions Breaks Ground on Commercial Low-Carbon Hydrogen Facility in Pittsburg, California',
     imagePath: 'news/k2-pittsburg-hydrogen/aerial-view-k2-production.png',
     category: 'Press Release',
+  },
+  {
+    slug: 'vercel-web-analytics-guide',
+    title: 'Getting Started with Vercel Web Analytics',
+    imagePath: 'logo_full.png', // Fallback to PACC logo
+    category: 'Blog Post',
   },
   // Add more articles here as needed
 ]
@@ -100,7 +106,9 @@ async function generateArticleOGImage(article: ArticleConfig): Promise<void> {
   await browser.close()
 
   console.log(`✅ Generated: ${outputPath}`)
-  console.log(`   📐 ${OG_WIDTH}x${OG_HEIGHT}px (2x) | 💾 ${(screenshot.length / 1024).toFixed(1)} KB`)
+  console.log(
+    `   📐 ${OG_WIDTH}x${OG_HEIGHT}px (2x) | 💾 ${(screenshot.length / 1024).toFixed(1)} KB`,
+  )
 }
 
 async function generateAllArticleOGImages(): Promise<void> {

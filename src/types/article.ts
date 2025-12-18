@@ -166,4 +166,3 @@ export interface CalloutBlock {
   title?: string
   text: string
 }
-

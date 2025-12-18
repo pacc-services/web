@@ -133,7 +133,7 @@ export const k2HydrogenFacility: Article = {
     {
       type: 'paragraph',
       text: 'Once operational, the project will establish a new benchmark for industrial decarbonization in California, turning proven manufacturing into a next-generation energy resource.',
-    }
+    },
   ],
 
   // SEO
