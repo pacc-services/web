@@ -13,5 +13,12 @@ export default [
   },
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),
+  {
+    name: 'app/config-files',
+    files: ['*.config.{js,ts,mjs,cjs}', 'eslint.config.js'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
+  },
   prettierConfig,
 ]

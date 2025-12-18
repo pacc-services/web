@@ -14,6 +14,16 @@ out/
 .next/
 .nuxt/
 .vuepress/dist/
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# TypeScript generated files
+vite.config.js
+vite.config.d.ts
+
+# Test outputs
+test-results/
+playwright-report/
 
 # Environment variables
 .env
@@ -111,6 +121,8 @@ temp/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/README.md
 .idea
 *.suo
 *.ntvs*
