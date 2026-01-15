@@ -3,8 +3,32 @@
     <AppHeader />
     <main class="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <div v-if="article">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="pt-24 pb-4 px-6 max-w-4xl mx-auto">
+          <ol class="flex items-center gap-2 text-sm text-white/90" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <router-link to="/" class="hover:text-white transition-colors" itemprop="item">
+                <span itemprop="name">Home</span>
+              </router-link>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li aria-hidden="true" class="text-white/50">/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <router-link to="/news" class="hover:text-white transition-colors" itemprop="item">
+                <span itemprop="name">News</span>
+              </router-link>
+              <meta itemprop="position" content="2" />
+            </li>
+            <li aria-hidden="true" class="text-white/50">/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span class="font-medium text-white" itemprop="name">{{ article.meta.title }}</span>
+              <meta itemprop="position" content="3" />
+            </li>
+          </ol>
+        </nav>
+
         <!-- Hero Header -->
-        <section class="relative bg-gradient-to-br from-brand to-brand-green pt-32 pb-16 px-6">
+        <section class="relative bg-gradient-to-br from-brand to-brand-green pt-8 pb-16 px-6">
           <div class="max-w-4xl mx-auto">
             <div class="text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
               {{ article.meta.category }}

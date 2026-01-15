@@ -4,6 +4,7 @@ import HomeView from '@/views/HomeView.vue'
 import NewsView from '@/views/NewsView.vue'
 import ArticleView from '@/views/ArticleView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
+import { useAnalytics } from '@/composables/useAnalytics'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -57,6 +58,15 @@ router.beforeEach((to, _from, next) => {
   } else {
     next()
   }
+})
+
+// Track page views for analytics
+router.afterEach((to) => {
+  const { trackPageView } = useAnalytics()
+  // Wait for next tick to ensure document title is updated
+  setTimeout(() => {
+    trackPageView(to.path, document.title)
+  }, 100)
 })
 
 export default router

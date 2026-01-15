@@ -4,6 +4,7 @@
     :href="href"
     :type="!href ? type : undefined"
     :class="buttonClasses"
+    @click="handleClick"
   >
     <slot />
   </component>
@@ -11,17 +12,27 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useAnalytics } from '@/composables/useAnalytics'
 
 interface Props {
   variant?: 'primary' | 'secondary'
   href?: string
   type?: 'button' | 'submit' | 'reset'
+  trackingLabel?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   variant: 'primary',
   type: 'button',
 })
+
+const { trackButtonClick } = useAnalytics()
+
+const handleClick = () => {
+  if (props.trackingLabel) {
+    trackButtonClick(props.trackingLabel)
+  }
+}
 
 const buttonClasses = computed(() => {
   const base =

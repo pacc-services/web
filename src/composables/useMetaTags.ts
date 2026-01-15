@@ -99,13 +99,15 @@ export const useMetaTags = () => {
 
     // Add structured data for articles
     if (articleSlug && datePublished) {
-      addStructuredData({
+      // Add Article structured data
+      addStructuredData('article', {
         '@context': 'https://schema.org',
         '@type': 'NewsArticle',
         headline: title,
         description: description,
         image: ogImage,
         datePublished: datePublished,
+        dateModified: datePublished,
         author: {
           '@type': 'Organization',
           name: 'PACC',
@@ -120,13 +122,45 @@ export const useMetaTags = () => {
           },
         },
         url: fullUrl,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': fullUrl,
+        },
+        articleSection: 'Energy Transition',
+        keywords: 'hydrogen, energy transition, market maker, specialty gases',
+      })
+
+      // Add BreadcrumbList structured data
+      addStructuredData('breadcrumb', {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: baseUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'News',
+            item: `${baseUrl}/news`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: title,
+            item: fullUrl,
+          },
+        ],
       })
     }
   }
 
-  const addStructuredData = (data: Record<string, unknown>) => {
-    // Remove existing structured data
-    const existingScript = document.querySelector('script[type="application/ld+json"]')
+  const addStructuredData = (id: string, data: Record<string, unknown>) => {
+    // Remove existing structured data with this ID
+    const existingScript = document.querySelector(`script[data-schema-id="${id}"]`)
     if (existingScript) {
       existingScript.remove()
     }
@@ -134,6 +168,7 @@ export const useMetaTags = () => {
     // Add new structured data
     const script = document.createElement('script')
     script.type = 'application/ld+json'
+    script.setAttribute('data-schema-id', id)
     script.textContent = JSON.stringify(data)
     document.head.appendChild(script)
   }
@@ -179,6 +214,16 @@ export const useMetaTags = () => {
       'content',
       'PACC is the trusted bridge between producers and customers of the energy transition—de‑risking supply, aggregating demand, and creating structured pathways for molecules including hydrogen and specialty gases.',
     )
+
+    // Remove article-specific structured data
+    const articleScript = document.querySelector('script[data-schema-id="article"]')
+    if (articleScript) {
+      articleScript.remove()
+    }
+    const breadcrumbScript = document.querySelector('script[data-schema-id="breadcrumb"]')
+    if (breadcrumbScript) {
+      breadcrumbScript.remove()
+    }
   }
 
   return {

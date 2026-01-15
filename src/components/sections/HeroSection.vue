@@ -30,6 +30,7 @@
               href="#contact"
               variant="primary"
               class="transform hover:scale-110 transition-all duration-300"
+              tracking-label="Hero - Talk to Us"
             >
               Talk to Us
             </BaseButton>
@@ -37,6 +38,7 @@
               href="#approach"
               variant="secondary"
               class="transform hover:scale-110 transition-all duration-300"
+              tracking-label="Hero - How We Work"
             >
               How We Work
             </BaseButton>
