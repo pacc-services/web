@@ -4,7 +4,11 @@
     <main class="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <!-- Breadcrumb -->
       <nav aria-label="Breadcrumb" class="pt-24 pb-4 px-6 max-w-4xl mx-auto">
-        <ol class="flex items-center gap-2 text-sm text-slate-600" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <ol
+          class="flex items-center gap-2 text-sm text-slate-600"
+          itemscope
+          itemtype="https://schema.org/BreadcrumbList"
+        >
           <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             <router-link to="/" class="hover:text-brand transition-colors" itemprop="item">
               <span itemprop="name">Home</span>

@@ -5,7 +5,11 @@
       <div v-if="article">
         <!-- Breadcrumb -->
         <nav aria-label="Breadcrumb" class="pt-24 pb-4 px-6 max-w-4xl mx-auto">
-          <ol class="flex items-center gap-2 text-sm text-white/90" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <ol
+            class="flex items-center gap-2 text-sm text-white/90"
+            itemscope
+            itemtype="https://schema.org/BreadcrumbList"
+          >
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <router-link to="/" class="hover:text-white transition-colors" itemprop="item">
                 <span itemprop="name">Home</span>
