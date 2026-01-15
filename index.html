@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8">
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PLACEHOLDER');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
@@ -14,6 +22,13 @@
     <meta name="author" content="PACC">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="%VITE_VERCEL_URL%">
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE">
+    
+    <!-- Performance optimization -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <!-- Favicon - multi-resolution for best compatibility -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -88,7 +103,27 @@
       "foundingDate": "2024",
       "industry": "Energy",
       "keywords": "hydrogen, energy transition, molecules, market maker, hydrogen trading, specialty gases, sustainable energy, green hydrogen, clean energy",
-      "slogan": "Market-Maker for Hydrogen & Energy Transition"
+      "slogan": "Market-Maker for Hydrogen & Energy Transition",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "37.7749",
+          "longitude": "-122.4194"
+        },
+        "geoRadius": "10000000"
+      },
+      "knowsAbout": [
+        "Hydrogen Trading",
+        "Energy Transition",
+        "Specialty Gases",
+        "Market Making",
+        "Green Hydrogen",
+        "Clean Energy",
+        "Sustainable Energy",
+        "Hydrogen Logistics",
+        "Energy Infrastructure"
+      ]
     }
     </script>
 
@@ -102,11 +137,75 @@
       "publisher": {
         "@type": "Organization",
         "name": "PACC"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "%VITE_VERCEL_URL%/news?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Energy Market Making",
+      "provider": {
+        "@type": "Organization",
+        "name": "PACC"
+      },
+      "areaServed": "Worldwide",
+      "description": "Market-making services for hydrogen and specialty gases in the energy transition",
+      "offers": {
+        "@type": "Offer",
+        "category": "Business Service"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does PACC do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PACC is a market-maker for hydrogen and specialty gases in the energy transition. We bridge the gap between producers and customers by de-risking supply, aggregating demand, and creating structured pathways for molecules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is hydrogen market making?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hydrogen market making involves facilitating transactions between hydrogen producers and buyers, ensuring supply reliability, managing logistics, and creating efficient market pathways for hydrogen and specialty gases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does PACC support the energy transition?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PACC supports the energy transition by providing trusted infrastructure for hydrogen and specialty gas trading, reducing market risk, and enabling scalable adoption of clean energy molecules through efficient market-making services."
+          }
+        }
+      ]
     }
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

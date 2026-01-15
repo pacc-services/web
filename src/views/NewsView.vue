@@ -2,8 +2,29 @@
   <div>
     <AppHeader />
     <main class="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="pt-24 pb-4 px-6 max-w-4xl mx-auto">
+        <ol
+          class="flex items-center gap-2 text-sm text-slate-600"
+          itemscope
+          itemtype="https://schema.org/BreadcrumbList"
+        >
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <router-link to="/" class="hover:text-brand transition-colors" itemprop="item">
+              <span itemprop="name">Home</span>
+            </router-link>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li aria-hidden="true" class="text-slate-400">/</li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span class="font-medium text-slate-900" itemprop="name">News</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+
       <!-- Hero Header -->
-      <section class="relative bg-gradient-to-br from-brand to-brand-green pt-32 pb-20 px-6">
+      <section class="relative bg-gradient-to-br from-brand to-brand-green pt-12 pb-20 px-6">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4">
             News & Updates

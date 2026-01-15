@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
@@ -15,6 +16,10 @@
     <lastmod>2025-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pacc.services/og-image.png</image:loc>
+      <image:title>PACC - Market Maker for Hydrogen &amp; Energy Transition</image:title>
+    </image:image>
   </url>
 
   <!-- News Page -->
@@ -31,6 +36,10 @@
     <lastmod>2025-12-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pacc.services/og-images/k2-hydrogen-facility-pittsburg.png</image:loc>
+      <image:title>K2 Hydrogen Facility Pittsburg</image:title>
+    </image:image>
   </url>
 
 </urlset>
