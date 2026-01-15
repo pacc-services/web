@@ -35,12 +35,6 @@ const articles: ArticleConfig[] = [
     imagePath: 'news/k2-pittsburg-hydrogen/aerial-view-k2-production.png',
     category: 'Press Release',
   },
-  {
-    slug: 'vercel-web-analytics-guide',
-    title: 'Getting Started with Vercel Web Analytics',
-    imagePath: 'logo_full.png', // Fallback to PACC logo
-    category: 'Blog Post',
-  },
   // Add more articles here as needed
 ]
 

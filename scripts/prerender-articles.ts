@@ -38,15 +38,6 @@ const articles: ArticleMetadata[] = [
     datePublished: '2025-12-17T08:00:00-08:00',
     category: 'Press Release',
   },
-  {
-    slug: 'vercel-web-analytics-guide',
-    title: 'Getting Started with Vercel Web Analytics',
-    description:
-      'Learn how to enable Vercel Web Analytics on your project and start tracking visitors and page views. A comprehensive guide for Next.js, React, Vue, and other frameworks.',
-    ogImage: '/og-images/vercel-web-analytics-guide.png',
-    datePublished: '2025-12-17T08:00:00-08:00',
-    category: 'Blog Post',
-  },
   // Add more articles here as needed
 ]
 
