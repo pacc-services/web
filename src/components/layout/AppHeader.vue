@@ -127,8 +127,8 @@ const navItems: NavItem[] = [
   { label: 'Approach', href: '#approach' },
   { label: 'Market', href: '#problem' },
   { label: 'Solution', href: '#solution' },
+  { label: 'How We Work', href: '/how-we-work' },
   { label: 'Leadership', href: '#leadership' },
-  //{ label: 'Revenue', href: '#revenue' },
   { label: 'News', href: '#news' },
   { label: 'Contact', href: '#contact' },
 ]
