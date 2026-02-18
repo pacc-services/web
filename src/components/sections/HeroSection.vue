@@ -39,7 +39,7 @@
               Talk to Us
             </BaseButton>
             <BaseButton
-              href="#approach"
+              href="/how-we-work"
               variant="secondary"
               class="transform hover:scale-110 transition-all duration-300"
             >
