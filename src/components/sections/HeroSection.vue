@@ -16,14 +16,19 @@
           <h1
             class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white drop-shadow-lg"
           >
-            The bridge between molecule producers and customers
+            Building Structured Markets for Industrial Molecules
           </h1>
           <p
             id="mission"
             class="hero-text text-lg sm:text-xl lg:text-2xl leading-relaxed text-white/90 drop-shadow"
           >
-            Our mission is to become the trusted bridge between producers and customers of the
-            energy transition—delivering scale, certainty, and value across dislocated markets.
+            PACC is the commercial bridge between producers and scalable demand.
+          </p>
+          <p
+            class="hero-text text-base sm:text-lg leading-relaxed text-white/80 drop-shadow"
+          >
+            We structure offtake, align logistics, and coordinate risk to transform supply into
+            predictable revenue and customers into reliable market anchors.
           </p>
           <div class="hero-buttons flex flex-wrap gap-4">
             <BaseButton
@@ -42,7 +47,7 @@
             </BaseButton>
           </div>
           <div class="hero-subtitle text-sm text-white/70">
-            Hydrogen & specialty gases • Logistics • Market‑making
+            Hydrogen • Industrial Gases • Specialty Molecules • Market Structure
           </div>
         </div>
         <div class="lg:pl-8 hero-card">
