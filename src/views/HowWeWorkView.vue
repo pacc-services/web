@@ -3,7 +3,6 @@
     <AppHeader />
     <main>
 
-      <!-- SECTION 1: INTRO -->
       <section class="py-20 sm:py-24 lg:py-32 bg-white border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
@@ -18,18 +17,11 @@
         </div>
       </section>
 
-      <!-- SECTION 2: THE PACC FRAMEWORK -->
       <section class="py-20 sm:py-24 bg-slate-50 border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-16">
-            The PACC Commercial Framework
-          </h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-16">The PACC Commercial Framework</h2>
           <div class="space-y-0">
-            <div
-              v-for="(step, index) in frameworkSteps"
-              :key="step.title"
-              class="relative flex gap-8"
-            >
+            <div v-for="(step, index) in frameworkSteps" :key="step.title" class="relative flex gap-8">
               <div class="flex flex-col items-center">
                 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white font-black text-lg shadow-md">
                   {{ index + 1 }}
@@ -40,11 +32,7 @@
                 <h3 class="text-xl font-bold text-slate-900 mt-2 mb-3">{{ step.title }}</h3>
                 <p class="text-slate-600 mb-4">{{ step.description }}</p>
                 <ul class="space-y-2">
-                  <li
-                    v-for="item in step.items"
-                    :key="item"
-                    class="flex items-start gap-2 text-slate-600"
-                  >
+                  <li v-for="item in step.items" :key="item" class="flex items-start gap-2 text-slate-600">
                     <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0"></span>
                     {{ item }}
                   </li>
@@ -56,12 +44,9 @@
         </div>
       </section>
 
-      <!-- SECTION 3: ENGAGEMENT MODELS -->
       <section class="py-20 sm:py-24 bg-white border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-12">
-            Engagement Models
-          </h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-12">Engagement Models</h2>
           <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8">
               <h3 class="text-xl font-bold text-slate-900 mb-2">For Producers</h3>
@@ -91,12 +76,9 @@
         </div>
       </section>
 
-      <!-- SECTION 4: DIFFERENTIATION + MOLECULES -->
       <section class="py-20 sm:py-24 bg-slate-900 border-b border-slate-700">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-10">
-            What Makes PACC Different
-          </h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-10">What Makes PACC Different</h2>
           <div class="space-y-4 text-xl text-slate-300 font-medium mb-10">
             <p>We are not brokers.</p>
             <p>We are not consultants.</p>
@@ -125,27 +107,21 @@
         </div>
       </section>
 
-      <!-- SECTION 5: CTA -->
       <section class="py-20 sm:py-24 bg-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Start the Right Conversation</h2>
           <p class="text-lg text-slate-600 mb-4">Are you a producer seeking structured market access?</p>
           <p class="text-lg text-slate-600 mb-10">Are you a buyer seeking reliable supply?</p>
-          <p class="text-xl text-slate-800 font-semibold mb-10">Let's build the commercial pathway.</p>
+          <p class="text-xl text-slate-800 font-semibold mb-10">Let us build the commercial pathway.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            
-              href="/#contact"
-              class="inline-flex items-center justify-center px-8 py-4 bg-brand text-white font-bold rounded-xl hover:bg-brand/90 transition-colors duration-200 text-base"
-            >
+            <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 bg-brand text-white font-bold rounded-xl hover:bg-brand/90 transition-colors duration-200 text-base">
               Speak with Our Commercial Team
             </a>
-            
-              href="/#contact"
-              class="inline-flex items-center justify-center px-8 py-4 border-2 border-brand text-brand font-bold rounded-xl hover:bg-brand/5 transition-colors duration-200 text-base"
-            >
+            <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 border-2 border-brand text-brand font-bold rounded-xl hover:bg-brand/5 transition-colors duration-200 text-base">
               Explore a Market Opportunity
             </a>
           </div>
+        </div>
       </section>
 
     </main>
