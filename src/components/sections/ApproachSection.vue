@@ -9,10 +9,14 @@
           <h2
             class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent mb-2"
           >
-            Our Approach
+            Our Model
           </h2>
           <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-            We de‑risk production, aggregate demand, and create structured pathways for molecules.
+            PACC builds structured markets around industrial molecules.
+          </p>
+          <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+            We operate between supply and demand to create commercial certainty, activate scalable
+            volume, and reduce friction across production and delivery.
           </p>
         </div>
         <div class="md:col-span-2 grid sm:grid-cols-2 gap-6">
@@ -38,23 +42,24 @@ import ApproachCard from '@/components/ui/ApproachCard.vue'
 
 const approaches = [
   {
-    title: 'De‑risk Production',
+    title: 'Commercial Certainty',
     description:
-      'Commercial certainty via structured offtake, credit support, and long‑term agreements.',
+      'Structured offtake, disciplined pricing frameworks, and aligned credit terms that convert production into predictable revenue. We design agreements that support investment and long-term scale.',
   },
   {
-    title: 'Aggregate Demand',
-    description: 'Create liquidity and price transparency; build scalable customer funnels.',
+    title: 'Demand Activation',
+    description:
+      'Aggregate fragmented buyers into bankable, scalable volume. We engage end-users directly and build structured customer funnels that create liquidity in regional markets.',
   },
   {
-    title: 'Optimize Logistics',
+    title: 'Logistics Alignment',
     description:
-      'Trailers, storage, pipelines—optimize midstream to lower delivered costs and improve reliability.',
+      'Trailers, storage, pipelines, and regional distribution must work together. We optimize midstream coordination to lower delivered costs and improve reliability across the supply chain.',
   },
   {
-    title: 'Market‑Maker',
+    title: 'Market Structure',
     description:
-      'Act as trusted intermediary to take market risk so producers can focus on operations.',
+      'Emerging and under-optimized markets often lack a trusted intermediary. PACC operates as a disciplined commercial layer that aligns producers, buyers, and infrastructure into executable transactions.',
   },
 ]
 </script>
