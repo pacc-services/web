@@ -11,7 +11,7 @@ export const k2HydrogenFttCoverage: Article = {
     date: 'February 18, 2026',
     datePublished: '2026-02-18T08:00:00-08:00',
     location: 'Pittsburg, CA',
-    category: 'Press Coverage',
+    category: 'Company News',
     tags: ['Hydrogen', 'Partnership', 'Infrastructure', 'California', 'Clean Energy'],
   },
 
