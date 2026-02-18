@@ -146,7 +146,6 @@
               Explore a Market Opportunity
             </a>
           </div>
-        </div>
       </section>
 
     </main>
