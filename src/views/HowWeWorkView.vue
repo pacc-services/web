@@ -269,7 +269,7 @@ const molecules = [
   'Hydrogen',
   'Industrial gases',
   'Byproduct streams',
-  'CO₂ and specialty gases',
+  'CO\u2082 and specialty gases',
   'Traditional industrial fuels',
   'Emerging molecules',
 ]
