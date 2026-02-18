@@ -84,7 +84,7 @@
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              <span>San Francisco, CA</span>
+              <span>Phoenix, AZ</span>
             </li>
           </ul>
         </div>
