@@ -11,18 +11,9 @@
           </h1>
           <div class="mt-8 space-y-5 text-lg text-slate-600 leading-relaxed">
             <p>Production capacity alone does not create a market.</p>
-            <p>
-              Industrial and emerging molecule markets stall when offtake is uncertain, logistics
-              are fragmented, and risk is misaligned.
-            </p>
-            <p>
-              PACC exists to build the commercial structure that allows supply and demand to meet
-              at scale.
-            </p>
-            <p>
-              We follow a disciplined, repeatable execution framework from first conversation to
-              executed transaction.
-            </p>
+            <p>Industrial and emerging molecule markets stall when offtake is uncertain, logistics are fragmented, and risk is misaligned.</p>
+            <p>PACC exists to build the commercial structure that allows supply and demand to meet at scale.</p>
+            <p>We follow a disciplined, repeatable execution framework from first conversation to executed transaction.</p>
           </div>
         </div>
       </section>
@@ -58,9 +49,7 @@
                     {{ item }}
                   </li>
                 </ul>
-                <p v-if="step.closing" class="mt-5 text-slate-800 font-semibold">
-                  {{ step.closing }}
-                </p>
+                <p v-if="step.closing" class="mt-5 text-slate-800 font-semibold">{{ step.closing }}</p>
               </div>
             </div>
           </div>
@@ -79,36 +68,24 @@
               <p class="text-slate-600 mb-6">We act as your commercial execution partner.</p>
               <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">PACC can support:</p>
               <ul class="space-y-3">
-                <li
-                  v-for="item in producerItems"
-                  :key="item"
-                  class="flex items-start gap-2 text-slate-600"
-                >
+                <li v-for="item in producerItems" :key="item" class="flex items-start gap-2 text-slate-600">
                   <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0"></span>
                   {{ item }}
                 </li>
               </ul>
-              <p class="mt-6 text-slate-700 font-semibold">
-                We align production reality with scalable demand.
-              </p>
+              <p class="mt-6 text-slate-700 font-semibold">We align production reality with scalable demand.</p>
             </div>
             <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8">
               <h3 class="text-xl font-bold text-slate-900 mb-2">For Buyers</h3>
               <p class="text-slate-600 mb-6">We provide structured access to reliable supply.</p>
               <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">PACC supports:</p>
               <ul class="space-y-3">
-                <li
-                  v-for="item in buyerItems"
-                  :key="item"
-                  class="flex items-start gap-2 text-slate-600"
-                >
+                <li v-for="item in buyerItems" :key="item" class="flex items-start gap-2 text-slate-600">
                   <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0"></span>
                   {{ item }}
                 </li>
               </ul>
-              <p class="mt-6 text-slate-700 font-semibold">
-                We reduce friction between production and end use.
-              </p>
+              <p class="mt-6 text-slate-700 font-semibold">We reduce friction between production and end use.</p>
             </div>
           </div>
         </div>
@@ -127,37 +104,23 @@
           </div>
           <p class="text-lg text-slate-300 mb-8">PACC operates as a commercial structuring layer.</p>
           <ul class="grid sm:grid-cols-2 gap-4 mb-14">
-            <li
-              v-for="trait in traits"
-              :key="trait"
-              class="flex items-center gap-3 text-white font-semibold text-lg"
-            >
+            <li v-for="trait in traits" :key="trait" class="flex items-center gap-3 text-white font-semibold text-lg">
               <span class="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"></span>
               {{ trait }}
             </li>
           </ul>
-          <p class="text-slate-400 mb-12">
-            We prioritize transactions that work under real capital constraints.
-          </p>
+          <p class="text-slate-400 mb-12">We prioritize transactions that work under real capital constraints.</p>
           <div class="border-t border-slate-700 pt-12">
-            <h3 class="text-2xl font-bold text-white mb-4">Molecules & Markets</h3>
-            <p class="text-slate-400 mb-6">
-              PACC's framework applies wherever supply and demand require commercial alignment.
-            </p>
+            <h3 class="text-2xl font-bold text-white mb-4">Molecules and Markets</h3>
+            <p class="text-slate-400 mb-6">PACC's framework applies wherever supply and demand require commercial alignment.</p>
             <p class="text-slate-400 mb-4 font-semibold">We work across:</p>
             <ul class="grid sm:grid-cols-2 gap-3">
-              <li
-                v-for="molecule in molecules"
-                :key="molecule"
-                class="flex items-center gap-3 text-slate-300"
-              >
+              <li v-for="molecule in molecules" :key="molecule" class="flex items-center gap-3 text-slate-300">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0"></span>
                 {{ molecule }}
               </li>
             </ul>
-            <p class="mt-8 text-slate-300 font-semibold italic">
-              If production exists but market structure does not, we build the bridge.
-            </p>
+            <p class="mt-8 text-slate-300 font-semibold italic">If production exists but market structure does not, we build the bridge.</p>
           </div>
         </div>
       </section>
@@ -165,9 +128,7 @@
       <!-- SECTION 5: CTA -->
       <section class="py-20 sm:py-24 bg-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
-            Start the Right Conversation
-          </h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Start the Right Conversation</h2>
           <p class="text-lg text-slate-600 mb-4">Are you a producer seeking structured market access?</p>
           <p class="text-lg text-slate-600 mb-10">Are you a buyer seeking reliable supply?</p>
           <p class="text-xl text-slate-800 font-semibold mb-10">Let's build the commercial pathway.</p>
@@ -199,7 +160,7 @@ import AppFooter from '@/components/layout/AppFooter.vue'
 
 const frameworkSteps = [
   {
-    title: 'Evaluate & Align',
+    title: 'Evaluate and Align',
     description: 'We begin with disciplined assessment.',
     items: [
       'Production profile and operating constraints',
@@ -234,7 +195,7 @@ const frameworkSteps = [
     closing: 'We do not deliver advisory memos. We drive transactions to execution.',
   },
   {
-    title: 'Execute & Scale',
+    title: 'Execute and Scale',
     description: 'Execution does not stop at contract signature.',
     items: [
       'Delivery coordination',
@@ -269,7 +230,7 @@ const molecules = [
   'Hydrogen',
   'Industrial gases',
   'Byproduct streams',
-  'CO\u2082 and specialty gases',
+  'CO2 and specialty gases',
   'Traditional industrial fuels',
   'Emerging molecules',
 ]
