@@ -16,6 +16,7 @@ import { reactive } from 'vue'
 import BaseInput from '@/components/ui/BaseInput.vue'
 import BaseTextarea from '@/components/ui/BaseTextarea.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
+import { useAnalytics } from '@/composables/useAnalytics'
 
 const form = reactive({
   name: '',
@@ -23,6 +24,8 @@ const form = reactive({
   company: '',
   message: '',
 })
+
+const { trackFormSubmission } = useAnalytics()
 
 const handleSubmit = () => {
   const subject = encodeURIComponent('PACC Website Inquiry')
@@ -32,6 +35,9 @@ const handleSubmit = () => {
       `Company: ${form.company}\n` +
       `Message:\n${form.message}`,
   )
+
+  // Track form submission
+  trackFormSubmission('Contact Form')
 
   window.location.href = `mailto:pat@pacc.services?subject=${subject}&body=${body}`
 
