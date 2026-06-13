@@ -1,17 +1,12 @@
 <template>
   <section class="relative isolate overflow-hidden min-h-screen flex items-center">
-    <!-- Bridge background — full bleed left anchor -->
     <div
-      class="absolute inset-0 bg-cover bg-center lg:bg-left"
+      class="absolute inset-0 bg-cover bg-center"
       :style="`background-image: url('${goldenGateBridge}')`"
     ></div>
-    <!-- K2 aerial — right half, visible on desktop -->
     <div
-      class="absolute inset-y-0 right-0 w-[55%] bg-cover bg-center hidden lg:block"
-      :style="`background-image: url('${aerialPhoto}')`"
+      class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-brand/50 to-transparent"
     ></div>
-    <!-- Gradient: hard navy left, soft blend centre, lighter right so aerial shows through -->
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 from-30% via-brand/80 via-55% to-slate-800/60"></div>
     <HydrogenBubbles />
     <div
       class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 w-full z-10"
@@ -68,7 +63,6 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 import ImpactCard from '@/components/ui/ImpactCard.vue'
 import HydrogenBubbles from '@/components/ui/HydrogenBubbles.vue'
 import goldenGateBridge from '@/assets/images/golden_gate_bridge.jpg'
-import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
 </script>
 
 <style scoped>
@@ -76,36 +70,24 @@ import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
   opacity: 0;
   animation: fadeInSimple 0.8s ease-out 0.2s forwards;
 }
-
 .hero-text {
   opacity: 0;
   animation: fadeInSimple 0.8s ease-out 0.4s forwards;
 }
-
 .hero-buttons {
   opacity: 0;
   animation: fadeInSimple 0.8s ease-out 0.6s forwards;
 }
-
 .hero-subtitle {
   opacity: 0;
   animation: fadeInSimple 0.8s ease-out 0.8s forwards;
 }
-
 .hero-card {
   opacity: 0;
   animation: fadeInSimple 0.8s ease-out 1s forwards;
 }
-
 @keyframes fadeInSimple {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
