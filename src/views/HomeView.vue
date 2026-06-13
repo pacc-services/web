@@ -10,7 +10,8 @@
       <!-- <OrgStructureSection /> -->
       <LeadershipSection />
       <NewsSection />
-      <LinkedInFeedSection />
+      <CaseStudyBanner />
+    <LinkedInFeedSection />
       <ContactSection />
     </main>
     <AppFooter />
@@ -26,6 +27,7 @@ import PaccTracSection from '@/components/sections/PaccTracSection.vue'
 import MarketProblemSection from '@/components/sections/MarketProblemSection.vue'
 import LeadershipSection from '@/components/sections/LeadershipSection.vue'
 import NewsSection from '@/components/sections/NewsSection.vue'
+import CaseStudyBanner from '@/components/sections/CaseStudyBanner.vue'
 import LinkedInFeedSection from '@/components/sections/LinkedInFeedSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
