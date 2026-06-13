@@ -6,7 +6,10 @@
         <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900">Get in Touch</h2>
         <p class="mt-4 text-xl text-slate-600">Discuss offtake, logistics, or partnership opportunities.</p>
         <div class="mt-10">
-          <a href="mailto:contact@pacc.services" class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-slate-900 text-white font-bold text-xl hover:bg-slate-800 transition-colors">Contact Us</a>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="mailto:contact@pacc.services" class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-slate-900 text-white font-bold text-xl hover:bg-slate-800 transition-colors">Contact Us</a>
+            <a href="tel:+18889617222" class="inline-flex items-center justify-center px-10 py-5 rounded-xl border-2 border-slate-900 text-slate-900 font-bold text-xl hover:bg-slate-100 transition-colors">(888) 961-PACC</a>
+          </div>
         </div>
       </div>
     </div>
