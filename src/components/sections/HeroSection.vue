@@ -1,12 +1,17 @@
 <template>
   <section class="relative isolate overflow-hidden min-h-screen flex items-center">
+    <!-- Bridge background — full bleed, brand anchor -->
     <div
       class="absolute inset-0 bg-cover bg-center"
       :style="`background-image: url('${goldenGateBridge}')`"
     ></div>
+    <!-- Aerial facility photo — right side blend -->
     <div
-      class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-brand/50 to-transparent"
+      class="absolute inset-y-0 right-0 w-1/2 bg-cover bg-center hidden lg:block"
+      :style="`background-image: url('${aerialPhoto}')`"
     ></div>
+    <!-- Gradient: left navy (over bridge), center blend, right darkens aerial -->
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-brand/70 to-slate-900/75"></div>
     <HydrogenBubbles />
     <div
       class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 w-full z-10"
@@ -63,6 +68,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 import ImpactCard from '@/components/ui/ImpactCard.vue'
 import HydrogenBubbles from '@/components/ui/HydrogenBubbles.vue'
 import goldenGateBridge from '@/assets/images/golden_gate_bridge.jpg'
+import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
 </script>
 
 <style scoped>
