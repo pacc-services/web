@@ -5,7 +5,7 @@
 
       <section class="relative overflow-hidden py-28 sm:py-32 lg:py-40">
         <div class="absolute inset-0 bg-cover bg-center" :style="{ backgroundImage: `url(${aerialPhoto})` }"></div>
-        <div class="absolute inset-0 bg-slate-900/78"></div>
+        <div class="absolute inset-0 bg-slate-900/85"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
             Markets Do Not Scale Without Structure
