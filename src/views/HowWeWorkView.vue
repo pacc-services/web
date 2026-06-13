@@ -3,12 +3,16 @@
     <AppHeader />
     <main>
 
-      <section class="py-20 sm:py-24 lg:py-32 bg-white border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
+      <section
+        class="relative overflow-hidden py-28 sm:py-32 lg:py-40"
+        :style="`background-image: url('${aerialPhoto}'); background-size: cover; background-position: center;`"
+      >
+        <div class="absolute inset-0 bg-slate-900/78"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
             Markets Do Not Scale Without Structure
           </h1>
-          <div class="mt-8 space-y-5 text-lg text-slate-600 leading-relaxed">
+          <div class="mt-8 space-y-5 text-lg text-white/70 leading-relaxed">
             <p>Production capacity alone does not create a market.</p>
             <p>Industrial and emerging molecule markets stall when offtake is uncertain, logistics are fragmented, and risk is misaligned.</p>
             <p>PACC exists to build the commercial structure that allows supply and demand to meet at scale.</p>
@@ -41,6 +45,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -155,6 +160,7 @@
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import deliveryMethods from '@/assets/images/brand/delivery-methods.png'
+import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
 
 const frameworkSteps = [
   {
