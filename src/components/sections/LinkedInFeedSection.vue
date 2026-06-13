@@ -152,7 +152,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import emblaCarouselVue from 'embla-carousel-vue'
-import { getRecentPosts, type LinkedInPost } from '@/data/linkedin-posts'
+import { getRecentPosts } from '@/data/linkedin-posts'
 
 const posts = getRecentPosts(5)
 
