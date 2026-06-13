@@ -5,6 +5,7 @@ import NewsView from '@/views/NewsView.vue'
 import ArticleView from '@/views/ArticleView.vue'
 import HowWeWorkView from '@/views/HowWeWorkView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
+import CaseStudyView from '@/views/CaseStudyView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -28,13 +29,16 @@ const routes: Array<RouteRecordRaw> = [
     component: HowWeWorkView,
   },
   {
+    path: '/case-studies/industrial-gas-contract-optimization',
+    name: 'case-study-industrial-gas',
+    component: CaseStudyView,
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: NotFoundView,
   },
 ]
-
-const CaseStudyView = () => import('../views/CaseStudyView.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
