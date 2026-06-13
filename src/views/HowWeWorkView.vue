@@ -54,15 +54,16 @@
               Logistics
             </span>
             <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900">How We Deliver</h2>
-            <p class="mt-3 text-lg text-slate-600 max-w-2xl">
+            <p class="mt-3 text-xl text-slate-600 max-w-3xl">
               PACC coordinates delivery logistics directly — matching the right method to each customer's infrastructure and operational profile.
             </p>
           </div>
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8">
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4">
             <img
               :src="deliveryMethods"
               alt="Three delivery methods: Drop and Swap, Offloading, and Wet Hose Fueling"
-              class="w-full"
+              class="w-full max-w-none"
+              style="min-height: 300px; object-fit: contain;"
             />
           </div>
         </div>
