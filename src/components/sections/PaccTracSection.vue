@@ -2,16 +2,12 @@
   <section
     id="pacc-trac"
     class="relative overflow-hidden py-16 sm:py-20 lg:py-24"
+    :style="`background-image: url('${aerialPhoto}'); background-size: cover; background-position: center;`"
   >
-    <!-- K2 facility aerial background -->
-    <div
-      class="absolute inset-0 bg-cover bg-center"
-      :style="`background-image: url('${aerialPhoto}')`"
-    ></div>
-    <!-- Dark overlay so text reads cleanly -->
-    <div class="absolute inset-0 bg-slate-900/85"></div>
+    <!-- Dark overlay so text reads cleanly over aerial photo -->
+    <div class="absolute inset-0 bg-slate-900/82"></div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
 
         <!-- Left: Logo + description -->
