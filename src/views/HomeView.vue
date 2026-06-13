@@ -9,6 +9,7 @@
       <!-- <OrgStructureSection /> -->
       <LeadershipSection />
       <NewsSection />
+      <LinkedInFeedSection />
       <ContactSection />
     </main>
     <AppFooter />
@@ -23,6 +24,7 @@ import ApproachSection from '@/components/sections/ApproachSection.vue'
 import MarketProblemSection from '@/components/sections/MarketProblemSection.vue'
 import LeadershipSection from '@/components/sections/LeadershipSection.vue'
 import NewsSection from '@/components/sections/NewsSection.vue'
+import LinkedInFeedSection from '@/components/sections/LinkedInFeedSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
 import { useMetaTags } from '@/composables/useMetaTags'
