@@ -1,12 +1,15 @@
 <template>
   <section
     id="pacc-trac"
-    class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-brand to-slate-900 py-16 sm:py-20 lg:py-24"
+    class="relative overflow-hidden py-16 sm:py-20 lg:py-24"
   >
-    <!-- Subtle background texture -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-    </div>
+    <!-- K2 facility aerial background -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      :style="`background-image: url('${aerialPhoto}')`"
+    ></div>
+    <!-- Dark overlay so text reads cleanly -->
+    <div class="absolute inset-0 bg-slate-900/85"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -94,4 +97,5 @@
 
 <script setup lang="ts">
 import paccTracLogo from '@/assets/images/brand/pacc-trac-logo.png'
+import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
 </script>
