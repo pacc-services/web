@@ -34,6 +34,8 @@ const routes: Array<RouteRecordRaw> = [
   },
 ]
 
+const CaseStudyView = () => import('../views/CaseStudyView.vue')
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
