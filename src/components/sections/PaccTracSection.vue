@@ -5,7 +5,7 @@
     :style="`background-image: url('${aerialPhoto}'); background-size: cover; background-position: center;`"
   >
     <!-- Dark overlay so text reads cleanly over aerial photo -->
-    <div class="absolute inset-0 bg-slate-900/70"></div>
+    <div class="absolute inset-0 bg-slate-900/78"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
