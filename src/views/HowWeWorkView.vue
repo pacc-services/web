@@ -49,7 +49,7 @@
       <!-- Delivery Methods -->
       <section class="py-20 sm:py-24 bg-white border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="mb-10">
+          <div class="mb-12">
             <span class="text-xs font-bold tracking-[0.3em] uppercase text-brand bg-brand/5 px-4 py-2 rounded-full">
               Logistics
             </span>
@@ -58,13 +58,17 @@
               PACC coordinates delivery logistics directly — matching the right method to each customer's infrastructure and operational profile.
             </p>
           </div>
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4">
-            <img
-              :src="deliveryMethods"
-              alt="Three delivery methods: Drop and Swap, Offloading, and Wet Hose Fueling"
-              class="w-full max-w-none"
-              style="min-height: 300px; object-fit: contain;"
-            />
+          <div class="grid sm:grid-cols-3 gap-6">
+            <div v-for="method in deliveryMethodCards" :key="method.title" class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden flex flex-col">
+              <div class="bg-white px-4 pt-6 pb-2">
+                <img :src="method.image" :alt="method.title" class="w-full h-40 object-contain" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <h3 class="text-xl font-bold text-brand mb-2">{{ method.title }}</h3>
+                <div class="w-8 h-0.5 bg-brand-green mb-3"></div>
+                <p class="text-base text-slate-600 leading-relaxed flex-1">{{ method.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -157,8 +161,28 @@
 <script setup lang="ts">
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
-import deliveryMethods from '@/assets/images/brand/delivery-methods.png'
+import dropSwapImg from '@/assets/images/brand/drop-swap.png'
+import offloadingImg from '@/assets/images/brand/offloading.png'
+import wetHoseImg from '@/assets/images/brand/wet-hose.png'
 import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
+
+const deliveryMethodCards = [
+  {
+    title: 'Drop & Swap',
+    image: dropSwapImg,
+    description: 'A PACC yard tractor hauls the empty trailer away and drops a fully-charged one in its place. The trailer doubles as on-site gaseous storage — continuous supply with no fixed infrastructure and no downtime.',
+  },
+  {
+    title: 'Offloading',
+    image: offloadingImg,
+    description: 'Hydrogen is transferred from the PACC trailer into the customer's fixed on-site tube storage in a single delivery — minimizing dwell time and maximizing throughput.',
+  },
+  {
+    title: 'Wet Hose Fueling',
+    image: wetHoseImg,
+    description: 'A trained PACC operator fills the customer's vehicle directly via cascade fill. Designed for buses, locomotives, and heavy-duty equipment operating from a central depot.',
+  },
+]
 
 const frameworkSteps = [
   {
