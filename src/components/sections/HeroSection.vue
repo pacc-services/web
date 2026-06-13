@@ -1,17 +1,17 @@
 <template>
   <section class="relative isolate overflow-hidden min-h-screen flex items-center">
-    <!-- Bridge background — full bleed, brand anchor -->
+    <!-- Bridge background — full bleed left anchor -->
     <div
-      class="absolute inset-0 bg-cover bg-center"
+      class="absolute inset-0 bg-cover bg-center lg:bg-left"
       :style="`background-image: url('${goldenGateBridge}')`"
     ></div>
-    <!-- Aerial facility photo — right side blend -->
+    <!-- K2 aerial — right half, visible on desktop -->
     <div
-      class="absolute inset-y-0 right-0 w-1/2 bg-cover bg-center hidden lg:block"
+      class="absolute inset-y-0 right-0 w-[55%] bg-cover bg-center hidden lg:block"
       :style="`background-image: url('${aerialPhoto}')`"
     ></div>
-    <!-- Gradient: left navy (over bridge), center blend, right darkens aerial -->
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-brand/70 to-slate-900/75"></div>
+    <!-- Gradient: hard navy left, soft blend centre, lighter right so aerial shows through -->
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 from-30% via-brand/80 via-55% to-slate-800/60"></div>
     <HydrogenBubbles />
     <div
       class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 w-full z-10"
