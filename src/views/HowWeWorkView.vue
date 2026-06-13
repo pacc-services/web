@@ -160,7 +160,7 @@
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import deliveryMethods from '@/assets/images/brand/delivery-methods.png'
-import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
+import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg' // hero bg
 
 const frameworkSteps = [
   {
