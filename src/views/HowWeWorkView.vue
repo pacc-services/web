@@ -175,12 +175,12 @@ const deliveryMethodCards = [
   {
     title: 'Offloading',
     image: offloadingImg,
-    description: 'Hydrogen is transferred from the PACC trailer into the customer's fixed on-site tube storage in a single delivery — minimizing dwell time and maximizing throughput.',
+    description: "Hydrogen is transferred from the PACC trailer into the customer's fixed on-site tube storage in a single delivery — minimizing dwell time and maximizing throughput.",
   },
   {
     title: 'Wet Hose Fueling',
     image: wetHoseImg,
-    description: 'A trained PACC operator fills the customer's vehicle directly via cascade fill. Designed for buses, locomotives, and heavy-duty equipment operating from a central depot.',
+    description: "A trained PACC operator fills the customer's vehicle directly via cascade fill. Designed for buses, locomotives, and heavy-duty equipment operating from a central depot.",
   },
 ]
 
