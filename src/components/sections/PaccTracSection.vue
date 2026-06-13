@@ -1,13 +1,6 @@
 <template>
-  <section
-    id="pacc-trac"
-    class="relative overflow-hidden py-16 sm:py-20 lg:py-24"
-    :style="`background-image: url('${aerialPhoto}'); background-size: cover; background-position: center;`"
-  >
-    <!-- Dark overlay so text reads cleanly over aerial photo -->
-    <div class="absolute inset-0 bg-slate-900/78"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="pacc-trac" class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-900 via-brand/90 to-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
 
         <!-- Left: Logo + description -->
@@ -93,5 +86,4 @@
 
 <script setup lang="ts">
 import paccTracLogo from '@/assets/images/brand/pacc-trac-logo.png'
-import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
 </script>
