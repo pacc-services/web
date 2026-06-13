@@ -3,10 +3,8 @@
     <AppHeader />
     <main>
 
-      <section
-        class="relative overflow-hidden py-28 sm:py-32 lg:py-40"
-        :style="`background-image: url('${aerialPhoto}'); background-size: cover; background-position: center;`"
-      >
+      <section class="relative overflow-hidden py-28 sm:py-32 lg:py-40">
+        <div class="absolute inset-0 bg-cover bg-center" :style="{ backgroundImage: `url(${aerialPhoto})` }"></div>
         <div class="absolute inset-0 bg-slate-900/78"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
@@ -45,7 +43,6 @@
               </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
 
@@ -160,7 +157,7 @@
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import deliveryMethods from '@/assets/images/brand/delivery-methods.png'
-import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg' // hero bg
+import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
 
 const frameworkSteps = [
   {
