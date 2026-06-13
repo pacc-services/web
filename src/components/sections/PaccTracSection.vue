@@ -27,28 +27,33 @@
             Track every molecule.<br />
             <span class="text-brand-green">Manage every deal.</span>
           </h2>
-          <p class="text-lg text-white/70 leading-relaxed mb-4">
-            PACC TRAC is our purpose-built commercial platform for hydrogen market management —
-            connecting producers, logistics, and customers in a single operating view.
+          <p class="text-lg text-white/70 leading-relaxed mb-6">
+            PACC TRAC is our purpose-built commercial platform for industrial gas and low-carbon fuel producers. Built by industry operators, the platform connects sales, logistics, operations, and customers in a single environment to improve execution, visibility, and market responsiveness.
           </p>
-          <ul class="space-y-2 text-white/70 text-sm">
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <ul class="space-y-3 text-white/70 text-sm">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
-              Pipeline and deal tracking across producers and customers
+              Manage customer relationships and opportunities
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
-              Delivery scheduling and logistics coordination
+              Coordinate deliveries across logistics partners
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
-              Volume, pricing, and margin visibility in real time
+              Track volumes, pricing, and commercial performance
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Provide customers with real-time order visibility
             </li>
           </ul>
         </div>
@@ -63,7 +68,7 @@
             </div>
             <h3 class="text-xl font-bold text-white mb-2">PACC TRAC Portal</h3>
             <p class="text-white/60 text-sm mb-8 leading-relaxed">
-              Access your commercial dashboard, delivery schedule, and market intelligence.
+              Access your orders, delivery schedules, account information, and commercial updates through a single customer portal.
             </p>
             <a
               href="https://pacctrac.com/"
@@ -71,7 +76,7 @@
               rel="noopener noreferrer"
               class="block w-full py-4 px-6 rounded-xl bg-brand-green text-white font-bold text-base hover:bg-brand-green/90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Log in to PACC TRAC
+              Log In to PACC TRAC
               <svg class="inline-block w-4 h-4 ml-2 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
