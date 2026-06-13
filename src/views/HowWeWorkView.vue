@@ -61,7 +61,7 @@
           <div class="grid sm:grid-cols-3 gap-6">
             <div v-for="method in deliveryMethodCards" :key="method.title" class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden flex flex-col">
               <div class="bg-white px-4 pt-6 pb-2">
-                <img :src="method.image" :alt="method.title" class="w-full h-40 object-contain" />
+                <img :src="method.image" :alt="method.title" class="w-full object-contain" />
               </div>
               <div class="p-6 flex flex-col flex-1">
                 <h3 class="text-xl font-bold text-brand mb-2">{{ method.title }}</h3>
