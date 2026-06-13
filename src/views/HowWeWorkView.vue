@@ -59,15 +59,15 @@
             </p>
           </div>
           <div class="grid sm:grid-cols-3 gap-6">
-            <div v-for="method in deliveryMethodCards" :key="method.title" class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden flex flex-col">
-              <div class="bg-white px-4 pt-6 pb-2">
-                <img :src="method.image" :alt="method.title" class="w-full object-contain" />
+            <div v-for="method in deliveryMethodCards" :key="method.title" class="bg-slate-50 border border-slate-200 rounded-2xl p-8 flex flex-col">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" :class="method.iconBg">
+                <svg class="w-6 h-6" :class="method.iconColor" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" :d="method.icon" />
+                </svg>
               </div>
-              <div class="p-6 flex flex-col flex-1">
-                <h3 class="text-xl font-bold text-brand mb-2">{{ method.title }}</h3>
-                <div class="w-8 h-0.5 bg-brand-green mb-3"></div>
-                <p class="text-base text-slate-600 leading-relaxed flex-1">{{ method.description }}</p>
-              </div>
+              <h3 class="text-xl font-bold text-brand mb-2">{{ method.title }}</h3>
+              <div class="w-8 h-0.5 bg-brand-green mb-4"></div>
+              <p class="text-base text-slate-600 leading-relaxed flex-1">{{ method.description }}</p>
             </div>
           </div>
         </div>
@@ -161,25 +161,28 @@
 <script setup lang="ts">
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
-import dropSwapImg from '@/assets/images/brand/drop-swap.png'
-import offloadingImg from '@/assets/images/brand/offloading.png'
-import wetHoseImg from '@/assets/images/brand/wet-hose.png'
 import aerialPhoto from '@/assets/images/k2-facility-aerial.jpg'
 
 const deliveryMethodCards = [
   {
     title: 'Drop & Swap',
-    image: dropSwapImg,
+    icon: 'M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5',
+    iconBg: 'bg-brand/10',
+    iconColor: 'text-brand',
     description: 'A PACC yard tractor hauls the empty trailer away and drops a fully-charged one in its place. The trailer doubles as on-site gaseous storage — continuous supply with no fixed infrastructure and no downtime.',
   },
   {
     title: 'Offloading',
-    image: offloadingImg,
+    icon: 'M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3',
+    iconBg: 'bg-brand-green/10',
+    iconColor: 'text-brand-green',
     description: "Hydrogen is transferred from the PACC trailer into the customer's fixed on-site tube storage in a single delivery — minimizing dwell time and maximizing throughput.",
   },
   {
     title: 'Wet Hose Fueling',
-    image: wetHoseImg,
+    icon: 'M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z',
+    iconBg: 'bg-orange-50',
+    iconColor: 'text-orange-500',
     description: "A trained PACC operator fills the customer's vehicle directly via cascade fill. Designed for buses, locomotives, and heavy-duty equipment operating from a central depot.",
   },
 ]
