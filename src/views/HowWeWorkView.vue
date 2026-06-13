@@ -44,6 +44,28 @@
         </div>
       </section>
 
+      <!-- Delivery Methods -->
+      <section class="py-20 sm:py-24 bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-10">
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-brand bg-brand/5 px-4 py-2 rounded-full">
+              Logistics
+            </span>
+            <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900">How We Deliver</h2>
+            <p class="mt-3 text-lg text-slate-600 max-w-2xl">
+              PACC coordinates delivery logistics directly — matching the right method to each customer's infrastructure and operational profile.
+            </p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8">
+            <img
+              :src="deliveryMethods"
+              alt="Three delivery methods: Drop and Swap, Offloading, and Wet Hose Fueling"
+              class="w-full"
+            />
+          </div>
+        </div>
+      </section>
+
       <section class="py-20 sm:py-24 bg-white border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-12">Engagement Models</h2>
@@ -132,6 +154,7 @@
 <script setup lang="ts">
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
+import deliveryMethods from '@/assets/images/brand/delivery-methods.png'
 
 const frameworkSteps = [
   {
