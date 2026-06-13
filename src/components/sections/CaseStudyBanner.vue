@@ -21,9 +21,7 @@
         </div>
 
         <a
-          href="/case-studies/industrial-gas-contract-optimization.html"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/case-studies/industrial-gas-contract-optimization"
           class="flex-shrink-0 inline-flex items-center gap-2 bg-white text-brand font-bold text-sm px-5 py-3 rounded-xl hover:bg-white/90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
         >
           Read the Case Study
