@@ -68,7 +68,7 @@ export const transitTomorrowHydrogen: Article = {
     {
       type: 'quote',
       text: "Transit agencies need supply they can count on at a price point that actually works. When that supply is produced on a pathway targeted to meet California\'s renewable fuel standards under the ICT regulation, it removes a real compliance headache for them.",
-      attribution: 'Jonathan Palacios-Avila, Executive, ZeroUp Energy',
+      author: 'Jonathan Palacios-Avila, Executive, ZeroUp Energy',
     },
     {
       type: 'paragraph',
@@ -77,7 +77,7 @@ export const transitTomorrowHydrogen: Article = {
     {
       type: 'quote',
       text: "Our facility was built on decades of operational excellence and process safety, and our hydrogen will be produced on a low-carbon pathway we believe is targeted to meet California\'s renewable fuel standards. That is a meaningful credential for the transit agencies ZeroUp serves, and it is something we will earn through the way we operate.",
-      attribution: 'Howard Brodie, CEO of K2 Pure Solutions',
+      author: 'Howard Brodie, CEO of K2 Pure Solutions',
     },
     {
       type: 'paragraph',
@@ -86,7 +86,7 @@ export const transitTomorrowHydrogen: Article = {
     {
       type: 'quote',
       text: "The ICT regulation creates real, durable demand for low-carbon hydrogen across California\'s transit sector. K2\'s targeted low-carbon production pathway, paired with ZeroUp\'s field experience and PACC\'s commercial infrastructure, is exactly the kind of integrated supply chain transit agencies need as they prepare for long-term compliance.",
-      attribution: 'Andrew Carman, CEO of PACC Services',
+      author: 'Andrew Carman, CEO of PACC Services',
     },
     {
       type: 'paragraph',
@@ -94,12 +94,12 @@ export const transitTomorrowHydrogen: Article = {
     },
     {
       type: 'callout',
+      variant: 'note',
       text: 'This article was originally published by Transit Tomorrow on June 17, 2026. Read the original at transittomorrow.com.',
     },
   ],
 
   seo: {
-    title: 'California Transit Agencies Need Renewable Hydrogen — Transit Tomorrow Coverage | PACC Services',
-    description: "Transit Tomorrow covers the K2 Pure Solutions and PACC Services hydrogen supply agreement with ZeroUp Energy, advancing zero-emission fleet transition for California transit agencies under the ICT regulation.",
+    metaDescription: "",
   },
 }
