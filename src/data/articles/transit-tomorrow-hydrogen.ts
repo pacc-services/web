@@ -11,7 +11,7 @@ export const transitTomorrowHydrogen: Article = {
     date: 'June 17, 2026',
     datePublished: '2026-06-17T08:00:00-04:00',
     location: 'Pittsburg, CA',
-    category: 'Press Coverage',
+    category: 'Industry Update',
     tags: ['Hydrogen', 'Transit', 'California', 'ICT Regulation', 'ZeroUp Energy', 'K2 Pure Solutions', 'Zero Emission'],
   },
 
