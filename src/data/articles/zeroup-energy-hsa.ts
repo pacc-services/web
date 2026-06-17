@@ -53,7 +53,7 @@ export const zeroUpEnergyHsa: Article = {
     {
       type: 'quote',
       text: 'ZeroUp Energy is exactly the kind of customer PACC was built to serve — a committed operator with real fleet demand, ready to move when supply is available. This agreement demonstrates that structured commercial relationships between producers and end-market demand are what actually move hydrogen from infrastructure investment to operational reality.',
-      attribution: 'Andrew Carman, CEO of PACC Services',
+      author: 'Andrew Carman, CEO of PACC Services',
     },
     {
       type: 'paragraph',
@@ -96,9 +96,6 @@ export const zeroUpEnergyHsa: Article = {
   ],
 
   seo: {
-    title:
-      'K2 Pure Solutions and PACC Services Execute Hydrogen Supply Agreement with ZeroUp Energy | PACC Services',
-    description:
-      'K2 Pure Solutions and PACC Services announce a Hydrogen Supply Agreement with ZeroUp Energy to advance zero-emission fleet transition across California.',
+    metaDescription: "",
   },
 }
