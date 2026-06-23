@@ -40,15 +40,15 @@ export const zeroUpEnergyHsa: Article = {
     },
     {
       type: 'paragraph',
-      text: "PITTSBURG, CA — June 17, 2026 — K2 Pure Solutions and PACC Services, LLC today announced a Hydrogen Supply Agreement (HSA) with ZeroUp Energy, Inc., a California-based company advancing zero-emission fleet transition for heavy-duty transportation. The agreement establishes a dedicated supply of low-carbon gaseous hydrogen produced at K2\'s Pittsburg, CA facility, with PACC Services acting as exclusive commercial agent under its Hydrogen Marketing Agreement with K2.",
+      text: "PITTSBURG, CA — June 17, 2026 — K2 Pure Solutions and PACC Services, LLC today announced a Hydrogen Supply Agreement (HSA) with ZeroUp Energy, Inc., a California-based company advancing zero-emission fleet transition for heavy-duty transportation. The agreement establishes a dedicated supply of low-carbon gaseous hydrogen produced at K2's Pittsburg, CA facility, with PACC Services acting as exclusive commercial agent under its Hydrogen Marketing Agreement with K2.",
     },
     {
       type: 'paragraph',
-      text: "ZeroUp Energy is focused on accelerating the adoption of hydrogen fuel cell technology across California\'s commercial fleet sector, targeting buses, heavy-duty trucks, and other high-utilization transportation applications. The agreement provides ZeroUp Energy with access to a reliable, locally produced supply of low-carbon hydrogen as it deploys and scales its California customer base.",
+      text: "ZeroUp Energy is focused on accelerating the adoption of hydrogen fuel cell technology across California's commercial fleet sector, targeting buses, heavy-duty trucks, and other high-utilization transportation applications. The agreement provides ZeroUp Energy with access to a reliable, locally produced supply of low-carbon hydrogen as it deploys and scales its California customer base.",
     },
     {
       type: 'paragraph',
-      text: "K2 Pure Solutions\' Pittsburg facility is one of the largest dedicated hydrogen production assets in Northern California, positioned to serve demand across the Bay Area, Central Valley, and broader California market. Commercial operations are expected to commence in July 2026, with the ZeroUp Energy agreement representing an early anchor offtake commitment ahead of K2\'s commercial date of operations.",
+      text: "K2 Pure Solutions' Pittsburg facility is one of the largest dedicated hydrogen production assets in Northern California, positioned to serve demand across the Bay Area, Central Valley, and broader California market. Commercial operations are expected to commence in July 2026, with the ZeroUp Energy agreement representing an early anchor offtake commitment ahead of K2's commercial date of operations.",
     },
     {
       type: 'quote',
@@ -57,7 +57,7 @@ export const zeroUpEnergyHsa: Article = {
     },
     {
       type: 'paragraph',
-      text: "The agreement was structured and executed by PACC Services under its Hydrogen Marketing Agreement with K2 Pure Solutions, which designates PACC as K2\'s exclusive commercial agent within a 75-mile radius of the Pittsburg facility. PACC manages customer origination, offtake negotiation, pricing, and logistics coordination on K2\'s behalf.",
+      text: "The agreement was structured and executed by PACC Services under its Hydrogen Marketing Agreement with K2 Pure Solutions, which designates PACC as K2's exclusive commercial agent within a 75-mile radius of the Pittsburg facility. PACC manages customer origination, offtake negotiation, pricing, and logistics coordination on K2's behalf.",
     },
     {
       type: 'heading',
@@ -66,7 +66,7 @@ export const zeroUpEnergyHsa: Article = {
     },
     {
       type: 'paragraph',
-      text: "K2 Pure Solutions is a leading producer of low-carbon hydrogen and industrial chemicals, operating an electrolysis-based production facility in Pittsburg, CA. K2\'s hydrogen is produced with a low carbon intensity and is positioned to serve growing demand across transportation, industrial, and energy sectors in Northern California.",
+      text: "K2 Pure Solutions is a leading producer of low-carbon hydrogen and industrial chemicals, operating an electrolysis-based production facility in Pittsburg, CA. K2's hydrogen is produced with a low carbon intensity and is positioned to serve growing demand across transportation, industrial, and energy sectors in Northern California.",
     },
     {
       type: 'heading',
