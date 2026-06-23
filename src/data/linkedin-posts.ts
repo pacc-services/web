@@ -15,6 +15,16 @@ export interface LinkedInPost {
 
 export const linkedInPosts: LinkedInPost[] = [
   {
+    id: 'andrew-rha-annual-meeting-2026-06-23',
+    date: 'June 23, 2026',
+    datePublished: '2026-06-23T09:00:00-08:00',
+    author: 'Andrew Carman',
+    authorTitle: 'Co-Founder & CEO',
+    authorUrl: 'https://www.linkedin.com/in/andrew-carman-mba-a086a5b/',
+    text: "Last week I had the opportunity to attend the Renewable Hydrogen Alliance Annual Meeting in Wenatchee, WA, representing PACC Services and K2 Pure Solutions alongside a great group of industry leaders working to make hydrogen a reality in the Pacific Northwest. It was a pleasure to join the transportation panel and discuss the real challenges facing the hydrogen economy today. While technology continues to advance, the conversations are increasingly focused on commercialization, customer adoption, reliable supply, and the partnerships needed to move from pilot projects to sustainable markets. The Pacific Northwest has a real opportunity to build something meaningful by bringing together producers, infrastructure providers, fleet operators, utilities, and policymakers around a shared vision. Shrinking circles. Building confidence.",
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7475204998348558337/',
+  },
+  {
     id: 'pacc-hyster-yale-2026-06-13',
     date: 'June 13, 2026',
     datePublished: '2026-06-13T09:00:00-08:00',
