@@ -110,7 +110,7 @@ const teamMembers: TeamMember[] = [
     name: 'Steve Morton',
     role: 'COO',
     bio: "A senior industrial gas executive with extensive leadership experience in hydrogen, operations, and commercial management. During a long career at Linde, led large teams and complex operations, combining operational discipline with a strong understanding of customer needs and the infrastructure required to serve them. His experience spans hydrogen supply, distribution, and customer operations, with a practical focus on solving problems and turning commercial commitments into reliable service. At PACC, leads operational execution and downstream infrastructure development, working with customers, equipment suppliers, and partners to coordinate refueling solutions and support new hydrogen deployments. Also brings experienced operational guidance to producer relationships as PACC expands its supply network. Having worked closely with both PACC founders during their time at Linde, brings a longstanding foundation of trust, mentorship, and shared experience to the leadership team.",
-    linkedin: 'https://www.linkedin.com/in/steve-morton-b2a5b84/',
+    linkedin: 'https://www.linkedin.com/in/steve-morton-connexus/',
     image: steveImage,
   },
 ]
