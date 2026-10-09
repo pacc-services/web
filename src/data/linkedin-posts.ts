@@ -13,7 +13,20 @@ export interface LinkedInPost {
   image?: string
 }
 
+import steveWelcomeImage from '@/assets/images/linkedin/steve-morton-welcome.png'
+
 export const linkedInPosts: LinkedInPost[] = [
+  {
+    id: 'pacc-steve-morton-coo-hydrogen-day-2026-10-08',
+    date: 'October 8, 2026',
+    datePublished: '2026-10-08T09:00:00-07:00',
+    author: 'PACC Services',
+    authorTitle: 'Producer Services and Commercial Platform',
+    authorUrl: 'https://www.linkedin.com/company/pacc-services',
+    text: "This Hydrogen Day, PACC is adding more than 40 years of hydrogen and industrial gas experience to our leadership team. Welcome Steve Morton, our new Chief Operating Officer. Growing the hydrogen market takes people who know how to connect production, logistics, and customer demand, then make those connections work in practice. Steve brings more than 40 years of industrial gas and hydrogen experience to that task. For PACC co-founders Andrew Carman and Patrick Charette, this is also a reunion. Both worked with Steve for many years at Linde and know firsthand his operating judgment, commercial perspective, and commitment to customers. Glad to be working together again, Steve. PACC Services | Bridging dislocated markets.",
+    url: 'https://www.linkedin.com/posts/pacc-services_hydrogenday-hydrogen-paccservices-activity-7514018388244021249-I8nz',
+    image: steveWelcomeImage,
+  },
   {
     id: 'andrew-rha-annual-meeting-2026-06-23',
     date: 'June 23, 2026',
