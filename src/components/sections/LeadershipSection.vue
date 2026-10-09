@@ -59,26 +59,6 @@
       <!-- Divider -->
       <div class="mt-12 mb-12 border-t border-slate-200 max-w-4xl mx-auto"></div>
 
-      <!-- Story Block 2 -->
-      <div class="max-w-4xl mx-auto" data-animate="fade-up">
-        <h3 class="text-2xl font-bold text-slate-900 mb-4">
-          Built by Long-Term Commercial Partners
-        </h3>
-        <p class="text-slate-600 leading-relaxed mb-4">
-          Andrew Carman and Patrick Charette founded PACC after nearly a decade of working
-          side-by-side in industrial gas and hydrogen markets.
-        </p>
-        <p class="text-slate-600 leading-relaxed mb-4">
-          Together, they led origination efforts, structured first-of-kind hydrogen transactions,
-          and developed regional supply strategies across North America. Their shared experience
-          revealed a recurring truth: markets do not scale on production alone. They scale when
-          commercial structure is built with discipline and alignment.
-        </p>
-        <p class="text-slate-600 leading-relaxed">
-          PACC was formed to bring that structure to industrial molecules across emerging and
-          established markets.
-        </p>
-      </div>
 
       <!-- Divider -->
       <div class="mt-12 mb-12 border-t border-slate-200 max-w-4xl mx-auto"></div>
