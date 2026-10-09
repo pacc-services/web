@@ -10,35 +10,49 @@
         <h2
           class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-brand to-brand-green bg-clip-text text-transparent"
         >
-          Founder's Story
+          Our Story
         </h2>
       </div>
 
       <!-- Story Block 1 -->
       <div class="mt-10 max-w-4xl mx-auto" data-animate="fade-up">
         <h3 class="text-2xl font-bold text-slate-900 mb-4">
-          Built by Operators. Strengthened by Partnership.
+          Built on Experience. Focused on Execution.
         </h3>
         <p class="text-slate-600 leading-relaxed mb-4">
-          PACC was founded by Andrew Carman and Patrick Charette, who have worked together for nearly
-          a decade across industrial gas and hydrogen markets.
+          PACC was founded by Andrew Carman and Patrick Charette after nearly a decade of working
+          together across industrial gas and hydrogen markets.
         </p>
         <p class="text-slate-600 leading-relaxed mb-4">
-          Over that time, they structured complex offtake agreements, developed new regional markets,
-          and led commercialization efforts inside large energy and gas organizations. Through that
-          experience, they saw a consistent gap: production was advancing, but commercial alignment
-          lagged behind.
-        </p>
-        <p class="text-slate-600 leading-relaxed mb-4">
-          Projects did not stall because of technology. They stalled because supply, demand,
-          logistics, and risk allocation were not structured correctly.
+          Together, they structured complex offtake agreements, developed regional supply strategies,
+          and led commercialization efforts inside major energy and gas organizations. Their experience
+          revealed a consistent gap: bringing production online required more than technology. It
+          required alignment between supply, demand, logistics, infrastructure, and commercial terms.
         </p>
         <p class="text-slate-600 leading-relaxed mb-4">
           PACC was created to close that gap.
         </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          Today, PACC connects producers with customers and coordinates the commercial and operational
+          work needed to turn available supply into reliable service.
+        </p>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">
+          A Shared History. An Expanded Team.
+        </h3>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          With Steve Morton joining as Chief Operating Officer, PACC builds on relationships
+          established during Andrew and Patrick's time at Linde. Steve brings extensive hydrogen and
+          industrial gas experience, a strong customer focus, and a history of leading teams and
+          complex operations.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Our leadership team brings together three complementary strengths: Andrew leads company
+          strategy and producer relationships; Patrick leads customer development and commercial
+          execution; and Steve leads operational coordination and downstream infrastructure.
+        </p>
         <p class="text-slate-600 leading-relaxed">
-          Today, PACC operates as an independent commercial platform focused on disciplined
-          structuring, market activation, and execution that works in real market conditions.
+          Together, we help customers connect hydrogen supply, distribution, and refueling
+          infrastructure so commercial agreements translate into operating solutions.
         </p>
       </div>
 
