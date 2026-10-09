@@ -89,6 +89,7 @@ import TeamMemberCard from '@/components/ui/TeamMemberCard.vue'
 import type { TeamMember } from '@/types'
 import andrewImage from '@/assets/images/andrew.png'
 import patrickImage from '@/assets/images/image.png'
+import steveImage from '@/assets/images/steve.jpg'
 
 const teamMembers: TeamMember[] = [
   {
@@ -104,6 +105,12 @@ const teamMembers: TeamMember[] = [
     bio: 'An energy executive and entrepreneur with extensive leadership experience in hydrogen and industrial gases. As Head of Commercial at BayoTech Hydrogen, led all commercial activities, set strategy, and pioneered the launch of a hydrogen molecule trading and logistics company that integrated production, distribution, and third-party sourcing. At Nikola Corporation, expanded hydrogen fueling and infrastructure strategy while securing significant government and industry partnerships. Earlier leadership roles with Linde and Praxair built expertise in specialty gases and large-scale pipeline networks. A foundation as an airline captain instilled the operational discipline and decision-making under pressure that continue to shape an executive approach to scaling clean energy businesses.',
     linkedin: 'https://www.linkedin.com/in/patrick-charette',
     image: patrickImage,
+  },
+  {
+    name: 'Steve Morton',
+    role: 'COO',
+    bio: "A senior industrial gas executive with extensive leadership experience in hydrogen, operations, and commercial management. During a long career at Linde, led large teams and complex operations, combining operational discipline with a strong understanding of customer needs and the infrastructure required to serve them. His experience spans hydrogen supply, distribution, and customer operations, with a practical focus on solving problems and turning commercial commitments into reliable service. At PACC, leads operational execution and downstream infrastructure development, working with customers, equipment suppliers, and partners to coordinate refueling solutions and support new hydrogen deployments. Also brings experienced operational guidance to producer relationships as PACC expands its supply network. Having worked closely with both PACC founders during their time at Linde, brings a longstanding foundation of trust, mentorship, and shared experience to the leadership team.",
+    image: steveImage,
   },
 ]
 </script>
