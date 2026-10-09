@@ -1,4 +1,5 @@
 import k2OpenHouse from '@/assets/images/linkedin/k2-open-house.jpg'
+import steveWelcomeImage from '@/assets/images/linkedin/steve-morton-welcome.png'
 import caHydrogenSummit from '@/assets/images/linkedin/ca-hydrogen-summit.jpg'
 
 export interface LinkedInPost {
@@ -12,8 +13,6 @@ export interface LinkedInPost {
   url: string
   image?: string
 }
-
-import steveWelcomeImage from '@/assets/images/linkedin/steve-morton-welcome.png'
 
 export const linkedInPosts: LinkedInPost[] = [
   {
